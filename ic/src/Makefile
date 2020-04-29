@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for ic
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -KINET_PROJ=../../inet -DINET_IMPORT -L$$\(INET_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake -f --deep -KINET_PROJ=../../../inet -KTICTOC_PROJ=../../../tictoc -DINET_IMPORT -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -39,7 +39,8 @@ MSGFILES =
 SMFILES =
 
 # Other makefile variables (-K)
-INET_PROJ=../../inet
+INET_PROJ=../../../inet
+TICTOC_PROJ=../../../tictoc
 
 #------------------------------------------------------------------------------
 
