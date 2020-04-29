@@ -11,7 +11,7 @@ import inet.physicallayer.contract.packetlevel.IRadioMedium;
 network WirelessA
 {
     parameters:
-        @display("bgb=650,500;bgg=100,1,grey95");
+        @display("bgb=666.288,531.216;bgg=100,1,grey95");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
 
         @figure[rcvdPkText](type=indicatorText; pos=380,20; anchor=w; font=,18; textFormat="packets received: %g"; initialValue=0);
@@ -28,10 +28,16 @@ network WirelessA
             @display("p=580,275");
         }
         hostA: <default("WirelessHost")> like INetworkNode {
-            @display("p=42.00,385.056");
+            @display("p=286.00,333.00");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
-            @display("p=600.00,385.056");
+            @display("p=495.00,340.00");
+        }
+        hostR1: <default("WirelessHost")> like INetworkNode {
+            @display("p=110.00,210.00");
+        }
+        hostR2: <default("WirelessHost")> like INetworkNode {
+            @display("p=270.00,498.00");
         }
 
 }
