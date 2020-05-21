@@ -21,12 +21,16 @@ import inet.applications.contract.IApp;
 simple TDOAApp like IApp
 {
     parameters:
-        bool isReceiver = true;
+        bool isReceiver = default(true);
         int localPort = default(-1);  // local port (-1: use ephemeral port)
         string destAddresses = default(""); // list of IP addresses, separated by spaces ("": don't send)
         string localAddress = default("");
         string packetName = default("UdpBasicAppData");
         int destPort;
+        @display("i=block/app");
+        @lifecycleSupport;
+        @signal[packetSent](type=inet::Packet);
+        @signal[packetReceived](type=inet::Packet);
     gates:
         input socketIn;
         output socketOut;

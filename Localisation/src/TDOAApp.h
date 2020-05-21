@@ -34,10 +34,12 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     std::vector<L3Address> destAddresses;
     std::vector<std::string> destAddressStr;
     int localPort = -1, destPort = -1;
+    bool isReceiver;
     UdpSocket socket;
 
+
   protected:
-    virtual void initialize() override;
+    virtual void initialize(int stage) override;
     virtual void handleMessageWhenUp(cMessage *msg) override;
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void finish() override;
@@ -45,7 +47,8 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 
     virtual L3Address chooseDestAddr();
     virtual void sendPacket();
-    virtual void createSocket();
+    virtual void processStart();
+    virtual void setSocketOptions();
 
     virtual void handleStartOperation(LifecycleOperation *operation) override;
     virtual void handleStopOperation(LifecycleOperation *operation) override;
