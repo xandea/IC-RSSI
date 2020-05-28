@@ -184,9 +184,14 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         EV << "Sender received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
         // Extract time response to save.
 
-        auto timeReceiver = packet->findTag<CreationTimeTag>();
-        EV << "timeReceiver = " << timeReceiver << endl;
-        std::cout << "timeReceiver: " << timeReceiver << endl;
+        auto data = packet->peekData(); // get all data from the packet
+        auto regions = data->getAllTags<CreationTimeTag>(); // get all tag regions
+           for (auto& region : regions) { // for each region do
+                auto creationTime = region.getTag()->getCreationTime(); // original time
+                EV << "timeReceiver = " << creationTime << endl;
+              }
+
+//        std::cout << "timeReceiver: " << timeReceiver << endl;
 
         delete packet;
     }
