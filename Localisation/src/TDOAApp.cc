@@ -27,6 +27,7 @@
 #include "inet/common/packet/printer/PacketPrinter.h"
 #include "inet/networklayer/ipv4/Ipv4Header_m.h"
 #include "inet/networklayer/common/L3AddressTag_m.h"
+#include "inet/physicallayer/contract/packetlevel/SignalTag_m.h"
 
 using namespace inet;
 
@@ -165,6 +166,12 @@ void TDOAApp::finish()
 
 void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 {
+    auto signalTimeTag = packet->getTag<SignalTimeInd>();
+    auto startTime = signalTimeTag->getStartTime();
+    EV << "startTime = " << startTime << endl;
+    auto endTime = signalTimeTag->getEndTime();
+    EV << "endTime = " << endTime << endl;
+
     // process incoming packet
     emit(packetReceivedSignal, packet);
 
@@ -185,11 +192,12 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         // Extract time response to save.
 
         auto data = packet->peekData(); // get all data from the packet
+        std::cout << data << endl;
         auto regions = data->getAllTags<CreationTimeTag>(); // get all tag regions
-           for (auto& region : regions) { // for each region do
-                auto creationTime = region.getTag()->getCreationTime(); // original time
-                EV << "timeReceiver = " << creationTime << endl;
-              }
+        for (auto& region : regions) { // for each region do
+            auto creationTime = region.getTag()->getCreationTime(); // original time
+            EV << "timeReceiver = " << creationTime << endl;
+        }
 
 //        std::cout << "timeReceiver: " << timeReceiver << endl;
 
