@@ -47,6 +47,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 
     virtual L3Address chooseDestAddr();
     virtual void sendPacket();
+    virtual void sendPacket(simtime_t startTime);
     virtual void processStart();
     virtual void setSocketOptions();
 

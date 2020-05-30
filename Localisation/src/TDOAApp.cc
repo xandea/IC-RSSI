@@ -154,6 +154,31 @@ void TDOAApp::sendPacket()
 
 }
 
+void TDOAApp::sendPacket(simtime_t startTime)
+{
+    std::ostringstream packetType;
+
+    if (!isReceiver) {
+        packetType << "TDOA INIT";
+    }
+    else {
+        packetType << "TDOA RESPONSE";
+    }
+    Packet *packet = new Packet((char*) packetType.str().c_str());
+
+//    if(dontFragment)
+//        packet->addTag<FragmentationReq>()->setDontFragment(true);
+    const auto& payload = makeShared<ApplicationPacket>();
+    payload->setChunkLength(B(4));
+    payload->setSequenceNumber(1);
+    payload->addTag<CreationTimeTag>()->setCreationTime(startTime);
+    packet->insertAtBack(payload);
+    L3Address destAddr = chooseDestAddr();
+    emit(packetSentSignal, packet);
+    socket.sendTo(packet, destAddr, destPort);
+
+}
+
 void TDOAApp::handleMessageWhenUp(cMessage *msg)
 {
     socket.processMessage(msg);
@@ -185,7 +210,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         std::cout << "Source address: " << srcAddr << endl;
         destAddresses.push_back(srcAddr);
         delete packet;
-        sendPacket();
+        sendPacket(startTime);
     }
     else {
         EV << "Sender received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
@@ -198,6 +223,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             auto creationTime = region.getTag()->getCreationTime(); // original time
             EV << "timeReceiver = " << creationTime << endl;
         }
+
 
 //        std::cout << "timeReceiver: " << timeReceiver << endl;
 
