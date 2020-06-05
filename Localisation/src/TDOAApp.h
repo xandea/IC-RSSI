@@ -22,6 +22,8 @@
 
 #include "inet/applications/base/ApplicationBase.h"
 #include "inet/transportlayer/contract/udp/UdpSocket.h"
+#include "inet/networklayer/contract/ipv4/Ipv4Address.h"
+#include "inet/common/INETDefs.h"
 
 using namespace inet;
 
@@ -31,11 +33,13 @@ using namespace inet;
 class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 {
     protected:
+
     std::vector<L3Address> destAddresses;
     std::vector<std::string> destAddressStr;
     int localPort = -1, destPort = -1;
     bool isReceiver;
     UdpSocket socket;
+
 
 
   protected:
@@ -44,6 +48,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void finish() override;
     virtual void refreshDisplay() const override;
+
 
     virtual L3Address chooseDestAddr();
     virtual void sendPacket();

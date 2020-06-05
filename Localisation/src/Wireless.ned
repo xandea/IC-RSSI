@@ -43,4 +43,7 @@ network WirelessA
         hostB: <default("WirelessHost")> like INetworkNode {
             @display("p=450,325");
         }
+        hostC: <default("WirelessHost")> like INetworkNode {
+            @display("p=200,225");
+        }
 }

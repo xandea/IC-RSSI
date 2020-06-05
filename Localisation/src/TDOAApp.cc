@@ -28,6 +28,8 @@
 #include "inet/networklayer/ipv4/Ipv4Header_m.h"
 #include "inet/networklayer/common/L3AddressTag_m.h"
 #include "inet/physicallayer/contract/packetlevel/SignalTag_m.h"
+#include "inet/networklayer/contract/ipv4/Ipv4Address.h"
+
 
 using namespace inet;
 
@@ -47,6 +49,7 @@ void TDOAApp::initialize(int stage)
         localPort = par("localPort");
         destPort = par("destPort");
         isReceiver = par("isReceiver");
+
 //        processStart();
 //        std::cout << "Socket created!" << endl;
 //        sendPacket();
@@ -92,21 +95,29 @@ void TDOAApp::processStart()
 {
     socket.setOutputGate(gate("socketOut"));
     const char *localAddress = par("localAddress");
-    socket.bind(*localAddress ? L3AddressResolver().resolve(localAddress) : L3Address(), localPort);
+    socket.bind(localPort);
+    socket.setBroadcast(true);
 
     setSocketOptions();
 
     const char *destAddrs = par("destAddresses");
+
     cStringTokenizer tokenizer(destAddrs);
     const char *token;
 
+
     while ((token = tokenizer.nextToken()) != nullptr) {
-        destAddressStr.push_back(token);
-        L3Address result;
-        L3AddressResolver().tryResolve(token, result);
-        if (result.isUnspecified())
-            EV_ERROR << "cannot resolve destination address: " << token << endl;
-        destAddresses.push_back(result);
+        if (strstr(token, "Broadcast") != nullptr){
+            destAddresses.push_back(Ipv4Address::ALLONES_ADDRESS);
+            }
+        else {
+            L3Address result;
+            L3AddressResolver().tryResolve(token, result);
+            if (result.isUnspecified())
+                        EV_ERROR << "cannot resolve destination address: " << token << endl;
+            destAddresses.push_back(result);
+        }
+
     }
 
     if (destAddresses.empty()) {
@@ -122,12 +133,17 @@ void TDOAApp::processStart()
 
 L3Address TDOAApp::chooseDestAddr()
 {
+
     int k = intrand(destAddresses.size());
+    EV<<"Tamanho K: "<<k;
     if (destAddresses[k].isUnspecified() || destAddresses[k].isLinkLocal()) {
         L3AddressResolver().tryResolve(destAddressStr[k].c_str(), destAddresses[k]);
     }
+
     return destAddresses[k];
 }
+
+
 
 void TDOAApp::sendPacket()
 {
@@ -148,9 +164,15 @@ void TDOAApp::sendPacket()
     payload->setSequenceNumber(1);
     payload->addTag<CreationTimeTag>()->setCreationTime(simTime());
     packet->insertAtBack(payload);
+
     L3Address destAddr = chooseDestAddr();
+ //   L3Address destAddr = Ipv4Address::ALLONES_ADDRESS;
     emit(packetSentSignal, packet);
-    socket.sendTo(packet, destAddr, destPort);
+
+    socket.sendTo(packet->dup(), destAddr, destPort);
+
+
+
 
 }
 
@@ -174,6 +196,7 @@ void TDOAApp::sendPacket(simtime_t startTime)
     payload->addTag<CreationTimeTag>()->setCreationTime(startTime);
     packet->insertAtBack(payload);
     L3Address destAddr = chooseDestAddr();
+
     emit(packetSentSignal, packet);
     socket.sendTo(packet, destAddr, destPort);
 
@@ -201,6 +224,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     emit(packetReceivedSignal, packet);
 
     if (isReceiver) {
+
         EV << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
         std::cout << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
 //        delete packet;
