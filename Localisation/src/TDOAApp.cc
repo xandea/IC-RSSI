@@ -29,6 +29,7 @@
 #include "inet/networklayer/common/L3AddressTag_m.h"
 #include "inet/physicallayer/contract/packetlevel/SignalTag_m.h"
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
+#include "inet/physicallayer/common/packetlevel/Radio.h"
 
 
 using namespace inet;
@@ -94,9 +95,15 @@ void TDOAApp::setSocketOptions()
 void TDOAApp::processStart()
 {
     socket.setOutputGate(gate("socketOut"));
+
     const char *localAddress = par("localAddress");
     socket.bind(localPort);
+    if(localPort=5000){
     socket.setBroadcast(true);
+    }
+    else{
+        socket.setBroadcast(false);
+    }
 
     setSocketOptions();
 
@@ -108,13 +115,16 @@ void TDOAApp::processStart()
 
     while ((token = tokenizer.nextToken()) != nullptr) {
         if (strstr(token, "Broadcast") != nullptr){
+
             destAddresses.push_back(Ipv4Address::ALLONES_ADDRESS);
+
             }
         else {
             L3Address result;
             L3AddressResolver().tryResolve(token, result);
             if (result.isUnspecified())
                         EV_ERROR << "cannot resolve destination address: " << token << endl;
+
             destAddresses.push_back(result);
         }
 
@@ -135,7 +145,7 @@ L3Address TDOAApp::chooseDestAddr()
 {
 
     int k = intrand(destAddresses.size());
-    EV<<"Tamanho K: "<<k;
+
     if (destAddresses[k].isUnspecified() || destAddresses[k].isLinkLocal()) {
         L3AddressResolver().tryResolve(destAddressStr[k].c_str(), destAddresses[k]);
     }
@@ -166,10 +176,10 @@ void TDOAApp::sendPacket()
     packet->insertAtBack(payload);
 
     L3Address destAddr = chooseDestAddr();
- //   L3Address destAddr = Ipv4Address::ALLONES_ADDRESS;
+
     emit(packetSentSignal, packet);
 
-    socket.sendTo(packet->dup(), destAddr, destPort);
+    socket.sendTo(packet, destAddr, destPort);
 
 
 
@@ -198,7 +208,9 @@ void TDOAApp::sendPacket(simtime_t startTime)
     L3Address destAddr = chooseDestAddr();
 
     emit(packetSentSignal, packet);
+
     socket.sendTo(packet, destAddr, destPort);
+
 
 }
 
@@ -223,6 +235,8 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     // process incoming packet
     emit(packetReceivedSignal, packet);
 
+
+
     if (isReceiver) {
 
         EV << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
@@ -235,25 +249,34 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         destAddresses.push_back(srcAddr);
         delete packet;
         sendPacket(startTime);
+
     }
     else {
         EV << "Sender received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
+
         // Extract time response to save.
 
         auto data = packet->peekData(); // get all data from the packet
         std::cout << data << endl;
         auto regions = data->getAllTags<CreationTimeTag>(); // get all tag regions
+        auto l3Addresses = packet->getTag<L3AddressInd>();
+        L3Address srcAddr = l3Addresses->getSrcAddress();
+
         for (auto& region : regions) { // for each region do
+
             auto creationTime = region.getTag()->getCreationTime(); // original time
             EV << "timeReceiver = " << creationTime << endl;
         }
-
-
-//        std::cout << "timeReceiver: " << timeReceiver << endl;
-
         delete packet;
+
+
+        auto radiomode=radio.getRadioMode();
+        EV<<"RADIO"<<radio.getRadioModeName(radiomode);
+
+
     }
 }
+
 
 void TDOAApp::socketErrorArrived(UdpSocket *socket, Indication *indication)
 {
