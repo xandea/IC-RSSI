@@ -45,29 +45,9 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/transportlayer/contract/udp/UdpControlInfo_m.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/IpProtocolId_m.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationPacket_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/Chunk_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BitCountChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/ByteCountChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/cPacketChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SequenceChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SliceChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/FieldsChunk.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/ModuleAccess.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TagBase_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TimeTag_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/FragmentationTag_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressResolver.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoutingTable.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoute.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/PacketPrinter.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/StringFormat.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/PacketDissector.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Protocol.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissector.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissectorRegistry.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/ProtocolPrinter.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/common/packetlevel/Radio.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/base/packetlevel/PhysicalLayerBase.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/LayeredProtocolBase.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/common/packetlevel/Signal.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ISignal.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IArrival.h \
@@ -95,6 +75,67 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/bitlevel/ISignalAnalogModel.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ITransmission.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAntennaGain.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPhysicalLayer.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAntenna.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/mobility/contract/IMobility.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IRadio.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceiver.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IInterference.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/INoise.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IListeningDecision.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceptionDecision.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceptionResult.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/RadioControlInfo_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IModulation_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IModulation.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IApskModulation.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ISnir.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ITransmitter.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IRadioMedium.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IMaterial.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IPhysicalEnvironment.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/IVisitor.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/RotationMatrix.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IGround.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IMaterialRegistry.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/common/Material.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IObjectCache.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/object/LineSegment.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/base/GeometricObjectBase.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IPhysicalObject.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/base/ShapeBase.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAnalogModel.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IBackgroundNoise.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ICommunicationCache.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/IntervalTree.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IMediumLimitCache.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/INeighborCache.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IObstacleLoss.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPathLoss.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPropagation.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationPacket_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/Chunk_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BitCountChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/ByteCountChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/cPacketChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SequenceChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SliceChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/FieldsChunk.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/ModuleAccess.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TagBase_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TimeTag_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/FragmentationTag_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressResolver.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoutingTable.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoute.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/PacketPrinter.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/StringFormat.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/PacketDissector.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Protocol.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissector.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissectorRegistry.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/ProtocolPrinter.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/ipv4/Ipv4Header_m.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TlvOptions_m.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/NetworkHeaderBase_m.h \
@@ -200,51 +241,11 @@ TDOAApp.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address_m.h:
 
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationPacket_m.h:
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/common/packetlevel/Radio.h:
 
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/Chunk_m.h:
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/base/packetlevel/PhysicalLayerBase.h:
 
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units_m.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BitCountChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/ByteCountChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/cPacketChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SequenceChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SliceChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/FieldsChunk.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/ModuleAccess.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TagBase_m.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TimeTag_m.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/FragmentationTag_m.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressResolver.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoutingTable.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoute.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/PacketPrinter.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/StringFormat.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/PacketDissector.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Protocol.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissector.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissectorRegistry.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/ProtocolPrinter.h:
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/LayeredProtocolBase.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/common/packetlevel/Signal.h:
 
@@ -299,6 +300,128 @@ TDOAApp.h:
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ITransmission.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAntennaGain.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPhysicalLayer.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAntenna.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/mobility/contract/IMobility.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IRadio.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceiver.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IInterference.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/INoise.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IListeningDecision.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceptionDecision.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IReceptionResult.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/RadioControlInfo_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IModulation_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IModulation.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IApskModulation.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ISnir.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ITransmitter.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IRadioMedium.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IMaterial.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IPhysicalEnvironment.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/IVisitor.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/RotationMatrix.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IGround.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IMaterialRegistry.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/common/Material.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IObjectCache.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/object/LineSegment.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/base/GeometricObjectBase.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/environment/contract/IPhysicalObject.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/base/ShapeBase.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IAnalogModel.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IBackgroundNoise.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ICommunicationCache.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/IntervalTree.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IMediumLimitCache.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/INeighborCache.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IObstacleLoss.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPathLoss.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPropagation.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationPacket_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/Chunk_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BitCountChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/ByteCountChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/cPacketChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SequenceChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/SliceChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/FieldsChunk.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/ModuleAccess.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TagBase_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TimeTag_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/FragmentationTag_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressResolver.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoutingTable.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IRoute.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/PacketPrinter.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/StringFormat.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/PacketDissector.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Protocol.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissector.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/dissector/ProtocolDissectorRegistry.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/printer/ProtocolPrinter.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/ipv4/Ipv4Header_m.h:
 

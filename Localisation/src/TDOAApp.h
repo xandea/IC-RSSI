@@ -24,6 +24,7 @@
 #include "inet/transportlayer/contract/udp/UdpSocket.h"
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 #include "inet/common/INETDefs.h"
+#include "inet/physicallayer/common/packetlevel/Radio.h"
 
 using namespace inet;
 
@@ -39,6 +40,8 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     int localPort = -1, destPort = -1;
     bool isReceiver;
     UdpSocket socket;
+    physicallayer::Radio radio;
+
 
 
 
