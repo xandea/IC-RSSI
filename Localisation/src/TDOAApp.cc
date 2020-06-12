@@ -30,6 +30,8 @@
 #include "inet/physicallayer/contract/packetlevel/SignalTag_m.h"
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 #include "inet/physicallayer/common/packetlevel/Radio.h"
+#include "inet/physicallayer/base/packetlevel/TransmissionBase.h"
+
 
 
 using namespace inet;
@@ -50,7 +52,7 @@ void TDOAApp::initialize(int stage)
         localPort = par("localPort");
         destPort = par("destPort");
         isReceiver = par("isReceiver");
-
+        i=0;
 //        processStart();
 //        std::cout << "Socket created!" << endl;
 //        sendPacket();
@@ -135,6 +137,7 @@ void TDOAApp::processStart()
     }
 
     if (isReceiver == false) {
+
         sendPacket();
     }
 
@@ -158,8 +161,10 @@ L3Address TDOAApp::chooseDestAddr()
 void TDOAApp::sendPacket()
 {
     std::ostringstream packetType;
+    EV<<"teste";
 
     if (!isReceiver) {
+
         packetType << "TDOA INIT";
     }
     else {
@@ -179,9 +184,8 @@ void TDOAApp::sendPacket()
 
     emit(packetSentSignal, packet);
 
+
     socket.sendTo(packet, destAddr, destPort);
-
-
 
 
 }
@@ -200,6 +204,7 @@ void TDOAApp::sendPacket(simtime_t startTime)
 
 //    if(dontFragment)
 //        packet->addTag<FragmentationReq>()->setDontFragment(true);
+
     const auto& payload = makeShared<ApplicationPacket>();
     payload->setChunkLength(B(4));
     payload->setSequenceNumber(1);
@@ -212,15 +217,20 @@ void TDOAApp::sendPacket(simtime_t startTime)
     socket.sendTo(packet, destAddr, destPort);
 
 
+
 }
 
 void TDOAApp::handleMessageWhenUp(cMessage *msg)
 {
     socket.processMessage(msg);
+
 }
 
 void TDOAApp::finish()
 {
+    for(i=0;i<2;i++){
+        EV<< "Tempo: "<< Tempos[i]<<endl;
+    }
     ApplicationBase::finish();
 }
 
@@ -232,13 +242,12 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     auto endTime = signalTimeTag->getEndTime();
     EV << "endTime = " << endTime << endl;
 
+
     // process incoming packet
     emit(packetReceivedSignal, packet);
 
 
-
     if (isReceiver) {
-
         EV << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
         std::cout << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
 //        delete packet;
@@ -248,6 +257,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         std::cout << "Source address: " << srcAddr << endl;
         destAddresses.push_back(srcAddr);
         delete packet;
+
         sendPacket(startTime);
 
     }
@@ -266,14 +276,12 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 
             auto creationTime = region.getTag()->getCreationTime(); // original time
             EV << "timeReceiver = " << creationTime << endl;
+            Tempos[i]=creationTime;
         }
+        i++;
+
+
         delete packet;
-
-
-        auto radiomode=radio.getRadioMode();
-        EV<<"RADIO"<<radio.getRadioModeName(radiomode);
-
-
     }
 }
 

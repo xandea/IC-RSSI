@@ -145,7 +145,8 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/transportlayer/common/CrcMode_m.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/ProtocolGroup.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressTag_m.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/SignalTag_m.h
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/SignalTag_m.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/base/packetlevel/TransmissionBase.h
 
 TDOAApp.h:
 
@@ -442,3 +443,5 @@ TDOAApp.h:
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3AddressTag_m.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/SignalTag_m.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/base/packetlevel/TransmissionBase.h:
