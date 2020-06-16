@@ -19,6 +19,7 @@
 #include <vector>
 
 #include "inet/common/INETDefs.h"
+#include "Valores.h"
 
 #include "inet/applications/base/ApplicationBase.h"
 #include "inet/transportlayer/contract/udp/UdpSocket.h"
@@ -42,9 +43,8 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     int localPort = -1, destPort = -1;
     bool isReceiver;
     UdpSocket socket;
-    simtime_t Tempos[2];
     int i;
-    Coord Positions[2];
+    Valores valores[3];
 
 
 

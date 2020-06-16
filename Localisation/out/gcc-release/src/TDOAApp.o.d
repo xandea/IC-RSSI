@@ -7,6 +7,16 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/features.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Compat.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/InitStages.h \
+ Valores.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Coord.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/INETMath.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/linklayer/common/MacAddress.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModuleIdAddress.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModulePathAddress.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/clns/ClnsAddress.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv4/Ipv4Address.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv6/Ipv6Address.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationBase.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/lifecycle/ModuleOperations.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/lifecycle/LifecycleOperation.h \
@@ -20,10 +30,6 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/Chunk.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/MemoryInputStream.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/INETMath.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/linklayer/common/MacAddress.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv4/Ipv4Address.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv6/Ipv6Address.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/MemoryOutputStream.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Ptr.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/IntrusivePtr.h \
@@ -31,10 +37,6 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/TemporarySharedPtr.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BytesChunk.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/socket/ISocket.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModuleIdAddress.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModulePathAddress.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/clns/ClnsAddress.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IInterfaceTable.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/InterfaceEntry.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Simsignals.h \
@@ -51,7 +53,6 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/common/packetlevel/Signal.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ISignal.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IArrival.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Coord.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Quaternion.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/EulerAngles.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPrintableObject.h \
@@ -167,6 +168,26 @@ TDOAApp.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/InitStages.h:
 
+Valores.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Coord.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/INETMath.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/linklayer/common/MacAddress.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModuleIdAddress.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModulePathAddress.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/clns/ClnsAddress.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv4/Ipv4Address.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv6/Ipv6Address.h:
+
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/applications/base/ApplicationBase.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/lifecycle/ModuleOperations.h:
@@ -193,14 +214,6 @@ TDOAApp.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Units.h:
 
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/INETMath.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/linklayer/common/MacAddress.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv4/Ipv4Address.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/ipv6/Ipv6Address.h:
-
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/MemoryOutputStream.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/Ptr.h:
@@ -214,14 +227,6 @@ TDOAApp.h:
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/packet/chunk/BytesChunk.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/socket/ISocket.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/L3Address.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModuleIdAddress.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/common/ModulePathAddress.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/clns/ClnsAddress.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/networklayer/contract/IInterfaceTable.h:
 
@@ -254,8 +259,6 @@ TDOAApp.h:
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/ISignal.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IArrival.h:
-
-/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Coord.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/geometry/common/Quaternion.h:
 

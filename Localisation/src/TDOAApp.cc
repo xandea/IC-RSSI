@@ -246,9 +246,10 @@ void TDOAApp::handleMessageWhenUp(cMessage *msg)
 void TDOAApp::finish()
 {
 
-    for(i=0;i<2;i++){
-        EV<< "Tempo: "<< Tempos[i]<<endl;
-        EV<< "Positon: "<< Positions[i]<<endl;
+    for(i=0;i<3;i++){
+        EV<< "Tempo: "<< valores[i].tempo<<endl;
+        EV<< "Positon: "<< valores[i].position<<endl;
+        EV<< "IP: "<< valores[i].ip<<endl;
     }
     ApplicationBase::finish();
 }
@@ -298,8 +299,9 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             auto creationTime = region.getTag()->getTime(); // original time
             auto positions=region.getTag()->getLocation();
             EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
-            Tempos[i]=creationTime;
-            Positions[i]=positions;
+            valores[i].tempo=creationTime;
+            valores[i].position=positions;
+            valores[i].ip=srcAddr;
         }
 
         i++;
