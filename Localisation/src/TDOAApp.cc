@@ -14,6 +14,7 @@
 // 
 
 #include "TDOAApp.h"
+#include "Position_m.h"
 
 #include "inet/applications/base/ApplicationPacket_m.h"
 #include "inet/common/ModuleAccess.h"
@@ -30,7 +31,8 @@
 #include "inet/physicallayer/contract/packetlevel/SignalTag_m.h"
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 #include "inet/physicallayer/common/packetlevel/Radio.h"
-#include "inet/physicallayer/base/packetlevel/TransmissionBase.h"
+#include "inet/common/packet/chunk/ByteCountChunk.h"
+
 
 
 
@@ -161,7 +163,6 @@ L3Address TDOAApp::chooseDestAddr()
 void TDOAApp::sendPacket()
 {
     std::ostringstream packetType;
-    EV<<"teste";
 
     if (!isReceiver) {
 
@@ -175,17 +176,19 @@ void TDOAApp::sendPacket()
 //    if(dontFragment)
 //        packet->addTag<FragmentationReq>()->setDontFragment(true);
     const auto& payload = makeShared<ApplicationPacket>();
+
     payload->setChunkLength(B(4));
     payload->setSequenceNumber(1);
     payload->addTag<CreationTimeTag>()->setCreationTime(simTime());
+
     packet->insertAtBack(payload);
 
     L3Address destAddr = chooseDestAddr();
 
     emit(packetSentSignal, packet);
 
-
     socket.sendTo(packet, destAddr, destPort);
+
 
 
 }
@@ -205,11 +208,23 @@ void TDOAApp::sendPacket(simtime_t startTime)
 //    if(dontFragment)
 //        packet->addTag<FragmentationReq>()->setDontFragment(true);
 
+
     const auto& payload = makeShared<ApplicationPacket>();
     payload->setChunkLength(B(4));
     payload->setSequenceNumber(1);
-    payload->addTag<CreationTimeTag>()->setCreationTime(startTime);
+
+    cModule *host = getContainingNode(this);
+    IMobility *mobility = check_and_cast<IMobility *>(host->getSubmodule("mobility"));
+    auto positions = mobility->getCurrentPosition();
+
+    auto tags=payload->addTag<position>();
+    tags->setLocation(positions);
+    tags->setTime(startTime);
     packet->insertAtBack(payload);
+
+    EV<<"Position: "<< positions;
+
+
     L3Address destAddr = chooseDestAddr();
 
     emit(packetSentSignal, packet);
@@ -218,24 +233,29 @@ void TDOAApp::sendPacket(simtime_t startTime)
 
 
 
+
 }
 
 void TDOAApp::handleMessageWhenUp(cMessage *msg)
 {
+
     socket.processMessage(msg);
 
 }
 
 void TDOAApp::finish()
 {
+
     for(i=0;i<2;i++){
         EV<< "Tempo: "<< Tempos[i]<<endl;
+        EV<< "Positon: "<< Positions[i]<<endl;
     }
     ApplicationBase::finish();
 }
 
 void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 {
+
     auto signalTimeTag = packet->getTag<SignalTimeInd>();
     auto startTime = signalTimeTag->getStartTime();
     EV << "startTime = " << startTime << endl;
@@ -268,16 +288,20 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 
         auto data = packet->peekData(); // get all data from the packet
         std::cout << data << endl;
-        auto regions = data->getAllTags<CreationTimeTag>(); // get all tag regions
+        auto regions = data->getAllTags<position>(); // get all tag regions
         auto l3Addresses = packet->getTag<L3AddressInd>();
         L3Address srcAddr = l3Addresses->getSrcAddress();
 
+
         for (auto& region : regions) { // for each region do
 
-            auto creationTime = region.getTag()->getCreationTime(); // original time
-            EV << "timeReceiver = " << creationTime << endl;
+            auto creationTime = region.getTag()->getTime(); // original time
+            auto positions=region.getTag()->getLocation();
+            EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
             Tempos[i]=creationTime;
+            Positions[i]=positions;
         }
+
         i++;
 
 

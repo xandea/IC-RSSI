@@ -44,6 +44,8 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     UdpSocket socket;
     simtime_t Tempos[2];
     int i;
+    Coord Positions[2];
+
 
 
 
