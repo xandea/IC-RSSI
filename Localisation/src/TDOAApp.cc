@@ -32,6 +32,7 @@
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 #include "inet/physicallayer/common/packetlevel/Radio.h"
 #include "inet/common/packet/chunk/ByteCountChunk.h"
+#include "inet/physicallayer/base/packetlevel/TransmissionBase_m.h"
 
 
 
@@ -48,6 +49,7 @@ void TDOAApp::initialize(int stage)
 {
     ApplicationBase::initialize(stage);
 
+
     if (stage == INITSTAGE_LOCAL) {
         EV << "Init" << endl;
 
@@ -59,6 +61,7 @@ void TDOAApp::initialize(int stage)
 //        std::cout << "Socket created!" << endl;
 //        sendPacket();
     }
+
 }
 
 void TDOAApp::setSocketOptions()
@@ -180,16 +183,18 @@ void TDOAApp::sendPacket()
     payload->setChunkLength(B(4));
     payload->setSequenceNumber(1);
     payload->addTag<CreationTimeTag>()->setCreationTime(simTime());
-
     packet->insertAtBack(payload);
 
     L3Address destAddr = chooseDestAddr();
 
+
+    cModule *host = getContainingNode(this);
+    host->subscribe(transmissionStarted, listener);
     emit(packetSentSignal, packet);
 
+
+
     socket.sendTo(packet, destAddr, destPort);
-
-
 
 }
 
@@ -229,10 +234,8 @@ void TDOAApp::sendPacket(simtime_t startTime)
 
     emit(packetSentSignal, packet);
 
+
     socket.sendTo(packet, destAddr, destPort);
-
-
-
 
 }
 
@@ -262,6 +265,8 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     EV << "startTime = " << startTime << endl;
     auto endTime = signalTimeTag->getEndTime();
     EV << "endTime = " << endTime << endl;
+
+
 
 
     // process incoming packet

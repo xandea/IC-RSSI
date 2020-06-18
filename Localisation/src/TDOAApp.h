@@ -20,6 +20,7 @@
 
 #include "inet/common/INETDefs.h"
 #include "Valores.h"
+#include "ReceptionStartedListener.h"
 
 #include "inet/applications/base/ApplicationBase.h"
 #include "inet/transportlayer/contract/udp/UdpSocket.h"
@@ -27,6 +28,7 @@
 #include "inet/common/INETDefs.h"
 #include "inet/physicallayer/common/packetlevel/Radio.h"
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
+
 
 
 using namespace inet;
@@ -45,6 +47,9 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     UdpSocket socket;
     int i;
     Valores valores[3];
+    simsignal_t transmissionStarted;
+    ReceptionStartedListener *listener;
+
 
 
 
