@@ -20,14 +20,19 @@
 
 using namespace inet;
 
+ReceptionStartedListener::ReceptionStartedListener() {
+}
+
 ReceptionStartedListener::~ReceptionStartedListener()
 {
+
 }
 
 void ReceptionStartedListener::receiveSignal(cComponent* source, simsignal_t signalID, cObject* obj, cObject* details)
 {
-    EV<<"tempo: "<< simTime();
+    EV << "Listener tempo: "<< simTime();
 }
+
 
 
 

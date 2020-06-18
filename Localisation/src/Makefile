@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for Localisation
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -KINET_PROJ=/home/angel/Documentos/omnetpp-5.6/samples/inet -DINET_IMPORT -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake -f --deep -KINET_PROJ=/home/naty/MEGA/Work/ICs_TCCs/Alexandre/Code/inet -DINET_IMPORT -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -40,7 +40,7 @@ MSGFILES = \
 SMFILES =
 
 # Other makefile variables (-K)
-INET_PROJ=/home/angel/Documentos/omnetpp-5.6/samples/inet
+INET_PROJ=/home/naty/MEGA/Work/ICs_TCCs/Alexandre/Code/inet
 
 #------------------------------------------------------------------------------
 

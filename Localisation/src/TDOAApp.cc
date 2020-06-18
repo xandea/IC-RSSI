@@ -36,7 +36,6 @@
 
 
 
-
 using namespace inet;
 
 Define_Module(TDOAApp);
@@ -105,7 +104,7 @@ void TDOAApp::processStart()
 
     const char *localAddress = par("localAddress");
     socket.bind(localPort);
-    if(localPort=5000){
+    if(!isReceiver){
     socket.setBroadcast(true);
     }
     else{
@@ -187,9 +186,11 @@ void TDOAApp::sendPacket()
 
     L3Address destAddr = chooseDestAddr();
 
-
     cModule *host = getContainingNode(this);
-    host->subscribe(transmissionStarted, listener);
+    std::cout << "host: " << host << endl;
+    listener = new ReceptionStartedListener();
+    host->subscribe("transmissionStarted", listener);
+
     emit(packetSentSignal, packet);
 
 
