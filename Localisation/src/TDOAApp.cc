@@ -46,6 +46,7 @@ TDOAApp::~TDOAApp()
 
 void TDOAApp::initialize(int stage)
 {
+
     ApplicationBase::initialize(stage);
 
 
@@ -102,13 +103,14 @@ void TDOAApp::processStart()
 {
     socket.setOutputGate(gate("socketOut"));
 
+
     const char *localAddress = par("localAddress");
     socket.bind(localPort);
     if(!isReceiver){
-    socket.setBroadcast(true);
+    socket.setBroadcast(false);
     }
     else{
-        socket.setBroadcast(false);
+        socket.setBroadcast(true);
     }
 
     setSocketOptions();
@@ -187,6 +189,7 @@ void TDOAApp::sendPacket()
     L3Address destAddr = chooseDestAddr();
 
     cModule *host = getContainingNode(this);
+
     std::cout << "host: " << host << endl;
     listener = new ReceptionStartedListener();
     host->subscribe("transmissionStarted", listener);

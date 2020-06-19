@@ -56,6 +56,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 
 
 
+
   protected:
     virtual void initialize(int stage) override;
     virtual void handleMessageWhenUp(cMessage *msg) override;

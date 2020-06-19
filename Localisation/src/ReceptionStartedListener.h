@@ -18,13 +18,17 @@
 #include "inet/common/INETDefs.h"
 #include "inet/common/ModuleAccess.h"
 #include "inet/common/Simsignals.h"
+#include "inet/transportlayer/contract/udp/UdpSocket.h"
+#include "inet/applications/base/ApplicationBase.h"
+
 
 using namespace inet;
 
-class INET_API ReceptionStartedListener : public cListener
+class INET_API ReceptionStartedListener : public cListener, public cSimpleModule
 {
 protected:
     virtual void receiveSignal(cComponent* source, simsignal_t signalID, cObject* obj, cObject* details) override;
+    UdpSocket socket;
 
 public:
     ReceptionStartedListener();

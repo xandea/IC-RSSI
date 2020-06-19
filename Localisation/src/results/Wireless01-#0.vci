@@ -1,15 +1,15 @@
-file 6745 1592515368                                            
+file 5367 1592593529                                            
 version 2
-run Wireless01-0-20200618-18:22:39-3347
+run Wireless01-0-20200619-16:05:14-22845
 attr configname Wireless01
-attr datetime 20200618-18:22:39
+attr datetime 20200619-16:05:14
 attr experiment Wireless01
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network WirelessA
-attr processid 3347
+attr processid 22845
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -28,16 +28,19 @@ param *.hostB.app[0].typename "\"TDOAApp\""
 param *.hostB.app[0].localPort 5000
 param *.hostB.app[0].destPort 6000
 param *.hostB.app[0].destAddresses "\"hostA\""
+param *.hostB.app[0].isReceiver true
 param *.hostC.numApps 1
 param *.hostC.app[0].typename "\"TDOAApp\""
 param *.hostC.app[0].localPort 5000
 param *.hostC.app[0].destPort 6000
 param *.hostC.app[0].destAddresses "\"hostA\""
+param *.hostC.app[0].isReceiver true
 param *.hostD.numApps 1
 param *.hostD.app[0].typename "\"TDOAApp\""
 param *.hostD.app[0].localPort 5000
 param *.hostD.app[0].destPort 6000
 param *.hostD.app[0].destAddresses "\"hostA\""
+param *.hostD.app[0].isReceiver true
 param *.host*.wlan[0].typename "\"WirelessInterface\""
 param *.host*.wlan[0].radio.typename "\"UnitDiskRadio\""
 param *.host*.wlan[0].mac.typename "\"CsmaCaMac\""
@@ -121,53 +124,22 @@ vector 17 WirelessA.hostA.wlan[0].radio transmissionState:vector ETV
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, vector"
-vector 18 WirelessA.hostC.udp packetReceived:vector(packetBytes) ETV
-attr interpolationmode none
-attr source packetReceived
-attr title "packets received, vector(packetBytes)"
-vector 19 WirelessA.hostC.udp droppedPkWrongPort:vector(count) ETV
-attr interpolationmode none
-attr source packetDropReasonIsNoPortFound(packetDropped)
-attr title "packets dropped (wrong port), vector(count)"
-vector 20 WirelessA.hostD.udp packetReceived:vector(packetBytes) ETV
-attr interpolationmode none
-attr source packetReceived
-attr title "packets received, vector(packetBytes)"
-vector 21 WirelessA.hostD.udp droppedPkWrongPort:vector(count) ETV
-attr interpolationmode none
-attr source packetDropReasonIsNoPortFound(packetDropped)
-attr title "packets dropped (wrong port), v
-ctor(count)"
-vector 22 WirelessA.hostB.udp packetReceived:vector(packetBytes) ETV
-attr interpolationmode none
-attr source packetReceived
-attr title "packets received, vector(packetBytes)"
-vector 23 WirelessA.hostB.udp droppedPkWrongPort:vector(count) ETV
-attr interpolationmode none
-attr source packetDropReasonIsNoPortFound(packetDropped)
-attr title "packets dropped (wrong port), vector(count)"
-0	6112 55 0 21 0 0.001078 5 0 3 7 17
-1	6167 24 0 0 0 0 3 0 2 2 4
-2	6191 24 0 0 0 0 3 0 2 2 4
-3	6215 24 0 0 0 0 3 0 2 2 4
-4	6239 39 0 21 0 0.001078 3 0 1 2 2
-5	6278 52 0 30 0 0.001078500346 3 1 3 5 11
-6	6330 52 0 22 0 0.001078166782 3 1 3 5 11
-7	6382 52 0 23 0 0.001078166782 3 1 3 5 11
-8	6434 9 3 3 0 0 1 12 12 12 144
-9	6443 10 11 11 0 0 1 32 32 32 1024
-10	6453 11 11 11 0 0 1 32 32 32 1024
-11	6464 11 12 12 0 0 1 59 59 59 3481
-12	6475 20 12 12 0 0 2 0 1 1 1
-13	6495 11 12 12 0 0 1 59 59 59 3481
-14	6506 10 12 12 0 0 1 0 0 0 0
-15	6516 11 14 14 0 0 1 12 12 12 144
-16	6527 10 14 14 0 0 1 1 1 1 1
-17	6537 66 16 21 0.00051 0.001078 4 0 2 4 6
-18	6603 24 28 28 0.001078166782 0.001078166782 1 12 12 12 144
-19	6627 23 28 28 0.001078166782 0.001078166782 1 1 1 1 1
-20	6650 24 29 29 0.001078166782 0.001078166782 1 12 12 12 144
-21	6674 23 29 29 0.001078166782 0.001078166782 1 1 1 1 1
-22	6697 24 33 33 0.001078500346 0.001078500346 1 12 12 12 144
-23	6721 23 33 33 0.001078500346 0.001078500346 1 1 1 1 1
+0	5073 39 0 16 0 0.00051 4 0 3 5 13
+1	5112 24 0 0 0 0 3 0 2 2 4
+2	5136 24 0 0 0 0 3 0 2 2 4
+3	5160 24 0 0 0 0 3 0 2 2 4
+4	5184 23 0 16 0 0.00051 2 0 1 1 1
+5	5207 8 0 0 0 0 1 1 1 1 1
+6	5215 8 0 0 0 0 1 1 1 1 1
+7	5223 8 0 0 0 0 1 1 1 1 1
+8	5231 9 3 3 0 0 1 12 12 12 144
+9	5240 10 11 11 0 0 1 32 32 32 1024
+10	5250 11 11 11 0 0 1 32 32 32 1024
+11	5261 11 12 12 0 0 1 59 59 59 3481
+12	5272 20 12 12 0 0 2 0 1 1 1
+13	5292 11 12 12 0 0 1 59 59 59 3481
+14	5303 10 12 12 0 0 1 0 0 0 0
+15	5313 11 14 14 0 0 1 12 12 12 144
+16	5324 10 14 14 0 0 1 1 1 1 1
+17	5334 32 16 17 0.00051 0.00051 2 1 2 3 5
 

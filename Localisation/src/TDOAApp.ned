@@ -35,4 +35,5 @@ simple TDOAApp like IApp
     gates:
         input socketIn;
         output socketOut;
+        input in@directIn;
 }
