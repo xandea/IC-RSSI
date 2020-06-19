@@ -255,6 +255,7 @@ void TDOAApp::finish()
 
     for(i=0;i<3;i++){
         EV<< "Tempo: "<< valores[i].tempo<<endl;
+        EV<< "Tempo Envio: "<< valores[i].timeSent <<endl;
         EV<< "Positon: "<< valores[i].position<<endl;
         EV<< "IP: "<< valores[i].ip<<endl;
     }
@@ -355,3 +356,11 @@ void TDOAApp::refreshDisplay() const
 //    sprintf(buf, "rcvd: %d pks\nsent: %d pks", numReceived, numSent);
 //    getDisplayString().setTagArg("t", 0, buf);
 }
+
+void TDOAApp::setTimeSent(simtime_t time)
+{
+    valores[0].timeSent = time;
+    valores[1].timeSent = time;
+    valores[2].timeSent = time;
+}
+

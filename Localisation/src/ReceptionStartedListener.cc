@@ -19,6 +19,7 @@
 #include "inet/common/ModuleAccess.h"
 #include "inet/common/Simsignals.h"
 #include "inet/transportlayer/contract/udp/UdpSocket.h"
+#include "TDOAApp.h"
 
 using namespace inet;
 
@@ -32,18 +33,12 @@ ReceptionStartedListener::~ReceptionStartedListener()
 
 void ReceptionStartedListener::receiveSignal(cComponent* source, simsignal_t signalID, cObject* obj, cObject* details)
 {
-    EV << "Listener tempo: "<< simTime();
-    cModule *targetModule = getSystemModule()->getSubmodule("hostA",0);//->getModuleType();
-    cMessage *teste= new cMessage();
-    teste->setTimestamp(simTime());
-    cMessage* copy = check_and_cast<cMessage*>(teste->dup());
-
-
-
     Enter_Method_Silent("receiveSignal");
-
-    sendDirect(copy, targetModule->getSubmodule("app",0),targetModule->getSubmodule("app",0)->gate("in")->getId());
-
+    EV << "Listener tempo: " << simTime();
+    cModule *targetModule = getSystemModule()->getSubmodule("hostA",0);//->getModuleType();
+    cModule *appModule = targetModule->getSubmodule("app",0);
+    TDOAApp *app = check_and_cast<TDOAApp*>(appModule);
+    app->setTimeSent(simTime());
 
 }
 

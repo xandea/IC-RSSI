@@ -50,13 +50,6 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;
 
-
-
-
-
-
-
-
   protected:
     virtual void initialize(int stage) override;
     virtual void handleMessageWhenUp(cMessage *msg) override;
@@ -82,6 +75,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
   public:
     TDOAApp() {}
     ~TDOAApp();
+    void setTimeSent(simtime_t timeSent);
 };
 
 #endif

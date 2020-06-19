@@ -18,6 +18,7 @@ class Valores
 {
     public:
     simtime_t tempo;
+    simtime_t timeSent;
     Coord position;
     L3Address ip;
 };
