@@ -47,8 +47,10 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     UdpSocket socket;
     int i;
     Valores valores[3];
+    simtime_t Tempo_Transmissao;
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;
+
 
   protected:
     virtual void initialize(int stage) override;

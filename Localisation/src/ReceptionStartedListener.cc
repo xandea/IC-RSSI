@@ -33,12 +33,15 @@ ReceptionStartedListener::~ReceptionStartedListener()
 
 void ReceptionStartedListener::receiveSignal(cComponent* source, simsignal_t signalID, cObject* obj, cObject* details)
 {
+
     Enter_Method_Silent("receiveSignal");
     EV << "Listener tempo: " << simTime();
     cModule *targetModule = getSystemModule()->getSubmodule("hostA",0);//->getModuleType();
     cModule *appModule = targetModule->getSubmodule("app",0);
     TDOAApp *app = check_and_cast<TDOAApp*>(appModule);
     app->setTimeSent(simTime());
+
+
 
 }
 

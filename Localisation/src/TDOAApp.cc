@@ -57,6 +57,7 @@ void TDOAApp::initialize(int stage)
         destPort = par("destPort");
         isReceiver = par("isReceiver");
         i=0;
+
 //        processStart();
 //        std::cout << "Socket created!" << endl;
 //        sendPacket();
@@ -200,6 +201,8 @@ void TDOAApp::sendPacket()
 
     socket.sendTo(packet, destAddr, destPort);
 
+
+
 }
 
 void TDOAApp::sendPacket(simtime_t startTime)
@@ -255,10 +258,10 @@ void TDOAApp::finish()
 
     for(i=0;i<3;i++){
         EV<< "Tempo: "<< valores[i].tempo<<endl;
-        EV<< "Tempo Envio: "<< valores[i].timeSent <<endl;
         EV<< "Positon: "<< valores[i].position<<endl;
         EV<< "IP: "<< valores[i].ip<<endl;
     }
+        EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
     ApplicationBase::finish();
 }
 
@@ -270,7 +273,8 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     EV << "startTime = " << startTime << endl;
     auto endTime = signalTimeTag->getEndTime();
     EV << "endTime = " << endTime << endl;
-
+    cModule *host=getSystemModule()->getSubmodule("hostA");
+    host->unsubscribe("transmissionStarted", listener);
 
 
 
@@ -359,8 +363,8 @@ void TDOAApp::refreshDisplay() const
 
 void TDOAApp::setTimeSent(simtime_t time)
 {
-    valores[0].timeSent = time;
-    valores[1].timeSent = time;
-    valores[2].timeSent = time;
+    Tempo_Transmissao=time;
+
+
 }
 
