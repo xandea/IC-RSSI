@@ -21,6 +21,7 @@ class Valores
     W potencia;
     Coord position;
     L3Address ip;
+    double distancia;
 };
 
 

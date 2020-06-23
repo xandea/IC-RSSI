@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for Localisation
+# OMNeT++/OMNEST Makefile for RSSI
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -KINET_PROJ=../../inet -DINET_IMPORT -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
-TARGET = Localisation$(D)$(EXE_SUFFIX)
+TARGET = RSSI$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)

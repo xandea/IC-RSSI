@@ -245,7 +245,7 @@ void TDOAApp::handleMessageWhenUp(cMessage *msg)
 
 void TDOAApp::finish()
 {
-
+    trilateracao(valores);
     for(i=0;i<3;i++){
         EV<< "Potencia: "<< valores[i].potencia<<endl;
         EV<< "Positon: "<< valores[i].position<<endl;
@@ -308,14 +308,15 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             valores[i].potencia=measurePower;
             valores[i].position=positions;
             valores[i].ip=srcAddr;
-            calculo(positions.x,positions.y,positions.z,measurePower);
-        }
+            valores[i].distancia = calculo(positions.x,positions.y,positions.z,measurePower);
 
+        }
         i++;
 
 
         delete packet;
     }
+
 }
 
 
@@ -354,10 +355,31 @@ void TDOAApp::refreshDisplay() const
 //    getDisplayString().setTagArg("t", 0, buf);
 }
 
-void TDOAApp::calculo(double x, double y, double z,W potencia){
-    //auto potencia = 10*log(1000*power*10^-12);
-    double potencia_dbm = pow(10.0,(-37.007106659-10*log10(1000*potencia.get()))/20);
-    //auto potencia_double = 10*log10(1000*potencia.str()*10^-12);
-    //auto d = pow(10,((-37.007106659-(10*log10(1000*potencia.get())))/10*2));
-    EV << "Distancia= " << potencia_dbm;
+double TDOAApp::calculo(double x, double y, double z,W potencia){
+    double distancia = pow(10.0,(-37.007106659-10*log10(1000*potencia.get()))/20);
+    EV << "Distancia= " << distancia;
+    return distancia;
+}
+
+void TDOAApp::trilateracao(Valores *valores ){
+    //[0] referente ao nó D e [r3]
+    //[1] referente ao nó B e [r1]
+    //[2] referente ao nó C e [r2]
+    auto x1 = valores[1].position.x;
+    auto y1 = valores[1].position.y;
+    auto x2 = valores[2].position.x;
+    auto y2 = valores[2].position.y;
+    auto x3 = valores[0].position.x;
+    auto y3 = valores[0].position.y;
+    auto r1 = valores[1].distancia;
+    auto r2 = valores[2].distancia;
+    auto r3 = valores[0].distancia;
+
+    auto delta = 4*((x1-x2)*(y1-y3)-(x1-x3)*(y1-y2));
+    auto A = pow(r2,2)-pow(r1,2)-pow(x2,2)+pow(x1,2)-pow(y2,2)+ pow(y1,2);
+    auto B = pow(r3,2)-pow(r1,2)-pow(x3,2)+pow(x1,2)-pow(y3,2)+pow(y1,2);
+    auto x0 = (1/delta) * (2*A*(y1-y3)-2*B*(y1-y2));
+    auto y0 = (1/delta) * (2*B*(x1-x2)-2*A*(x1-x3));
+    EV << "x0 =" << x0 << "y0 = " << y0;
+
 }
