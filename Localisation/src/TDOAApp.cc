@@ -48,7 +48,7 @@ void TDOAApp::initialize(int stage)
 {
 
     ApplicationBase::initialize(stage);
-
+    Velocidade_luz=299792458;
 
     if (stage == INITSTAGE_LOCAL) {
         EV << "Init" << endl;
@@ -229,6 +229,8 @@ void TDOAApp::sendPacket(simtime_t startTime)
     IMobility *mobility = check_and_cast<IMobility *>(host->getSubmodule("mobility"));
     auto positions = mobility->getCurrentPosition();
 
+
+
     auto tags=payload->addTag<position>();
     tags->setLocation(positions);
     tags->setTime(startTime);
@@ -260,8 +262,13 @@ void TDOAApp::finish()
         EV<< "Tempo: "<< valores[i].tempo<<endl;
         EV<< "Positon: "<< valores[i].position<<endl;
         EV<< "IP: "<< valores[i].ip<<endl;
+        EV<<"Distancia: "<<valores[i].distancia<<endl;
     }
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
+
+        Trilateracao(valores);
+
+
     ApplicationBase::finish();
 }
 
@@ -308,11 +315,16 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         L3Address srcAddr = l3Addresses->getSrcAddress();
 
 
+
         for (auto& region : regions) { // for each region do
 
             auto creationTime = region.getTag()->getTime(); // original time
             auto positions=region.getTag()->getLocation();
             EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
+            //auto position_x=positions.x;
+            //auto position_y=positions.y;
+            auto distancia=CalculoDistancia(Tempo_Transmissao,creationTime);
+            valores[i].distancia=distancia;
             valores[i].tempo=creationTime;
             valores[i].position=positions;
             valores[i].ip=srcAddr;
@@ -364,7 +376,36 @@ void TDOAApp::refreshDisplay() const
 void TDOAApp::setTimeSent(simtime_t time)
 {
     Tempo_Transmissao=time;
+}
+double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final){
+    simtime_t diferenca_tempo= tempo_final - tempo_inicial;
 
+    double di=diferenca_tempo.dbl()* Velocidade_luz;
 
+    EV<<"Distancia :"<< di;
+    return di;
+
+}
+void TDOAApp::Trilateracao(Valores* valores){
+    double x1=valores[0].position.x;
+    double x2=valores[1].position.x;
+    double x3=valores[2].position.x;
+
+    double y1=valores[0].position.y;
+    double y2=valores[1].position.y;
+    double y3=valores[2].position.y;
+
+    double r1=valores[0].distancia;
+    double r2=valores[1].distancia;
+    double r3=valores[2].distancia;
+
+    double A=(pow(r2,2))-(pow(r1,2))-(pow(x2,2))+(pow(x1,2))-(pow(y2,2))+(pow(y1,2));
+    double B=(pow(r3,2))-(pow(r1,2))-(pow(x3,2))+(pow(x1,2))-(pow(y3,2))+(pow(y1,2));
+
+    double delta= 4*(((x1-x2)*(y1-y3))-((x1-x3)*(y1-y2)));
+    double x=(1/delta)*((2*A*(y1-y3))-(2*B*(y1-y2)));
+    double y=(1/delta)*((2*B*(x1-x2))-(2*A*(x1-x3)));
+
+    EV<< "X: "<<x << "Y: "<< y<<endl;
 }
 

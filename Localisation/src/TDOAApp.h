@@ -50,6 +50,8 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     simtime_t Tempo_Transmissao;
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;
+    int Velocidade_luz;
+
 
 
   protected:
@@ -65,6 +67,9 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     virtual void sendPacket(simtime_t startTime);
     virtual void processStart();
     virtual void setSocketOptions();
+    virtual double CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final);
+    virtual void Trilateracao(Valores* valores);
+
 
     virtual void handleStartOperation(LifecycleOperation *operation) override;
     virtual void handleStopOperation(LifecycleOperation *operation) override;

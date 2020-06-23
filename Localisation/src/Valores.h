@@ -21,6 +21,7 @@ class Valores
     simtime_t timeSent;
     Coord position;
     L3Address ip;
+    double distancia;
 };
 
 

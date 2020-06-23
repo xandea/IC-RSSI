@@ -38,17 +38,17 @@ network WirelessA
             @display("p=580,275");
         }
         hostA: <default("WirelessHost")> like INetworkNode {
-            @display("p=50,50");
+            @display("p=85.68,29.232");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
-            @display("p=200.0,50.0");
+            @display("p=190.51201,17.136");
         }
         hostC: <default("WirelessHost")> like INetworkNode {
-            @display("p=50.0.0,100.0");
+            @display("p=23.184,124.992004");
         }
         hostD: <default("WirelessHost")> like INetworkNode {
-            @display("p=0.0.0,50.0");
+            @display("p=124.992004,88.704");
         }
-        
-        
+
+
 }
