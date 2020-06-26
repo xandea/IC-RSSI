@@ -17,6 +17,7 @@
 #define __TDOA_TDOAAPP_H_
 
 #include <vector>
+#include <Eigen>
 
 #include "inet/common/INETDefs.h"
 #include "Valores.h"
@@ -46,11 +47,12 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     bool isReceiver;
     UdpSocket socket;
     int i;
-    Valores valores[3];
+    Valores *valores=(Valores*)malloc(Quant_nos*sizeof(Valores));
     simtime_t Tempo_Transmissao;
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;
     int Velocidade_luz;
+    int Quant_nos=0;
 
 
 

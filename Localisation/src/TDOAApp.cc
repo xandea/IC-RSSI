@@ -15,6 +15,7 @@
 
 #include "TDOAApp.h"
 #include "Position_m.h"
+#include <Eigen>
 
 #include "inet/applications/base/ApplicationPacket_m.h"
 #include "inet/common/ModuleAccess.h"
@@ -57,6 +58,7 @@ void TDOAApp::initialize(int stage)
         destPort = par("destPort");
         isReceiver = par("isReceiver");
         i=0;
+
 
 //        processStart();
 //        std::cout << "Socket created!" << endl;
@@ -112,6 +114,7 @@ void TDOAApp::processStart()
     }
     else{
         socket.setBroadcast(true);
+
     }
 
     setSocketOptions();
@@ -131,6 +134,7 @@ void TDOAApp::processStart()
         else {
             L3Address result;
             L3AddressResolver().tryResolve(token, result);
+
             if (result.isUnspecified())
                         EV_ERROR << "cannot resolve destination address: " << token << endl;
 
@@ -258,12 +262,6 @@ void TDOAApp::handleMessageWhenUp(cMessage *msg)
 void TDOAApp::finish()
 {
 
-    for(i=0;i<3;i++){
-        EV<< "Tempo: "<< valores[i].tempo<<endl;
-        EV<< "Positon: "<< valores[i].position<<endl;
-        EV<< "IP: "<< valores[i].ip<<endl;
-        EV<<"Distancia: "<<valores[i].distancia<<endl;
-    }
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
 
         Trilateracao(valores);
@@ -282,6 +280,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     EV << "endTime = " << endTime << endl;
     cModule *host=getSystemModule()->getSubmodule("hostA");
     host->unsubscribe("transmissionStarted", listener);
+    Quant_nos++;
 
 
 
@@ -324,6 +323,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             //auto position_x=positions.x;
             //auto position_y=positions.y;
             auto distancia=CalculoDistancia(Tempo_Transmissao,creationTime);
+
             valores[i].distancia=distancia;
             valores[i].tempo=creationTime;
             valores[i].position=positions;
@@ -387,25 +387,55 @@ double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final)
 
 }
 void TDOAApp::Trilateracao(Valores* valores){
-    double x1=valores[0].position.x;
-    double x2=valores[1].position.x;
-    double x3=valores[2].position.x;
+    double x[i];
+    double y[i];
+    double d[i];
+    EV<<"Quantidade de nos: "<< Quant_nos<<endl;
+    for(int cont=0; cont<Quant_nos;cont++){
+        x[cont]=valores[cont].position.x;
+    }
+    for(int cont=0; cont<Quant_nos;cont++){
+        y[cont]=valores[cont].position.y;
+    }
+    for(int cont=0; cont<Quant_nos;cont++){
+        d[cont]=valores[cont].distancia;
+     }
 
-    double y1=valores[0].position.y;
-    double y2=valores[1].position.y;
-    double y3=valores[2].position.y;
+    //EV<<"X1: "<<x[0];
+    //EV<<" X2: "<<x[1];
+    //EV<<" X3: "<<x[2];
+    //EV<<" X4: "<<x[3]<<endl;
 
-    double r1=valores[0].distancia;
-    double r2=valores[1].distancia;
-    double r3=valores[2].distancia;
+    //EV<<"y1: "<<y[0];
+    //EV<<"y2: "<<y[1];
+    //EV<<"y3: "<<y[2];
+    //EV<<"y4: "<<y[3]<<endl;
 
-    double A=(pow(r2,2))-(pow(r1,2))-(pow(x2,2))+(pow(x1,2))-(pow(y2,2))+(pow(y1,2));
-    double B=(pow(r3,2))-(pow(r1,2))-(pow(x3,2))+(pow(x1,2))-(pow(y3,2))+(pow(y1,2));
 
-    double delta= 4*(((x1-x2)*(y1-y3))-((x1-x3)*(y1-y2)));
-    double x=(1/delta)*((2*A*(y1-y3))-(2*B*(y1-y2)));
-    double y=(1/delta)*((2*B*(x1-x2))-(2*A*(x1-x3)));
+    Eigen::MatrixXd matriz_X(Quant_nos-1,2);
+    Eigen::MatrixXd matriz_Y(Quant_nos-1,1);
 
-    EV<< "X: "<<x << "Y: "<< y<<endl;
+    int posicao;
+
+    for(posicao=0;posicao<Quant_nos-1;posicao++){
+        matriz_X(posicao,0)=2*(x[Quant_nos-1]-x[posicao]);
+    }
+    for(posicao=0; posicao<Quant_nos-1;posicao++){
+        matriz_X(posicao,1)=2*(y[Quant_nos-1]-y[posicao]);
+    }
+    for(posicao=0; posicao<Quant_nos-1;posicao++){
+        matriz_Y(posicao,0)=(-(pow(x[posicao],2))-(pow(y[posicao],2))+(pow(d[posicao],2))) - (-(pow(x[Quant_nos-1],2))-(pow(y[Quant_nos-1],2))+pow(d[Quant_nos-1],2));
+    }
+
+
+    Eigen::MatrixXd matriz_X_inversa(2,2);
+
+    EV<<"Matriz_X: "<<endl<< matriz_X<<endl;
+    EV<<"Matriz_Y: "<<endl<< matriz_Y<<endl;
+    matriz_X_inversa=(matriz_X.transpose()*matriz_X).inverse();
+    matriz_X=matriz_X_inversa*matriz_X.transpose()*matriz_Y;
+    EV<<"Resultado: "<<endl<< matriz_X<<endl;
+
+
 }
 
