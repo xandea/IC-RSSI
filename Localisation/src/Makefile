@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for Localisation
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -KINET_PROJ=/home/angel/Documentos/omnetpp-5.6/samples/inet -DINET_IMPORT -I/home/angel/Documentos/Eigen -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake -f --deep -KINET_PROJ=/home/naty/MEGA/Work/ICs_TCCs/Alexandre/Code/inet -DINET_IMPORT -I/home/angel/Documentos/Eigen -I/usr/include/eigen3/Eigen -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -16,7 +16,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(QTENV_LIBS) $(CMDENV_LI
 #USERIF_LIBS = $(QTENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I/home/angel/Documentos/Eigen -I$(INET_PROJ)/src
+INCLUDE_PATH = -I/home/angel/Documentos/Eigen -I/usr/include/eigen3/Eigen -I$(INET_PROJ)/src
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -40,7 +40,7 @@ MSGFILES = \
 SMFILES =
 
 # Other makefile variables (-K)
-INET_PROJ=/home/angel/Documentos/omnetpp-5.6/samples/inet
+INET_PROJ=/home/naty/MEGA/Work/ICs_TCCs/Alexandre/Code/inet
 
 #------------------------------------------------------------------------------
 
@@ -83,6 +83,9 @@ endif
 #------------------------------------------------------------------------------
 # User-supplied makefile fragment(s)
 # >>>
+# inserted from file 'makefrag':
+MSGC:=$(MSGC) --msg6
+
 # <<<
 #------------------------------------------------------------------------------
 

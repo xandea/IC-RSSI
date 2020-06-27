@@ -3,15 +3,15 @@
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Lesser General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
+//
 
 #include "TDOAApp.h"
 #include "Position_m.h"
@@ -263,10 +263,12 @@ void TDOAApp::handleMessageWhenUp(cMessage *msg)
 
 void TDOAApp::finish()
 {
-
+    if (!isReceiver)
+    {
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
 
         Trilateracao();
+    }
 
 
     ApplicationBase::finish();
@@ -378,7 +380,11 @@ void TDOAApp::refreshDisplay() const
 void TDOAApp::setTimeSent(simtime_t time)
 {
     Tempo_Transmissao=time;
+    // Add random delay
+    Tempo_Transmissao = Tempo_Transmissao+uniform(0, 0.000000083);
+
 }
+
 double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final){
     simtime_t diferenca_tempo= tempo_final - tempo_inicial;
 
@@ -388,6 +394,7 @@ double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final)
     return di;
 
 }
+
 void TDOAApp::Trilateracao(){
     int Quant_nos=valores.size();
     double x[Quant_nos];
@@ -434,4 +441,3 @@ void TDOAApp::Trilateracao(){
 
 
 }
-
