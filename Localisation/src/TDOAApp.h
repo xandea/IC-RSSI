@@ -47,7 +47,9 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     bool isReceiver;
     UdpSocket socket;
     int i;
-    Valores *valores=(Valores*)malloc(Quant_nos*sizeof(Valores));
+
+    std::vector<Valores> valores ;
+
     simtime_t Tempo_Transmissao;
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;
@@ -70,7 +72,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     virtual void processStart();
     virtual void setSocketOptions();
     virtual double CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final);
-    virtual void Trilateracao(Valores* valores);
+    virtual void Trilateracao();
 
 
     virtual void handleStartOperation(LifecycleOperation *operation) override;

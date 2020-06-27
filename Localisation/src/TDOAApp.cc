@@ -48,6 +48,7 @@ TDOAApp::~TDOAApp()
 void TDOAApp::initialize(int stage)
 {
 
+
     ApplicationBase::initialize(stage);
     Velocidade_luz=299792458;
 
@@ -139,6 +140,7 @@ void TDOAApp::processStart()
                         EV_ERROR << "cannot resolve destination address: " << token << endl;
 
             destAddresses.push_back(result);
+
         }
 
     }
@@ -264,7 +266,7 @@ void TDOAApp::finish()
 
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
 
-        Trilateracao(valores);
+        Trilateracao();
 
 
     ApplicationBase::finish();
@@ -280,7 +282,6 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     EV << "endTime = " << endTime << endl;
     cModule *host=getSystemModule()->getSubmodule("hostA");
     host->unsubscribe("transmissionStarted", listener);
-    Quant_nos++;
 
 
 
@@ -320,14 +321,15 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             auto creationTime = region.getTag()->getTime(); // original time
             auto positions=region.getTag()->getLocation();
             EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
-            //auto position_x=positions.x;
-            //auto position_y=positions.y;
-            auto distancia=CalculoDistancia(Tempo_Transmissao,creationTime);
 
-            valores[i].distancia=distancia;
-            valores[i].tempo=creationTime;
-            valores[i].position=positions;
-            valores[i].ip=srcAddr;
+            auto distancia=CalculoDistancia(Tempo_Transmissao,creationTime);
+            Valores valores_temp;
+            valores_temp.distancia=distancia;
+            valores_temp.position=positions;
+            valores_temp.tempo=creationTime;
+            valores_temp.ip=srcAddr;
+
+            valores.push_back(valores_temp);
         }
 
         i++;
@@ -386,30 +388,24 @@ double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final)
     return di;
 
 }
-void TDOAApp::Trilateracao(Valores* valores){
-    double x[i];
-    double y[i];
-    double d[i];
+void TDOAApp::Trilateracao(){
+    int Quant_nos=valores.size();
+    double x[Quant_nos];
+    double y[Quant_nos];
+    double d[Quant_nos];
+
+
     EV<<"Quantidade de nos: "<< Quant_nos<<endl;
+
     for(int cont=0; cont<Quant_nos;cont++){
-        x[cont]=valores[cont].position.x;
+        x[cont]=valores.at(cont).position.x;
     }
     for(int cont=0; cont<Quant_nos;cont++){
-        y[cont]=valores[cont].position.y;
+        y[cont]=valores.at(cont).position.y;
     }
     for(int cont=0; cont<Quant_nos;cont++){
-        d[cont]=valores[cont].distancia;
+        d[cont]=valores.at(cont).distancia;
      }
-
-    //EV<<"X1: "<<x[0];
-    //EV<<" X2: "<<x[1];
-    //EV<<" X3: "<<x[2];
-    //EV<<" X4: "<<x[3]<<endl;
-
-    //EV<<"y1: "<<y[0];
-    //EV<<"y2: "<<y[1];
-    //EV<<"y3: "<<y[2];
-    //EV<<"y4: "<<y[3]<<endl;
 
 
     Eigen::MatrixXd matriz_X(Quant_nos-1,2);
