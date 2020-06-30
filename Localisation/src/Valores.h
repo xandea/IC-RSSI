@@ -22,6 +22,7 @@ class Valores
     Coord position;
     L3Address ip;
     double distancia;
+    std::chrono::duration<double> time_real_distancia ;
 };
 
 

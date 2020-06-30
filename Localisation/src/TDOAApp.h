@@ -18,6 +18,7 @@
 
 #include <vector>
 #include <Eigen>
+#include <chrono>
 
 #include "inet/common/INETDefs.h"
 #include "Valores.h"
@@ -29,6 +30,7 @@
 #include "inet/common/INETDefs.h"
 #include "inet/physicallayer/common/packetlevel/Radio.h"
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
+#include "inet/common/scheduler/RealTimeScheduler.h"
 
 
 
@@ -43,11 +45,12 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 
     std::vector<L3Address> destAddresses;
     std::vector<std::string> destAddressStr;
+    std::chrono::time_point<std::chrono::system_clock> start_trilateracao, end_trilateracao;
+    std::chrono::time_point<std::chrono::system_clock> start_distancia, end_distancia;
     int localPort = -1, destPort = -1;
     bool isReceiver;
     UdpSocket socket;
     int i;
-
     std::vector<Valores> valores ;
 
     simtime_t Tempo_Transmissao;

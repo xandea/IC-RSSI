@@ -15,6 +15,7 @@
 
 #include "TDOAApp.h"
 #include "Position_m.h"
+#include <chrono>
 #include <Eigen>
 
 #include "inet/applications/base/ApplicationPacket_m.h"
@@ -34,6 +35,7 @@
 #include "inet/physicallayer/common/packetlevel/Radio.h"
 #include "inet/common/packet/chunk/ByteCountChunk.h"
 #include "inet/physicallayer/base/packetlevel/TransmissionBase_m.h"
+#include "inet/common/scheduler/RealTimeScheduler.h"
 
 
 
@@ -51,6 +53,7 @@ void TDOAApp::initialize(int stage)
 
     ApplicationBase::initialize(stage);
     Velocidade_luz=299792458;
+
 
     if (stage == INITSTAGE_LOCAL) {
         EV << "Init" << endl;
@@ -267,7 +270,19 @@ void TDOAApp::finish()
     {
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
 
+        start_trilateracao = std::chrono::system_clock::now();
         Trilateracao();
+        end_trilateracao = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> elapsed_seconds = end_trilateracao - start_trilateracao;
+
+        EV<<"Tempo trilateracao "<<elapsed_seconds.count()<<endl;
+
+        int Quant_nos=valores.size();
+
+        for(int cont=0; cont<Quant_nos;cont++){
+            EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
+        }
     }
 
 
@@ -287,9 +302,10 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 
 
 
+
+
     // process incoming packet
     emit(packetReceivedSignal, packet);
-
 
     if (isReceiver) {
         EV << "Receiver received packet: " << UdpSocket::getReceivedPacketInfo(packet) << endl;
@@ -324,8 +340,16 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             auto positions=region.getTag()->getLocation();
             EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
 
+            start_distancia = std::chrono::system_clock::now();
+
             auto distancia=CalculoDistancia(Tempo_Transmissao,creationTime);
+
+            end_distancia = std::chrono::system_clock::now();
+            std::chrono::duration<double> elapsed_seconds = end_distancia - start_distancia;
+
+
             Valores valores_temp;
+            valores_temp.time_real_distancia=elapsed_seconds;
             valores_temp.distancia=distancia;
             valores_temp.position=positions;
             valores_temp.tempo=creationTime;
@@ -396,6 +420,7 @@ double TDOAApp::CalculoDistancia(simtime_t tempo_inicial, simtime_t tempo_final)
 }
 
 void TDOAApp::Trilateracao(){
+
     int Quant_nos=valores.size();
     double x[Quant_nos];
     double y[Quant_nos];

@@ -365,7 +365,8 @@
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/INeighborCache.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IObstacleLoss.h \
  /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPathLoss.h \
- /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPropagation.h
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPropagation.h \
+ /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/scheduler/RealTimeScheduler.h
 
 ReceptionStartedListener.h:
 
@@ -1106,3 +1107,5 @@ Valores.h:
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPathLoss.h:
 
 /home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/physicallayer/contract/packetlevel/IPropagation.h:
+
+/home/angel/Documentos/omnetpp-5.6/samples/inet/src/inet/common/scheduler/RealTimeScheduler.h:
