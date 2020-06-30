@@ -51,8 +51,9 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     bool isReceiver;
     UdpSocket socket;
     int i;
+    double x_emissor,y_emissor;
+    Coord position_emissor;
     std::vector<Valores> valores ;
-
     simtime_t Tempo_Transmissao;
     simsignal_t transmissionStarted;
     ReceptionStartedListener *listener;

@@ -36,6 +36,7 @@
 #include "inet/common/packet/chunk/ByteCountChunk.h"
 #include "inet/physicallayer/base/packetlevel/TransmissionBase_m.h"
 #include "inet/common/scheduler/RealTimeScheduler.h"
+#include <fstream>
 
 
 
@@ -210,8 +211,6 @@ void TDOAApp::sendPacket()
 
     socket.sendTo(packet, destAddr, destPort);
 
-
-
 }
 
 void TDOAApp::sendPacket(simtime_t startTime)
@@ -278,13 +277,65 @@ void TDOAApp::finish()
 
         EV<<"Tempo trilateracao "<<elapsed_seconds.count()<<endl;
 
-        int Quant_nos=valores.size();
 
-        for(int cont=0; cont<Quant_nos;cont++){
-            EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
+        std::ifstream verifica_arquivo;
+        std::ofstream arquivo;
+
+        verifica_arquivo.open("Estatisticas.csv");
+
+        if(verifica_arquivo.is_open()){
+            arquivo.open ("Estatisticas.csv",std::ios::app);
+            arquivo<<elapsed_seconds.count()<<";";
+            int Quant_nos=valores.size();
+            for(int cont=0; cont<Quant_nos;cont++){
+                arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+            }
+
+            for(int cont=0; cont<Quant_nos;cont++){
+                  arquivo<<valores.at(cont).distancia<<";";
+             }
+            arquivo<<x_emissor<<","<<y_emissor<<";";
+            arquivo<<position_emissor.x<<","<<position_emissor.y;
+
+            arquivo<<"\n";
         }
-    }
 
+
+        else{
+            arquivo.open ("Estatisticas.csv");
+            arquivo << "Tempo Trilateração (s);";
+
+            int Quant_nos=valores.size();
+
+            for(int cont=0; cont<Quant_nos;cont++){
+
+                EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
+
+                arquivo<<"Tempo distancia "<< cont<<"(s);";
+            }
+            for(int cont=0; cont<Quant_nos;cont++){
+                arquivo<<"Distancia nó "<<cont<<"(m);";
+            }
+            arquivo<<"Posição estimada (m);";
+            arquivo<<"Posição real (m)";
+
+            arquivo<<"\n";
+            arquivo<<elapsed_seconds.count()<<";";
+
+            for(int cont=0; cont<Quant_nos;cont++){
+                arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+            }
+
+            for(int cont=0; cont<Quant_nos;cont++){
+                  arquivo<<valores.at(cont).distancia<<";";
+             }
+            arquivo<<x_emissor<<","<<y_emissor<<";";
+            arquivo<<position_emissor.x<<","<<position_emissor.y;
+            arquivo<<"\n";
+        }
+        arquivo.close();
+        verifica_arquivo.close();
+ }
 
     ApplicationBase::finish();
 }
@@ -331,8 +382,11 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
         auto regions = data->getAllTags<position>(); // get all tag regions
         auto l3Addresses = packet->getTag<L3AddressInd>();
         L3Address srcAddr = l3Addresses->getSrcAddress();
+        cModule *host = getContainingNode(this);
+        IMobility *mobility = check_and_cast<IMobility *>(host->getSubmodule("mobility"));
+        auto positions = mobility->getCurrentPosition();
 
-
+        position_emissor=positions;
 
         for (auto& region : regions) { // for each region do
 
@@ -463,6 +517,10 @@ void TDOAApp::Trilateracao(){
     matriz_X_inversa=(matriz_X.transpose()*matriz_X).inverse();
     matriz_X=matriz_X_inversa*matriz_X.transpose()*matriz_Y;
     EV<<"Resultado: "<<endl<< matriz_X<<endl;
+
+    x_emissor=matriz_X(0,0);
+    y_emissor=matriz_X(1,0);
+
 
 
 }
