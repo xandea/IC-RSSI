@@ -59,6 +59,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     ReceptionStartedListener *listener;
     int Velocidade_luz;
     int Quant_nos=0;
+    const char* nome_arquivo;
 
 
 

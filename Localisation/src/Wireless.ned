@@ -21,6 +21,7 @@ import inet.visualizer.contract.IIntegratedVisualizer;
 network WirelessA
 {
     parameters:
+        string Nome_arquivo = default("");
         @display("bgb=650,500;bgg=100,1,grey95");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
 
@@ -41,13 +42,13 @@ network WirelessA
             @display("p=259.056,226.8");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
-            @display("p=231.84001,124.992004");
+            @display("p=298.368,160.272");
         }
         hostC: <default("WirelessHost")> like INetworkNode {
-            @display("p=149.184,181.44");
+            @display("p=208.656,199.584");
         }
         hostD: <default("WirelessHost")> like INetworkNode {
-            @display("p=137.088,286.272");
+            @display("p=219.744,266.112");
         }
         hostE: <default("WirelessHost")> like INetworkNode {
             @display("p=259.056,318.528");

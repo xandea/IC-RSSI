@@ -269,6 +269,8 @@ void TDOAApp::finish()
     {
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
 
+        nome_arquivo=getSystemModule()->par("Nome_arquivo");
+
         start_trilateracao = std::chrono::system_clock::now();
         Trilateracao();
         end_trilateracao = std::chrono::system_clock::now();
@@ -281,10 +283,10 @@ void TDOAApp::finish()
         std::ifstream verifica_arquivo;
         std::ofstream arquivo;
 
-        verifica_arquivo.open("Estatisticas.csv");
+        verifica_arquivo.open(nome_arquivo);
 
         if(verifica_arquivo.is_open()){
-            arquivo.open ("Estatisticas.csv",std::ios::app);
+            arquivo.open (nome_arquivo,std::ios::app);
             arquivo<<elapsed_seconds.count()<<";";
             int Quant_nos=valores.size();
             for(int cont=0; cont<Quant_nos;cont++){
@@ -294,15 +296,15 @@ void TDOAApp::finish()
             for(int cont=0; cont<Quant_nos;cont++){
                   arquivo<<valores.at(cont).distancia<<";";
              }
-            arquivo<<x_emissor<<","<<y_emissor<<";";
-            arquivo<<position_emissor.x<<","<<position_emissor.y;
+            arquivo<<x_emissor<<";"<<y_emissor<<";";
+            arquivo<<position_emissor.x<<";"<<position_emissor.y;
 
             arquivo<<"\n";
         }
 
 
         else{
-            arquivo.open ("Estatisticas.csv");
+            arquivo.open (nome_arquivo);
             arquivo << "Tempo Trilateração (s);";
 
             int Quant_nos=valores.size();
@@ -316,8 +318,11 @@ void TDOAApp::finish()
             for(int cont=0; cont<Quant_nos;cont++){
                 arquivo<<"Distancia nó "<<cont<<"(m);";
             }
-            arquivo<<"Posição estimada (m);";
-            arquivo<<"Posição real (m)";
+            arquivo<<"Posição x estimada (m);";
+            arquivo<<"Posição y estimada (m);";
+            arquivo<<"Posição x real (m);";
+            arquivo<<"Posição y real (m)";
+
 
             arquivo<<"\n";
             arquivo<<elapsed_seconds.count()<<";";
@@ -329,8 +334,8 @@ void TDOAApp::finish()
             for(int cont=0; cont<Quant_nos;cont++){
                   arquivo<<valores.at(cont).distancia<<";";
              }
-            arquivo<<x_emissor<<","<<y_emissor<<";";
-            arquivo<<position_emissor.x<<","<<position_emissor.y;
+            arquivo<<x_emissor<<";"<<y_emissor<<";";
+            arquivo<<position_emissor.x<<";"<<position_emissor.y;
             arquivo<<"\n";
         }
         arquivo.close();
