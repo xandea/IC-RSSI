@@ -21,7 +21,6 @@ import inet.visualizer.contract.IIntegratedVisualizer;
 network WirelessA
 {
     parameters:
-        string Nome_arquivo = default("");
         @display("bgb=650,500;bgg=100,1,grey95");
         @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
 
@@ -56,6 +55,5 @@ network WirelessA
         hostF: <default("WirelessHost")> like INetworkNode {
             @display("p=311.47202,226.8");
         }
-
 
 }

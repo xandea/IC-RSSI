@@ -62,6 +62,7 @@ void TDOAApp::initialize(int stage)
         localPort = par("localPort");
         destPort = par("destPort");
         isReceiver = par("isReceiver");
+        nome_arquivo=par("Nome_arquivo");
         i=0;
 
 
@@ -268,8 +269,6 @@ void TDOAApp::finish()
     if (!isReceiver)
     {
         EV<<"Tempo transmissão: "<<Tempo_Transmissao<<endl;
-
-        nome_arquivo=getSystemModule()->par("Nome_arquivo");
 
         start_trilateracao = std::chrono::system_clock::now();
         Trilateracao();

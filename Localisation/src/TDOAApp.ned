@@ -22,6 +22,7 @@ simple TDOAApp like IApp
 {
     parameters:
         bool isReceiver = default(true);
+        string Nome_arquivo = default("");
         string interfaceTableModule; 
         int localPort = default(-1);  // local port (-1: use ephemeral port)
         string destAddresses = default(""); // list of IP addresses, separated by spaces ("": don't send)
