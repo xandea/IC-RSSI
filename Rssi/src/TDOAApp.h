@@ -17,6 +17,8 @@
 #define __TDOA_TDOAAPP_H_
 
 #include <vector>
+#include <Eigen>
+#include <chrono>
 
 #include "inet/common/INETDefs.h"
 #include "Valores.h"
@@ -40,11 +42,18 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
 
     std::vector<L3Address> destAddresses;
     std::vector<std::string> destAddressStr;
+    std::chrono::time_point<std::chrono::system_clock> start_trilateracao, end_trilateracao;
+    std::chrono::time_point<std::chrono::system_clock> start_distancia, end_distancia;
     int localPort = -1, destPort = -1;
     bool isReceiver;
     UdpSocket socket;
+    Coord position_emissor;
     int i;
-    Valores valores[3];
+    int Quant_nos=0;
+    double x_emissor, y_emissor;
+    std::vector <Valores> valores;
+
+
 
 
 
@@ -65,7 +74,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     virtual void processStart();
     virtual void setSocketOptions();
     virtual double calculo(double x, double y, double z,W potencia);
-    virtual void trilateracao(Valores *valores);
+    virtual void trilateracao();
 
     virtual void handleStartOperation(LifecycleOperation *operation) override;
     virtual void handleStopOperation(LifecycleOperation *operation) override;

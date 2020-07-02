@@ -15,6 +15,9 @@
 
 #include "TDOAApp.h"
 #include "Position_m.h"
+#include <Eigen>
+#include <chrono>
+#include <fstream>
 
 #include "inet/applications/base/ApplicationPacket_m.h"
 #include "inet/common/ModuleAccess.h"
@@ -245,12 +248,76 @@ void TDOAApp::handleMessageWhenUp(cMessage *msg)
 
 void TDOAApp::finish()
 {
-    trilateracao(valores);
-    for(i=0;i<3;i++){
-        EV<< "Potencia: "<< valores[i].potencia<<endl;
-        EV<< "Positon: "<< valores[i].position<<endl;
-        EV<< "IP: "<< valores[i].ip<<endl;
+    if(!isReceiver){
+        start_trilateracao = std::chrono::system_clock::now();
+        trilateracao();
+        end_trilateracao = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> elapsed_seconds = end_distancia - start_distancia;
+
+        EV<< "Duracao da trilateração:"<< elapsed_seconds.count();
+
+        std::ifstream verifica_arquivo;
+        std::ofstream arquivo;
+
+               verifica_arquivo.open("Estatisticas.csv");
+
+               if(verifica_arquivo.is_open()){
+                   arquivo.open ("Estatisticas.csv",std::ios::app);
+                   arquivo<<elapsed_seconds.count()<<";";
+                   int Quant_nos=valores.size();
+                   for(int cont=0; cont<Quant_nos;cont++){
+                       arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                   }
+
+                   for(int cont=0; cont<Quant_nos;cont++){
+                         arquivo<<valores.at(cont).distancia<<";";
+                    }
+                   arquivo<<x_emissor<<","<<y_emissor<<";";
+                   arquivo<<position_emissor.x<<","<<position_emissor.y;
+
+                   arquivo<<"\n";
+               }
+
+
+               else{
+                   arquivo.open ("Estatisticas.csv");
+                   arquivo << "Tempo Trilateração (s);";
+
+                   int Quant_nos=valores.size();
+
+                   for(int cont=0; cont<Quant_nos;cont++){
+
+                       EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
+
+                       arquivo<<"Tempo distancia "<< cont<<"(s);";
+                   }
+                   for(int cont=0; cont<Quant_nos;cont++){
+                       arquivo<<"Distancia nó "<<cont<<"(m);";
+                   }
+                   arquivo<<"Posição estimada (m);";
+                   arquivo<<"Posição real (m)";
+
+                   arquivo<<"\n";
+                   arquivo<<elapsed_seconds.count()<<";";
+
+                   for(int cont=0; cont<Quant_nos;cont++){
+                       arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                   }
+
+                   for(int cont=0; cont<Quant_nos;cont++){
+                         arquivo<<valores.at(cont).distancia<<";";
+                    }
+                   arquivo<<x_emissor<<","<<y_emissor<<";";
+                   arquivo<<position_emissor.x<<","<<position_emissor.y;
+                   arquivo<<"\n";
+               }
+               arquivo.close();
+               verifica_arquivo.close();
+
+
     }
+
     ApplicationBase::finish();
 }
 
@@ -270,8 +337,11 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
     EV << "endTime = " << endTime << endl;
 
 
+
     // process incoming packet
     emit(packetReceivedSignal, packet);
+
+
 
 
     if (isReceiver) {
@@ -305,10 +375,22 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
             auto measurePower = region.getTag()->getSignalPower(); // original signal power
             auto positions=region.getTag()->getLocation();
             EV << "PowerReceived = " << measurePower << "Position :"<<positions<< endl;
-            valores[i].potencia=measurePower;
-            valores[i].position=positions;
-            valores[i].ip=srcAddr;
-            valores[i].distancia = calculo(positions.x,positions.y,positions.z,measurePower);
+
+            start_distancia = std::chrono::system_clock::now(); //Calculo em relação a função calcula posição
+
+            auto distancia = calculo(positions.x,positions.y,positions.z,measurePower);
+
+            end_distancia = std::chrono::system_clock::now();
+
+            std::chrono::duration<double> elapsed_seconds = end_distancia - start_distancia;
+
+                        Valores valores_temp;
+                        valores_temp.time_real_distancia=elapsed_seconds;
+                        valores_temp.distancia=distancia;
+                        valores_temp.position=positions;
+                        valores_temp.potencia=measurePower;
+                        valores_temp.ip=srcAddr;
+                        valores.push_back(valores_temp);
 
         }
         i++;
@@ -361,25 +443,52 @@ double TDOAApp::calculo(double x, double y, double z,W potencia){
     return distancia;
 }
 
-void TDOAApp::trilateracao(Valores *valores ){
-    //[0] referente ao nó D e [r3]
-    //[1] referente ao nó B e [r1]
-    //[2] referente ao nó C e [r2]
-    auto x1 = valores[1].position.x;
-    auto y1 = valores[1].position.y;
-    auto x2 = valores[2].position.x;
-    auto y2 = valores[2].position.y;
-    auto x3 = valores[0].position.x;
-    auto y3 = valores[0].position.y;
-    auto r1 = valores[1].distancia;
-    auto r2 = valores[2].distancia;
-    auto r3 = valores[0].distancia;
+void TDOAApp::trilateracao(){
+        int Quant_nos=valores.size();
+        double x[Quant_nos];
+        double y[Quant_nos];
+        double d[Quant_nos];
 
-    auto delta = 4*((x1-x2)*(y1-y3)-(x1-x3)*(y1-y2));
-    auto A = pow(r2,2)-pow(r1,2)-pow(x2,2)+pow(x1,2)-pow(y2,2)+ pow(y1,2);
-    auto B = pow(r3,2)-pow(r1,2)-pow(x3,2)+pow(x1,2)-pow(y3,2)+pow(y1,2);
-    auto x0 = (1/delta) * (2*A*(y1-y3)-2*B*(y1-y2));
-    auto y0 = (1/delta) * (2*B*(x1-x2)-2*A*(x1-x3));
-    EV << "x0 =" << x0 << "y0 = " << y0;
+
+        EV<<"Quantidade de nos: "<< Quant_nos<<endl;
+
+        for(int cont=0; cont<Quant_nos;cont++){
+            x[cont]=valores.at(cont).position.x;
+        }
+        for(int cont=0; cont<Quant_nos;cont++){
+            y[cont]=valores.at(cont).position.y;
+        }
+        for(int cont=0; cont<Quant_nos;cont++){
+            d[cont]=valores.at(cont).distancia;
+         }
+
+
+        Eigen::MatrixXd matriz_X(Quant_nos-1,2);
+        Eigen::MatrixXd matriz_Y(Quant_nos-1,1);
+
+        int posicao;
+
+        for(posicao=0;posicao<Quant_nos-1;posicao++){
+            matriz_X(posicao,0)=2*(x[Quant_nos-1]-x[posicao]);
+        }
+        for(posicao=0; posicao<Quant_nos-1;posicao++){
+            matriz_X(posicao,1)=2*(y[Quant_nos-1]-y[posicao]);
+        }
+        for(posicao=0; posicao<Quant_nos-1;posicao++){
+            matriz_Y(posicao,0)=(-(pow(x[posicao],2))-(pow(y[posicao],2))+(pow(d[posicao],2))) - (-(pow(x[Quant_nos-1],2))-(pow(y[Quant_nos-1],2))+pow(d[Quant_nos-1],2));
+        }
+
+
+        Eigen::MatrixXd matriz_X_inversa(2,2);
+
+        EV<<"Matriz_X: "<<endl<< matriz_X<<endl;
+        EV<<"Matriz_Y: "<<endl<< matriz_Y<<endl;
+        matriz_X_inversa=(matriz_X.transpose()*matriz_X).inverse();
+        matriz_X=matriz_X_inversa*matriz_X.transpose()*matriz_Y;
+        EV<<"Resultado: "<<endl<< matriz_X<<endl;
+
+        x_emissor=matriz_X(0,0);
+        y_emissor=matriz_X(1,0);
+
 
 }
