@@ -3,22 +3,22 @@
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//
+// 
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Lesser General Public License for more details.
-//
+// 
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
-//
+// 
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.INetworkNode;
 import inet.physicallayer.contract.packetlevel.IRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
 
-network Wireless_Test
+network Wireless_3_10m
 {
     parameters:
         @display("bgb=650,500;bgg=100,1,grey95");
@@ -29,31 +29,25 @@ network Wireless_Test
 
     submodules:
         visualizer: <default("IntegratedCanvasVisualizer")> like IIntegratedVisualizer if hasVisualizer() {
-            @display("p=580,125");
+            @display("p=477.79202,144.144");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=580,200");
+            @display("p=477.79202,218.73601");
         }
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
-            @display("p=580,275");
+            @display("p=477.79202,299.376");
         }
         hostA: <default("WirelessHost")> like INetworkNode {
-            @display("p=259.056,226.8");
+            @display("p=300,300");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
-            @display("p=298.368,160.272");
+            @display("p=290.00,300.00");
         }
         hostC: <default("WirelessHost")> like INetworkNode {
-            @display("p=208.656,199.584");
+            @display("p=310.00,300.00");
         }
         hostD: <default("WirelessHost")> like INetworkNode {
-            @display("p=219.744,266.112");
-        }
-        hostE: <default("WirelessHost")> like INetworkNode {
-            @display("p=259.056,318.528");
-        }
-        hostF: <default("WirelessHost")> like INetworkNode {
-            @display("p=311.47202,226.8");
+            @display("p=300.00,310.00");
         }
 
 }

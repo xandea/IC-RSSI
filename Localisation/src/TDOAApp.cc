@@ -463,7 +463,9 @@ void TDOAApp::setTimeSent(simtime_t time)
 {
     Tempo_Transmissao=time;
     // Add random delay
-    Tempo_Transmissao = Tempo_Transmissao+uniform(0, 0.000000083);
+    double tempo_aleatorio=uniform(0, 0.000000083);
+    Tempo_Transmissao = Tempo_Transmissao;
+    EV<< "Tempo aleatorio: "<<tempo_aleatorio;
 
 }
 
