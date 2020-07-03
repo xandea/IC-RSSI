@@ -396,6 +396,10 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 
             auto creationTime = region.getTag()->getTime(); // original time
             auto positions=region.getTag()->getLocation();
+            auto valor_aleatorio=uniform(0, 0.0000000083);
+            creationTime=creationTime.dbl()+valor_aleatorio;
+            EV<<"Valor aleatorio: "<< valor_aleatorio;
+
             EV << "timeReceiver = " << creationTime << "Position :"<<positions<< endl;
 
             start_distancia = std::chrono::system_clock::now();
@@ -462,10 +466,6 @@ void TDOAApp::refreshDisplay() const
 void TDOAApp::setTimeSent(simtime_t time)
 {
     Tempo_Transmissao=time;
-    // Add random delay
-    double tempo_aleatorio=uniform(0, 0.000000083);
-    Tempo_Transmissao = Tempo_Transmissao;
-    EV<< "Tempo aleatorio: "<<tempo_aleatorio;
 
 }
 
