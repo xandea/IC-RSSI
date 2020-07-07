@@ -54,10 +54,10 @@ network Wireless_6_5
             @display("p=297.50,304.330127019");
         }
         hostF: <default("WirelessHost")> like INetworkNode {
-            @display("p=302.5,295,669872981");
+            @display("p=302.5,295.669872981");
         }
         hostG: <default("WirelessHost")> like INetworkNode {
-            @display("p=297.50,295,669872981");
+            @display("p=297.50,295.669872981");
         }
 
 }
