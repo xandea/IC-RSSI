@@ -19,7 +19,7 @@ import inet.node.inet.INetworkNode;
 import inet.physicallayer.contract.packetlevel.IRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
 
-network Wireless_3_10
+network Wireless_12_10
 {
     parameters:
         @display("bgb=650,500;bgg=100,1,grey95");
@@ -38,17 +38,44 @@ network Wireless_3_10
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
             @display("p=477.79202,299.376");
         }
-        hostA: <default("WirelessHost")> like INetworkNode {
+         hostA: <default("WirelessHost")> like INetworkNode {
             @display("p=300,300");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
-            @display("p=290.00,300.00");
+            @display("p=305.0,308.660254038");
         }
         hostC: <default("WirelessHost")> like INetworkNode {
-            @display("p=310.00,300.00");
+            @display("p=295.0,308.660254038");
         }
         hostD: <default("WirelessHost")> like INetworkNode {
-            @display("p=300.00,310.00");
+            @display("p=290.0,300");
+        }
+        hostE: <default("WirelessHost")> like INetworkNode {
+            @display("p=295.0,291.339745962");
+        }
+        hostF: <default("WirelessHost")> like INetworkNode {
+            @display("p=310.0,300.0");
+        }
+        hostG: <default("WirelessHost")> like INetworkNode {
+            @display("p=305.0,291.339745962");
+        }
+        hostH: <default("WirelessHost")> like INetworkNode {
+            @display("p=308.660254038,305.0");
+        }
+        hostI: <default("WirelessHost")> like INetworkNode {
+            @display("p=308.660254038,295.0");
+        }
+        hostJ: <default("WirelessHost")> like INetworkNode {
+            @display("p=291.339745962,295.0");
+        }
+        hostK: <default("WirelessHost")> like INetworkNode {
+            @display("p=291.339745962,305.0");
+        }
+        hostL: <default("WirelessHost")> like INetworkNode {
+            @display("p=300.0,310.0");
+        }
+        hostM: <default("WirelessHost")> like INetworkNode {
+            @display("p=300.0,290.0");
         }
 
 }
