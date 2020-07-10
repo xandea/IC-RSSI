@@ -17,6 +17,8 @@
 #include "Position_m.h"
 #include <chrono>
 #include <Eigen>
+#include <iostream>
+#include <iomanip>
 
 #include "inet/applications/base/ApplicationPacket_m.h"
 #include "inet/common/ModuleAccess.h"
@@ -37,6 +39,7 @@
 #include "inet/physicallayer/base/packetlevel/TransmissionBase_m.h"
 #include "inet/common/scheduler/RealTimeScheduler.h"
 #include <fstream>
+
 
 
 
@@ -286,17 +289,25 @@ void TDOAApp::finish()
 
         if(verifica_arquivo.is_open()){
             arquivo.open (nome_arquivo,std::ios::app);
-            arquivo<<elapsed_seconds.count()<<";";
+
+            arquivo.precision(10);
+            arquivo<<std::fixed;
+            arquivo<<elapsed_seconds.count()<<",";
+
             int Quant_nos=valores.size();
             for(int cont=0; cont<Quant_nos;cont++){
-                arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                arquivo.precision(10);
+                arquivo<<std::fixed;
+
+                arquivo<<valores.at(cont).time_real_distancia.count()<<",";
             }
 
             for(int cont=0; cont<Quant_nos;cont++){
-                  arquivo<<valores.at(cont).distancia<<";";
+
+                  arquivo<<valores.at(cont).distancia<<",";
              }
-            arquivo<<x_emissor<<";"<<y_emissor<<";";
-            arquivo<<position_emissor.x<<";"<<position_emissor.y;
+            arquivo<<x_emissor<<","<<y_emissor<<",";
+            arquivo<<position_emissor.x<<","<<position_emissor.y;
 
             arquivo<<"\n";
         }
@@ -304,37 +315,38 @@ void TDOAApp::finish()
 
         else{
             arquivo.open (nome_arquivo);
-            arquivo << "Tempo Trilateração (s);";
+            arquivo << "Tempo Trilateração (s),";
 
             int Quant_nos=valores.size();
 
             for(int cont=0; cont<Quant_nos;cont++){
-
-                EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
-
-                arquivo<<"Tempo distancia "<< cont<<"(s);";
+                arquivo<<"Tempo distancia "<< cont<<"(s),";
             }
             for(int cont=0; cont<Quant_nos;cont++){
-                arquivo<<"Distancia nó "<<cont<<"(m);";
+                arquivo<<"Distancia nó "<<cont<<"(m),";
             }
-            arquivo<<"Posição x estimada (m);";
-            arquivo<<"Posição y estimada (m);";
-            arquivo<<"Posição x real (m);";
+            arquivo<<"Posição x estimada (m),";
+            arquivo<<"Posição y estimada (m),";
+            arquivo<<"Posição x real (m),";
             arquivo<<"Posição y real (m)";
 
 
             arquivo<<"\n";
-            arquivo<<elapsed_seconds.count()<<";";
+            arquivo.precision(10);
+            arquivo<<std::fixed;
+            arquivo<<elapsed_seconds.count()<<",";
 
             for(int cont=0; cont<Quant_nos;cont++){
-                arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                arquivo.precision(10);
+                arquivo<<std::fixed;
+                arquivo<<valores.at(cont).time_real_distancia.count()<<",";
             }
 
             for(int cont=0; cont<Quant_nos;cont++){
-                  arquivo<<valores.at(cont).distancia<<";";
+                  arquivo<<valores.at(cont).distancia<<",";
              }
-            arquivo<<x_emissor<<";"<<y_emissor<<";";
-            arquivo<<position_emissor.x<<";"<<position_emissor.y;
+            arquivo<<x_emissor<<","<<y_emissor<<",";
+            arquivo<<position_emissor.x<<","<<position_emissor.y;
             arquivo<<"\n";
         }
         arquivo.close();
