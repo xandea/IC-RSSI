@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for Rssi
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -KINET_PROJ=../inet -DINET_IMPORT -I. -I/home/ale/omnetpp-5.6/samples/Eigen -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
+#  opp_makemake -f --deep -O out -KINET_PROJ=/home/ale/omnetpp-5.6/samples/inet -DINET_IMPORT -I. -I/home/ale/omnetpp-5.6/samples/Eigen -I$$\(INET_PROJ\)/src -L$$\(INET_PROJ\)/src -lINET$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -40,7 +40,7 @@ MSGFILES = \
 SMFILES =
 
 # Other makefile variables (-K)
-INET_PROJ=../inet
+INET_PROJ=/home/ale/omnetpp-5.6/samples/inet
 
 #------------------------------------------------------------------------------
 

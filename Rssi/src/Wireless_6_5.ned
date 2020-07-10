@@ -13,7 +13,6 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package src;
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.INetworkNode;
@@ -55,10 +54,10 @@ network Wireless_6_5
             @display("p=297.50,304.330127019");
         }
         hostF: <default("WirelessHost")> like INetworkNode {
-            @display("p=302.5,295,669872981");
+            @display("p=302.5,295.669872981");
         }
         hostG: <default("WirelessHost")> like INetworkNode {
-            @display("p=297.50,295,669872981");
+            @display("p=297.50,295.669872981");
         }
 
 }

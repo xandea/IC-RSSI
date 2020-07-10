@@ -1,4 +1,3 @@
-package src;
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -22,6 +21,7 @@ simple TDOAApp like IApp
 {
     parameters:
         bool isReceiver = default(true);
+        string Nome_arquivo = default("");
         string interfaceTableModule; 
         int localPort = default(-1);  // local port (-1: use ephemeral port)
         string destAddresses = default(""); // list of IP addresses, separated by spaces ("": don't send)

@@ -52,6 +52,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     int Quant_nos=0;
     double x_emissor, y_emissor;
     std::vector <Valores> valores;
+    const char* nome_arquivo;
 
 
 

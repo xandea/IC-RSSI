@@ -57,6 +57,7 @@ void TDOAApp::initialize(int stage)
         localPort = par("localPort");
         destPort = par("destPort");
         isReceiver = par("isReceiver");
+        nome_arquivo=par("Nome_arquivo");
         i=0;
 //        processStart();
 //        std::cout << "Socket created!" << endl;
@@ -260,60 +261,63 @@ void TDOAApp::finish()
         std::ifstream verifica_arquivo;
         std::ofstream arquivo;
 
-               verifica_arquivo.open("Estatisticas.csv");
+        verifica_arquivo.open(nome_arquivo);
 
-               if(verifica_arquivo.is_open()){
-                   arquivo.open ("Estatisticas.csv",std::ios::app);
-                   arquivo<<elapsed_seconds.count()<<";";
-                   int Quant_nos=valores.size();
-                   for(int cont=0; cont<Quant_nos;cont++){
-                       arquivo<<valores.at(cont).time_real_distancia.count()<<";";
-                   }
-
-                   for(int cont=0; cont<Quant_nos;cont++){
-                         arquivo<<valores.at(cont).distancia<<";";
+                if(verifica_arquivo.is_open()){
+                    arquivo.open (nome_arquivo,std::ios::app);
+                    arquivo<<elapsed_seconds.count()<<";";
+                    int Quant_nos=valores.size();
+                    for(int cont=0; cont<Quant_nos;cont++){
+                        arquivo<<valores.at(cont).time_real_distancia.count()<<";";
                     }
-                   arquivo<<x_emissor<<","<<y_emissor<<";";
-                   arquivo<<position_emissor.x<<","<<position_emissor.y;
 
-                   arquivo<<"\n";
-               }
+                    for(int cont=0; cont<Quant_nos;cont++){
+                          arquivo<<valores.at(cont).distancia<<";";
+                     }
+                    arquivo<<x_emissor<<";"<<y_emissor<<";";
+                    arquivo<<position_emissor.x<<";"<<position_emissor.y;
+
+                    arquivo<<"\n";
+                }
 
 
-               else{
-                   arquivo.open ("Estatisticas.csv");
-                   arquivo << "Tempo Trilateração (s);";
+                else{
+                    arquivo.open (nome_arquivo);
+                    arquivo << "Tempo Trilateração (s);";
 
-                   int Quant_nos=valores.size();
+                    int Quant_nos=valores.size();
 
-                   for(int cont=0; cont<Quant_nos;cont++){
+                    for(int cont=0; cont<Quant_nos;cont++){
 
-                       EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
+                        EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
 
-                       arquivo<<"Tempo distancia "<< cont<<"(s);";
-                   }
-                   for(int cont=0; cont<Quant_nos;cont++){
-                       arquivo<<"Distancia nó "<<cont<<"(m);";
-                   }
-                   arquivo<<"Posição estimada (m);";
-                   arquivo<<"Posição real (m)";
-
-                   arquivo<<"\n";
-                   arquivo<<elapsed_seconds.count()<<";";
-
-                   for(int cont=0; cont<Quant_nos;cont++){
-                       arquivo<<valores.at(cont).time_real_distancia.count()<<";";
-                   }
-
-                   for(int cont=0; cont<Quant_nos;cont++){
-                         arquivo<<valores.at(cont).distancia<<";";
+                        arquivo<<"Tempo distancia "<< cont<<"(s);";
                     }
-                   arquivo<<x_emissor<<","<<y_emissor<<";";
-                   arquivo<<position_emissor.x<<","<<position_emissor.y;
-                   arquivo<<"\n";
-               }
-               arquivo.close();
-               verifica_arquivo.close();
+                    for(int cont=0; cont<Quant_nos;cont++){
+                        arquivo<<"Distancia nó "<<cont<<"(m);";
+                    }
+                    arquivo<<"Posição x estimada (m);";
+                    arquivo<<"Posição y estimada (m);";
+                    arquivo<<"Posição x real (m);";
+                    arquivo<<"Posição y real (m)";
+
+
+                    arquivo<<"\n";
+                    arquivo<<elapsed_seconds.count()<<";";
+
+                    for(int cont=0; cont<Quant_nos;cont++){
+                        arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                    }
+
+                    for(int cont=0; cont<Quant_nos;cont++){
+                          arquivo<<valores.at(cont).distancia<<";";
+                     }
+                    arquivo<<x_emissor<<";"<<y_emissor<<";";
+                    arquivo<<position_emissor.x<<";"<<position_emissor.y;
+                    arquivo<<"\n";
+                }
+                arquivo.close();
+                verifica_arquivo.close();
 
 
     }
