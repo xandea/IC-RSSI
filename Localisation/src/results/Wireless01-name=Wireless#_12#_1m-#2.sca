@@ -1,19 +1,19 @@
 version 2
-run Wireless01-62-20200703-11:27:07-4452
+run Wireless01-182-20200710-12:28:24-3535
 attr configname Wireless01
-attr datetime 20200703-11:27:07
+attr datetime 20200710-12:28:24
 attr experiment Wireless01
 attr inifile omnetpp.ini
 attr iterationvars $name=Wireless_12_1m
 attr iterationvarsf name=Wireless#_12#_1m-
 attr measurement $name=Wireless_12_1m
 attr network "${name=Wireless_3_1m,Wireless_3_5m, Wireless_3_10m, Wireless_6_1m, Wireless_6_5m, Wireless_6_10m, Wireless_12_1m, Wireless_12_5m, Wireless_12_10m }"
-attr processid 4452
+attr processid 3535
 attr repetition 2
 attr replication #2
 attr resultdir results
-attr runnumber 62
-attr seedset 62
+attr runnumber 182
+attr seedset 182
 itervar name Wireless_12_1m
 param *.hostA.numApps 1
 param *.hostA.app[0].typename "\"TDOAApp\""
@@ -51,14 +51,14 @@ param *.host*.**.bitrate 1Mbps
 param *.host*.ipv4.arp.typename "\"GlobalArp\""
 param **.ip.limitedBroadcast true
 
-scalar Wireless_12_1m.radioMedium.propagation "Arrival computation count" 324
-scalar Wireless_12_1m.radioMedium "transmission count" 27
-scalar Wireless_12_1m.radioMedium "signal send count" 324
-scalar Wireless_12_1m.radioMedium "reception computation count" 324
-scalar Wireless_12_1m.radioMedium "interference computation count" 997
-scalar Wireless_12_1m.radioMedium "reception decision computation count" 311
-scalar Wireless_12_1m.radioMedium "listening decision computation count" 364
-scalar Wireless_12_1m.radioMedium "reception cache hit" 85.644661054497
+scalar Wireless_12_1m.radioMedium.propagation "Arrival computation count" 372
+scalar Wireless_12_1m.radioMedium "transmission count" 31
+scalar Wireless_12_1m.radioMedium "signal send count" 372
+scalar Wireless_12_1m.radioMedium "reception computation count" 372
+scalar Wireless_12_1m.radioMedium "interference computation count" 1115
+scalar Wireless_12_1m.radioMedium "reception decision computation count" 333
+scalar Wireless_12_1m.radioMedium "listening decision computation count" 416
+scalar Wireless_12_1m.radioMedium "reception cache hit" 85.525291828794
 attr unit %
 scalar Wireless_12_1m.radioMedium "interference cache hit" 66.666666666667
 attr unit %
@@ -187,16 +187,16 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostA.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostA.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostA.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostA.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostA.wlan[0].mac numCollision 3
 scalar Wireless_12_1m.hostA.wlan[0].mac numSent 0
 scalar Wireless_12_1m.hostA.wlan[0].mac numReceived 12
 scalar Wireless_12_1m.hostA.wlan[0].mac numSentBroadcast 1
 scalar Wireless_12_1m.hostA.wlan[0].mac numReceivedBroadcast 0
-scalar Wireless_12_1m.hostA.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostA.wlan[0].mac packetDropIncorrectlyReceived:count 3
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostA.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostA.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 177
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
@@ -232,7 +232,7 @@ scalar Wireless_12_1m.hostA.wlan[0].radio radioMode:count 29
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostA.wlan[0].radio receptionState:count 53
+scalar Wireless_12_1m.hostA.wlan[0].radio receptionState:count 58
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -241,17 +241,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostA.wlan[0].radio minSnir:histogram
-field count 13
-field mean 183877.16430713
-field stddev 55247.911563592
-field min 0.99999497995581
+field count 15
+field mean 159360.34239884
+field stddev 82476.295314265
+field min 0.99999497994932
 field max 199200.17800003
-field sum 2390403.1359927
-field sqrsum 476168530982.88
+field sum 2390405.1359827
+field sqrsum 476168530984.88
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	1
+bin	0	3
 bin	5000	0
 bin	10000	0
 bin	15000	0
@@ -303,13 +303,13 @@ bin	240000	0
 bin	245000	0
 bin	250000	0
 statistic Wireless_12_1m.hostA.wlan[0].radio packetErrorRate:histogram
-field count 13
-field mean 0.076922738854617
-field stddev 0.27734887918945
+field count 15
+field mean 0.199999121022
+field stddev 0.41403751594808
 field min 0
 field max 0.99999560511002
-field sum 0.99999560511002
-field sqrsum 0.99999121023935
+field sum 2.99998681533
+field sqrsum 2.999973630718
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
@@ -362,7 +362,7 @@ bin	0.9	0
 bin	0.92	0
 bin	0.94	0
 bin	0.96	0
-bin	0.98	1
+bin	0.98	3
 bin	1	0
 bin	1.02	0
 bin	1.04	0
@@ -378,13 +378,13 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostA.wlan[0].radio bitErrorRate:histogram
-field count 13
-field mean 0.0017500309989937
-field stddev 0.0063098265005232
+field count 15
+field mean 0.00455008059743
+field stddev 0.009419561737555
 field min 0
-field max 0.022750402986918
-field sum 0.022750402986918
-field sqrsum 0.00051758083606717
+field max 0.022750402987268
+field sum 0.06825120896145
+field sqrsum 0.0015527425082332
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
@@ -433,7 +433,7 @@ bin	0.0205	0
 bin	0.021	0
 bin	0.0215	0
 bin	0.022	0
-bin	0.0225	1
+bin	0.0225	3
 bin	0.023	0
 bin	0.0235	0
 bin	0.024	0
@@ -447,13 +447,13 @@ bin	0.0275	0
 bin	0.028	0
 bin	0.0285	0
 statistic Wireless_12_1m.hostA.wlan[0].radio symbolErrorRate:histogram
-field count 13
-field mean 0.0017500309989937
-field stddev 0.0063098265005232
+field count 15
+field mean 0.00455008059743
+field stddev 0.009419561737555
 field min 0
-field max 0.022750402986918
-field sum 0.022750402986918
-field sqrsum 0.00051758083606717
+field max 0.022750402987268
+field sum 0.06825120896145
+field sqrsum 0.0015527425082332
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
@@ -502,7 +502,7 @@ bin	0.0205	0
 bin	0.021	0
 bin	0.0215	0
 bin	0.022	0
-bin	0.0225	1
+bin	0.0225	3
 bin	0.023	0
 bin	0.0235	0
 bin	0.024	0
@@ -705,27 +705,27 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostB.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostB.wlan[0].mac numRetry 1
-scalar Wireless_12_1m.hostB.wlan[0].mac numSentWithoutRetry 0
+scalar Wireless_12_1m.hostB.wlan[0].mac numRetry 0
+scalar Wireless_12_1m.hostB.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostB.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostB.wlan[0].mac numCollision 0
+scalar Wireless_12_1m.hostB.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostB.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostB.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostB.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostB.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostB.wlan[0].mac packetDropIncorrectlyReceived:count 0
+scalar Wireless_12_1m.hostB.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostB.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+scalar Wireless_12_1m.hostB.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostB.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostB.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostB.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostB.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -749,30 +749,30 @@ scalar Wireless_12_1m.hostB.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostB.wlan[0].radio radioMode:count 7
+scalar Wireless_12_1m.hostB.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostB.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostB.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostB.wlan[0].radio transmissionState:count 8
+scalar Wireless_12_1m.hostB.wlan[0].radio transmissionState:count 4
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostB.wlan[0].radio minSnir:histogram
-field count 24
-field mean 478830.73049386
-field stddev 1127693.4015789
-field min 49800.044500005
+field count 27
+field mean 425627.53178687
+field stddev 1071668.913054
+field min 0.63999485948623
 field max 4929696.1888752
-field sum 11491937.531853
-field sqrsum 34751618226351
+field sum 11491943.358246
+field sqrsum 34751618226368
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	7
+bin	0	10
 bin	100000	15
 bin	200000	0
 bin	300000	0
@@ -836,42 +836,17 @@ bin	6000000	0
 bin	6100000	0
 bin	6200000	0
 statistic Wireless_12_1m.hostB.wlan[0].radio packetErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.074746561220034
+field stddev 0.26655736009407
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 0.99999999999992
+field sum 2.0181571529409
+field sqrsum 1.9982237889122
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
-bin	0	24
+bin	0	25
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -897,130 +872,206 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	2
+bin	1	0
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
 statistic Wireless_12_1m.hostB.wlan[0].radio bitErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.0025003833462237
+field stddev 0.010732540977729
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 0.05480000444225
+field sum 0.06751035034804
+field sqrsum 0.0031636750875122
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
-bin	0	24
+bin	0	25
+bin	0.001	0
+bin	0.002	0
+bin	0.003	0
+bin	0.004	0
+bin	0.005	0
+bin	0.006	0
+bin	0.007	0
+bin	0.008	0
+bin	0.009	0
+bin	0.01	0
+bin	0.011	0
+bin	0.012	1
+bin	0.013	0
+bin	0.014	0
+bin	0.015	0
+bin	0.016	0
+bin	0.017	0
+bin	0.018	0
+bin	0.019	0
 bin	0.02	0
+bin	0.021	0
+bin	0.022	0
+bin	0.023	0
+bin	0.024	0
+bin	0.025	0
+bin	0.026	0
+bin	0.027	0
+bin	0.028	0
+bin	0.029	0
+bin	0.03	0
+bin	0.031	0
+bin	0.032	0
+bin	0.033	0
+bin	0.034	0
+bin	0.035	0
+bin	0.036	0
+bin	0.037	0
+bin	0.038	0
+bin	0.039	0
 bin	0.04	0
+bin	0.041	0
+bin	0.042	0
+bin	0.043	0
+bin	0.044	0
+bin	0.045	0
+bin	0.046	0
+bin	0.047	0
+bin	0.048	0
+bin	0.049	0
+bin	0.05	0
+bin	0.051	0
+bin	0.052	0
+bin	0.053	0
+bin	0.054	1
+bin	0.055	0
+bin	0.056	0
+bin	0.057	0
+bin	0.058	0
+bin	0.059	0
 bin	0.06	0
-bin	0.08	0
-bin	0.1	0
-bin	0.12	0
-bin	0.14	0
-bin	0.16	0
-bin	0.18	0
-bin	0.2	0
-bin	0.22	0
-bin	0.24	0
-bin	0.26	0
-bin	0.28	0
-bin	0.3	0
-bin	0.32	0
-bin	0.34	0
-bin	0.36	0
-bin	0.38	0
-bin	0.4	0
-bin	0.42	0
-bin	0.44	0
-bin	0.46	0
-bin	0.48	0
-bin	0.5	0
+bin	0.061	0
+bin	0.062	0
+bin	0.063	0
+bin	0.064	0
+bin	0.065	0
+bin	0.066	0
+bin	0.067	0
+bin	0.068	0
+bin	0.069	0
 statistic Wireless_12_1m.hostB.wlan[0].radio symbolErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.0025003833462237
+field stddev 0.010732540977729
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 0.05480000444225
+field sum 0.06751035034804
+field sqrsum 0.0031636750875122
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
-bin	0	24
+bin	0	25
+bin	0.001	0
+bin	0.002	0
+bin	0.003	0
+bin	0.004	0
+bin	0.005	0
+bin	0.006	0
+bin	0.007	0
+bin	0.008	0
+bin	0.009	0
+bin	0.01	0
+bin	0.011	0
+bin	0.012	1
+bin	0.013	0
+bin	0.014	0
+bin	0.015	0
+bin	0.016	0
+bin	0.017	0
+bin	0.018	0
+bin	0.019	0
 bin	0.02	0
+bin	0.021	0
+bin	0.022	0
+bin	0.023	0
+bin	0.024	0
+bin	0.025	0
+bin	0.026	0
+bin	0.027	0
+bin	0.028	0
+bin	0.029	0
+bin	0.03	0
+bin	0.031	0
+bin	0.032	0
+bin	0.033	0
+bin	0.034	0
+bin	0.035	0
+bin	0.036	0
+bin	0.037	0
+bin	0.038	0
+bin	0.039	0
 bin	0.04	0
+bin	0.041	0
+bin	0.042	0
+bin	0.043	0
+bin	0.044	0
+bin	0.045	0
+bin	0.046	0
+bin	0.047	0
+bin	0.048	0
+bin	0.049	0
+bin	0.05	0
+bin	0.051	0
+bin	0.052	0
+bin	0.053	0
+bin	0.054	1
+bin	0.055	0
+bin	0.056	0
+bin	0.057	0
+bin	0.058	0
+bin	0.059	0
 bin	0.06	0
-bin	0.08	0
-bin	0.1	0
-bin	0.12	0
-bin	0.14	0
-bin	0.16	0
-bin	0.18	0
-bin	0.2	0
-bin	0.22	0
-bin	0.24	0
-bin	0.26	0
-bin	0.28	0
-bin	0.3	0
-bin	0.32	0
-bin	0.34	0
-bin	0.36	0
-bin	0.38	0
-bin	0.4	0
-bin	0.42	0
-bin	0.44	0
-bin	0.46	0
-bin	0.48	0
-bin	0.5	0
+bin	0.061	0
+bin	0.062	0
+bin	0.063	0
+bin	0.064	0
+bin	0.065	0
+bin	0.066	0
+bin	0.067	0
+bin	0.068	0
+bin	0.069	0
 scalar Wireless_12_1m.hostB.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -1211,27 +1262,27 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostC.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostC.wlan[0].mac numRetry 0
-scalar Wireless_12_1m.hostC.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_12_1m.hostC.wlan[0].mac numRetry 1
+scalar Wireless_12_1m.hostC.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostC.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostC.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostC.wlan[0].mac numCollision 0
 scalar Wireless_12_1m.hostC.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostC.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostC.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostC.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostC.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostC.wlan[0].mac packetDropIncorrectlyReceived:count 0
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostC.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostC.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostC.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostC.wlan[0].mac packetDropNotAddressedToUs:count 13
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostC.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostC.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 767
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -1255,30 +1306,30 @@ scalar Wireless_12_1m.hostC.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostC.wlan[0].radio radioMode:count 5
+scalar Wireless_12_1m.hostC.wlan[0].radio radioMode:count 7
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostC.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostC.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostC.wlan[0].radio transmissionState:count 4
+scalar Wireless_12_1m.hostC.wlan[0].radio transmissionState:count 8
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostC.wlan[0].radio minSnir:histogram
-field count 25
-field mean 289381.61606536
-field stddev 608523.64395891
-field min 1.199985542359
+field count 26
+field mean 278254.12100168
+field stddev 598922.64444704
+field min 5.5980340575198
 field max 3136599.3679114
-field sum 7234540.401634
-field sqrsum 10980767599084
+field sum 7234607.1460437
+field sqrsum 10980767603001
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	2
+bin	0	3
 bin	50000	6
 bin	100000	2
 bin	150000	13
@@ -1359,282 +1410,256 @@ bin	3850000	0
 bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostC.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.03998156265812
-field stddev 0.1999078132906
+field count 26
+field mean 2.2905362334449e-05
+field stddev 0.00011679488950927
 field min 0
-field max 0.99953906645299
-field sum 0.99953906645299
-field sqrsum 0.99907834536572
+field max 0.00059553942069568
+field sum 0.00059553942069568
+field sqrsum 3.5466720160254e-07
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.02	0
-bin	0.04	0
-bin	0.06	0
-bin	0.08	0
-bin	0.1	0
-bin	0.12	0
-bin	0.14	0
-bin	0.16	0
-bin	0.18	0
-bin	0.2	0
-bin	0.22	0
-bin	0.24	0
-bin	0.26	0
-bin	0.28	0
-bin	0.3	0
-bin	0.32	0
-bin	0.34	0
-bin	0.36	0
-bin	0.38	0
-bin	0.4	0
-bin	0.42	0
-bin	0.44	0
-bin	0.46	0
-bin	0.48	0
-bin	0.5	0
-bin	0.52	0
-bin	0.54	0
-bin	0.56	0
-bin	0.58	0
-bin	0.6	0
-bin	0.62	0
-bin	0.64	0
-bin	0.66	0
-bin	0.68	0
-bin	0.7	0
-bin	0.72	0
-bin	0.74	0
-bin	0.76	0
-bin	0.78	0
-bin	0.8	0
-bin	0.82	0
-bin	0.84	0
-bin	0.86	0
-bin	0.88	0
-bin	0.9	0
-bin	0.92	0
-bin	0.94	0
-bin	0.96	0
-bin	0.98	1
-bin	1	0
-bin	1.02	0
-bin	1.04	0
-bin	1.06	0
-bin	1.08	0
-bin	1.1	0
-bin	1.12	0
-bin	1.14	0
-bin	1.16	0
-bin	1.18	0
-bin	1.2	0
-bin	1.22	0
-bin	1.24	0
-bin	1.26	0
+bin	0	25
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	0
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	0
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	1
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
 statistic Wireless_12_1m.hostC.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00056921384467499
-field stddev 0.002846069223375
+field count 26
+field mean 4.2746591107442e-08
+field stddev 2.1796570219642e-07
 field min 0
-field max 0.014230346116875
-field sum 0.014230346116875
-field sqrsum 0.00020250275060605
+field max 1.1114113687935e-06
+field sum 1.1114113687935e-06
+field sqrsum 1.2352352306834e-12
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
-bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
-bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
-bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
-bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
-bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
-bin	0.014	0
-bin	0.0142	1
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
-bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
-bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
-bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
+bin	0	25
+bin	2e-08	0
+bin	4e-08	0
+bin	6e-08	0
+bin	8e-08	0
+bin	1e-07	0
+bin	1.2e-07	0
+bin	1.4e-07	0
+bin	1.6e-07	0
+bin	1.8e-07	0
+bin	2e-07	0
+bin	2.2e-07	0
+bin	2.4e-07	0
+bin	2.6e-07	0
+bin	2.8e-07	0
+bin	3e-07	0
+bin	3.2e-07	0
+bin	3.4e-07	0
+bin	3.6e-07	0
+bin	3.8e-07	0
+bin	4e-07	0
+bin	4.2e-07	0
+bin	4.4e-07	0
+bin	4.6e-07	0
+bin	4.8e-07	0
+bin	5e-07	0
+bin	5.2e-07	0
+bin	5.4e-07	0
+bin	5.6e-07	0
+bin	5.8e-07	0
+bin	6e-07	0
+bin	6.2e-07	0
+bin	6.4e-07	0
+bin	6.6e-07	0
+bin	6.8e-07	0
+bin	7e-07	0
+bin	7.2e-07	0
+bin	7.4e-07	0
+bin	7.6e-07	0
+bin	7.8e-07	0
+bin	8e-07	0
+bin	8.2e-07	0
+bin	8.4e-07	0
+bin	8.6e-07	0
+bin	8.8e-07	0
+bin	9e-07	0
+bin	9.2e-07	0
+bin	9.4e-07	0
+bin	9.6e-07	0
+bin	9.8e-07	0
+bin	1e-06	0
+bin	1.02e-06	0
+bin	1.04e-06	0
+bin	1.06e-06	0
+bin	1.08e-06	0
+bin	1.1e-06	1
+bin	1.12e-06	0
+bin	1.14e-06	0
+bin	1.16e-06	0
+bin	1.18e-06	0
+bin	1.2e-06	0
+bin	1.22e-06	0
+bin	1.24e-06	0
+bin	1.26e-06	0
+bin	1.28e-06	0
+bin	1.3e-06	0
+bin	1.32e-06	0
+bin	1.34e-06	0
+bin	1.36e-06	0
+bin	1.38e-06	0
+bin	1.4e-06	0
 statistic Wireless_12_1m.hostC.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00056921384467499
-field stddev 0.002846069223375
+field count 26
+field mean 4.2746591107442e-08
+field stddev 2.1796570219642e-07
 field min 0
-field max 0.014230346116875
-field sum 0.014230346116875
-field sqrsum 0.00020250275060605
+field max 1.1114113687935e-06
+field sum 1.1114113687935e-06
+field sqrsum 1.2352352306834e-12
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
-bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
-bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
-bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
-bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
-bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
-bin	0.014	0
-bin	0.0142	1
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
-bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
-bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
-bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
+bin	0	25
+bin	2e-08	0
+bin	4e-08	0
+bin	6e-08	0
+bin	8e-08	0
+bin	1e-07	0
+bin	1.2e-07	0
+bin	1.4e-07	0
+bin	1.6e-07	0
+bin	1.8e-07	0
+bin	2e-07	0
+bin	2.2e-07	0
+bin	2.4e-07	0
+bin	2.6e-07	0
+bin	2.8e-07	0
+bin	3e-07	0
+bin	3.2e-07	0
+bin	3.4e-07	0
+bin	3.6e-07	0
+bin	3.8e-07	0
+bin	4e-07	0
+bin	4.2e-07	0
+bin	4.4e-07	0
+bin	4.6e-07	0
+bin	4.8e-07	0
+bin	5e-07	0
+bin	5.2e-07	0
+bin	5.4e-07	0
+bin	5.6e-07	0
+bin	5.8e-07	0
+bin	6e-07	0
+bin	6.2e-07	0
+bin	6.4e-07	0
+bin	6.6e-07	0
+bin	6.8e-07	0
+bin	7e-07	0
+bin	7.2e-07	0
+bin	7.4e-07	0
+bin	7.6e-07	0
+bin	7.8e-07	0
+bin	8e-07	0
+bin	8.2e-07	0
+bin	8.4e-07	0
+bin	8.6e-07	0
+bin	8.8e-07	0
+bin	9e-07	0
+bin	9.2e-07	0
+bin	9.4e-07	0
+bin	9.6e-07	0
+bin	9.8e-07	0
+bin	1e-06	0
+bin	1.02e-06	0
+bin	1.04e-06	0
+bin	1.06e-06	0
+bin	1.08e-06	0
+bin	1.1e-06	1
+bin	1.12e-06	0
+bin	1.14e-06	0
+bin	1.16e-06	0
+bin	1.18e-06	0
+bin	1.2e-06	0
+bin	1.22e-06	0
+bin	1.24e-06	0
+bin	1.26e-06	0
+bin	1.28e-06	0
+bin	1.3e-06	0
+bin	1.32e-06	0
+bin	1.34e-06	0
+bin	1.36e-06	0
+bin	1.38e-06	0
+bin	1.4e-06	0
 scalar Wireless_12_1m.hostC.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -1828,24 +1853,24 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostD.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostD.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostD.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostD.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostD.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostD.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostD.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostD.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostD.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostD.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostD.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostD.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostD.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostD.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostD.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostD.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostD.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -1873,7 +1898,7 @@ scalar Wireless_12_1m.hostD.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostD.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostD.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -1882,17 +1907,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostD.wlan[0].radio minSnir:histogram
-field count 25
-field mean 459677.5512736
-field stddev 1108095.8131657
-field min 1.2499874499314
+field count 27
+field mean 425631.01692439
+field stddev 1071667.4758113
+field min 1.0161128264869
 field max 4929696.1888752
-field sum 11491938.78184
-field sqrsum 34751618226353
+field sum 11492037.456958
+field sqrsum 34751618235844
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	8
+bin	0	10
 bin	100000	15
 bin	200000	0
 bin	300000	0
@@ -1956,17 +1981,17 @@ bin	6000000	0
 bin	6100000	0
 bin	6200000	0
 statistic Wireless_12_1m.hostD.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039957054152184
-field stddev 0.19978527076092
+field count 27
+field mean 0.073332608009429
+field stddev 0.26422340545394
 field min 0
-field max 0.9989263538046
-field sum 0.9989263538046
-field sqrsum 0.99785386032536
+field max 0.9999929849244
+field sum 1.9799804162546
+field sqrsum 1.9603613354631
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2014,7 +2039,7 @@ bin	0.88	0
 bin	0.9	0
 bin	0.92	0
 bin	0.94	0
-bin	0.96	0
+bin	0.96	1
 bin	0.98	1
 bin	1	0
 bin	1.02	0
@@ -2031,189 +2056,139 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostD.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00050696107741371
-field stddev 0.0025348053870685
+field count 27
+field mean 0.0010803063908987
+field stddev 0.0043890276909978
 field min 0
-field max 0.012674026935343
-field sum 0.012674026935343
-field sqrsum 0.00016063095875779
+field max 0.021897455469978
+field sum 0.029168272554265
+field sqrsum 0.00053236333713283
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0	25
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	0
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0065	0
+bin	0.007	1
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	1
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	0
 bin	0.014	0
-bin	0.0142	0
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
+bin	0.0145	0
 bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
+bin	0.0155	0
 bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	1
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
 statistic Wireless_12_1m.hostD.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00050696107741371
-field stddev 0.0025348053870685
+field count 27
+field mean 0.0010803063908987
+field stddev 0.0043890276909978
 field min 0
-field max 0.012674026935343
-field sum 0.012674026935343
-field sqrsum 0.00016063095875779
+field max 0.021897455469978
+field sum 0.029168272554265
+field sqrsum 0.00053236333713283
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0	25
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	0
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0065	0
+bin	0.007	1
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	1
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	0
 bin	0.014	0
-bin	0.0142	0
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
+bin	0.0145	0
 bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
+bin	0.0155	0
 bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	1
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
 scalar Wireless_12_1m.hostD.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -2407,24 +2382,24 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostE.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostE.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostE.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostE.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostE.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostE.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostE.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostE.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostE.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostE.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostE.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostE.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostE.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostE.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostE.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostE.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostE.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -2452,7 +2427,7 @@ scalar Wireless_12_1m.hostE.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostE.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostE.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -2461,17 +2436,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostE.wlan[0].radio minSnir:histogram
-field count 25
-field mean 289381.60847333
-field stddev 608523.64771969
-field min 1.0101848595147
+field count 27
+field mean 267947.75452362
+field stddev 589728.60851259
+field min 1.3333199465989
 field max 3136599.3679114
-field sum 7234540.2118333
-field sqrsum 10980767599083
+field sum 7234589.3721378
+field sqrsum 10980767601318
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	2
+bin	0	4
 bin	50000	6
 bin	100000	2
 bin	150000	13
@@ -2552,17 +2527,17 @@ bin	3850000	0
 bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostE.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.03999976320711
-field stddev 0.19999881603555
+field count 27
+field mean 0.072218122686431
+field stddev 0.2602617395416
 field min 0
-field max 0.99999408017775
-field sum 0.99999408017775
-field sqrsum 0.99998816039054
+field max 0.99643511729981
+field sum 1.9498893125336
+field sqrsum 1.9019578453973
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -2609,7 +2584,7 @@ bin	0.86	0
 bin	0.88	0
 bin	0.9	0
 bin	0.92	0
-bin	0.94	0
+bin	0.94	1
 bin	0.96	0
 bin	0.98	1
 bin	1	0
@@ -2627,141 +2602,161 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostE.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00088828714214376
-field stddev 0.0044414357107188
+field count 27
+field mean 0.00059878722446193
+field stddev 0.002255872829409
 field min 0
-field max 0.022207178553594
-field sum 0.022207178553594
-field sqrsum 0.00049315877931121
+field max 0.010460989037638
+field sum 0.016167255060472
+field sqrsum 0.00014199376356893
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0005	0
+bin	0	25
+bin	0.0002	0
+bin	0.0004	0
+bin	0.0006	0
+bin	0.0008	0
 bin	0.001	0
-bin	0.0015	0
+bin	0.0012	0
+bin	0.0014	0
+bin	0.0016	0
+bin	0.0018	0
 bin	0.002	0
-bin	0.0025	0
+bin	0.0022	0
+bin	0.0024	0
+bin	0.0026	0
+bin	0.0028	0
 bin	0.003	0
-bin	0.0035	0
+bin	0.0032	0
+bin	0.0034	0
+bin	0.0036	0
+bin	0.0038	0
 bin	0.004	0
-bin	0.0045	0
+bin	0.0042	0
+bin	0.0044	0
+bin	0.0046	0
+bin	0.0048	0
 bin	0.005	0
-bin	0.0055	0
+bin	0.0052	0
+bin	0.0054	0
+bin	0.0056	1
+bin	0.0058	0
 bin	0.006	0
-bin	0.0065	0
+bin	0.0062	0
+bin	0.0064	0
+bin	0.0066	0
+bin	0.0068	0
 bin	0.007	0
-bin	0.0075	0
+bin	0.0072	0
+bin	0.0074	0
+bin	0.0076	0
+bin	0.0078	0
 bin	0.008	0
-bin	0.0085	0
+bin	0.0082	0
+bin	0.0084	0
+bin	0.0086	0
+bin	0.0088	0
 bin	0.009	0
-bin	0.0095	0
+bin	0.0092	0
+bin	0.0094	0
+bin	0.0096	0
+bin	0.0098	0
 bin	0.01	0
-bin	0.0105	0
+bin	0.0102	0
+bin	0.0104	1
+bin	0.0106	0
+bin	0.0108	0
 bin	0.011	0
-bin	0.0115	0
+bin	0.0112	0
+bin	0.0114	0
+bin	0.0116	0
+bin	0.0118	0
 bin	0.012	0
-bin	0.0125	0
+bin	0.0122	0
+bin	0.0124	0
+bin	0.0126	0
+bin	0.0128	0
 bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
-bin	0.015	0
-bin	0.0155	0
-bin	0.016	0
-bin	0.0165	0
-bin	0.017	0
-bin	0.0175	0
-bin	0.018	0
-bin	0.0185	0
-bin	0.019	0
-bin	0.0195	0
-bin	0.02	0
-bin	0.0205	0
-bin	0.021	0
-bin	0.0215	0
-bin	0.022	1
-bin	0.0225	0
-bin	0.023	0
-bin	0.0235	0
-bin	0.024	0
-bin	0.0245	0
-bin	0.025	0
-bin	0.0255	0
-bin	0.026	0
-bin	0.0265	0
-bin	0.027	0
-bin	0.0275	0
-bin	0.028	0
+bin	0.0132	0
 statistic Wireless_12_1m.hostE.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00088828714214376
-field stddev 0.0044414357107188
+field count 27
+field mean 0.00059878722446193
+field stddev 0.002255872829409
 field min 0
-field max 0.022207178553594
-field sum 0.022207178553594
-field sqrsum 0.00049315877931121
+field max 0.010460989037638
+field sum 0.016167255060472
+field sqrsum 0.00014199376356893
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0005	0
+bin	0	25
+bin	0.0002	0
+bin	0.0004	0
+bin	0.0006	0
+bin	0.0008	0
 bin	0.001	0
-bin	0.0015	0
+bin	0.0012	0
+bin	0.0014	0
+bin	0.0016	0
+bin	0.0018	0
 bin	0.002	0
-bin	0.0025	0
+bin	0.0022	0
+bin	0.0024	0
+bin	0.0026	0
+bin	0.0028	0
 bin	0.003	0
-bin	0.0035	0
+bin	0.0032	0
+bin	0.0034	0
+bin	0.0036	0
+bin	0.0038	0
 bin	0.004	0
-bin	0.0045	0
+bin	0.0042	0
+bin	0.0044	0
+bin	0.0046	0
+bin	0.0048	0
 bin	0.005	0
-bin	0.0055	0
+bin	0.0052	0
+bin	0.0054	0
+bin	0.0056	1
+bin	0.0058	0
 bin	0.006	0
-bin	0.0065	0
+bin	0.0062	0
+bin	0.0064	0
+bin	0.0066	0
+bin	0.0068	0
 bin	0.007	0
-bin	0.0075	0
+bin	0.0072	0
+bin	0.0074	0
+bin	0.0076	0
+bin	0.0078	0
 bin	0.008	0
-bin	0.0085	0
+bin	0.0082	0
+bin	0.0084	0
+bin	0.0086	0
+bin	0.0088	0
 bin	0.009	0
-bin	0.0095	0
+bin	0.0092	0
+bin	0.0094	0
+bin	0.0096	0
+bin	0.0098	0
 bin	0.01	0
-bin	0.0105	0
+bin	0.0102	0
+bin	0.0104	1
+bin	0.0106	0
+bin	0.0108	0
 bin	0.011	0
-bin	0.0115	0
+bin	0.0112	0
+bin	0.0114	0
+bin	0.0116	0
+bin	0.0118	0
 bin	0.012	0
-bin	0.0125	0
+bin	0.0122	0
+bin	0.0124	0
+bin	0.0126	0
+bin	0.0128	0
 bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
-bin	0.015	0
-bin	0.0155	0
-bin	0.016	0
-bin	0.0165	0
-bin	0.017	0
-bin	0.0175	0
-bin	0.018	0
-bin	0.0185	0
-bin	0.019	0
-bin	0.0195	0
-bin	0.02	0
-bin	0.0205	0
-bin	0.021	0
-bin	0.0215	0
-bin	0.022	1
-bin	0.0225	0
-bin	0.023	0
-bin	0.0235	0
-bin	0.024	0
-bin	0.0245	0
-bin	0.025	0
-bin	0.0255	0
-bin	0.026	0
-bin	0.0265	0
-bin	0.027	0
-bin	0.0275	0
-bin	0.028	0
+bin	0.0132	0
 scalar Wireless_12_1m.hostE.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -2955,24 +2950,24 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostF.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostF.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostF.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostF.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostF.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostF.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostF.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostF.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostF.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostF.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostF.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostF.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostF.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostF.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostF.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostF.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostF.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -3000,7 +2995,7 @@ scalar Wireless_12_1m.hostF.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostF.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostF.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -3009,17 +3004,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostF.wlan[0].radio minSnir:histogram
-field count 25
-field mean 188711.00615108
-field stddev 143298.31404531
-field min 1.0671778189763
+field count 27
+field mean 174732.67861425
+field stddev 146598.76129712
+field min 0.53904505669234
 field max 743425.18517283
-field sum 4717775.1537771
-field sqrsum 1383121859461.4
+field sum 4717782.3225849
+field sqrsum 1383121859504.4
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	1
+bin	0	3
 bin	20000	0
 bin	40000	4
 bin	60000	2
@@ -3068,17 +3063,17 @@ bin	900000	0
 bin	920000	0
 bin	940000	0
 statistic Wireless_12_1m.hostF.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039998905298744
-field stddev 0.19999452649372
+field count 27
+field mean 0.074064795440901
+field stddev 0.26683401255003
 field min 0
-field max 0.99997263246859
-field sum 0.99997263246859
-field sqrsum 0.99994526568617
+field max 1
+field sum 1.9997494769043
+field sqrsum 1.9993211825322
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -3128,7 +3123,7 @@ bin	0.92	0
 bin	0.94	0
 bin	0.96	0
 bin	0.98	1
-bin	1	0
+bin	1	1
 bin	1.02	0
 bin	1.04	0
 bin	1.06	0
@@ -3143,127 +3138,207 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostF.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00077640723655225
-field stddev 0.0038820361827612
+field count 27
+field mean 0.003177463976042
+field stddev 0.013849511123443
 field min 0
-field max 0.019410180913806
-field sum 0.019410180913806
-field sqrsum 0.00037675512310669
+field max 0.070998648154411
+field sum 0.085791527353134
+field sqrsum 0.005259632404932
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0005	0
+bin	0	25
 bin	0.001	0
-bin	0.0015	0
 bin	0.002	0
-bin	0.0025	0
 bin	0.003	0
-bin	0.0035	0
 bin	0.004	0
-bin	0.0045	0
 bin	0.005	0
-bin	0.0055	0
 bin	0.006	0
-bin	0.0065	0
 bin	0.007	0
-bin	0.0075	0
 bin	0.008	0
-bin	0.0085	0
 bin	0.009	0
-bin	0.0095	0
 bin	0.01	0
-bin	0.0105	0
 bin	0.011	0
-bin	0.0115	0
 bin	0.012	0
-bin	0.0125	0
 bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
+bin	0.014	1
 bin	0.015	0
-bin	0.0155	0
 bin	0.016	0
-bin	0.0165	0
 bin	0.017	0
-bin	0.0175	0
 bin	0.018	0
-bin	0.0185	0
-bin	0.019	1
-bin	0.0195	0
+bin	0.019	0
 bin	0.02	0
-bin	0.0205	0
 bin	0.021	0
-bin	0.0215	0
 bin	0.022	0
-bin	0.0225	0
 bin	0.023	0
-bin	0.0235	0
 bin	0.024	0
-bin	0.0245	0
+bin	0.025	0
+bin	0.026	0
+bin	0.027	0
+bin	0.028	0
+bin	0.029	0
+bin	0.03	0
+bin	0.031	0
+bin	0.032	0
+bin	0.033	0
+bin	0.034	0
+bin	0.035	0
+bin	0.036	0
+bin	0.037	0
+bin	0.038	0
+bin	0.039	0
+bin	0.04	0
+bin	0.041	0
+bin	0.042	0
+bin	0.043	0
+bin	0.044	0
+bin	0.045	0
+bin	0.046	0
+bin	0.047	0
+bin	0.048	0
+bin	0.049	0
+bin	0.05	0
+bin	0.051	0
+bin	0.052	0
+bin	0.053	0
+bin	0.054	0
+bin	0.055	0
+bin	0.056	0
+bin	0.057	0
+bin	0.058	0
+bin	0.059	0
+bin	0.06	0
+bin	0.061	0
+bin	0.062	0
+bin	0.063	0
+bin	0.064	0
+bin	0.065	0
+bin	0.066	0
+bin	0.067	0
+bin	0.068	0
+bin	0.069	0
+bin	0.07	1
+bin	0.071	0
+bin	0.072	0
+bin	0.073	0
+bin	0.074	0
+bin	0.075	0
+bin	0.076	0
+bin	0.077	0
+bin	0.078	0
+bin	0.079	0
+bin	0.08	0
+bin	0.081	0
+bin	0.082	0
+bin	0.083	0
+bin	0.084	0
+bin	0.085	0
+bin	0.086	0
+bin	0.087	0
+bin	0.088	0
+bin	0.089	0
 statistic Wireless_12_1m.hostF.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00077640723655225
-field stddev 0.0038820361827612
+field count 27
+field mean 0.003177463976042
+field stddev 0.013849511123443
 field min 0
-field max 0.019410180913806
-field sum 0.019410180913806
-field sqrsum 0.00037675512310669
+field max 0.070998648154411
+field sum 0.085791527353134
+field sqrsum 0.005259632404932
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0005	0
+bin	0	25
 bin	0.001	0
-bin	0.0015	0
 bin	0.002	0
-bin	0.0025	0
 bin	0.003	0
-bin	0.0035	0
 bin	0.004	0
-bin	0.0045	0
 bin	0.005	0
-bin	0.0055	0
 bin	0.006	0
-bin	0.0065	0
 bin	0.007	0
-bin	0.0075	0
 bin	0.008	0
-bin	0.0085	0
 bin	0.009	0
-bin	0.0095	0
 bin	0.01	0
-bin	0.0105	0
 bin	0.011	0
-bin	0.0115	0
 bin	0.012	0
-bin	0.0125	0
 bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
+bin	0.014	1
 bin	0.015	0
-bin	0.0155	0
 bin	0.016	0
-bin	0.0165	0
 bin	0.017	0
-bin	0.0175	0
 bin	0.018	0
-bin	0.0185	0
-bin	0.019	1
-bin	0.0195	0
+bin	0.019	0
 bin	0.02	0
-bin	0.0205	0
 bin	0.021	0
-bin	0.0215	0
 bin	0.022	0
-bin	0.0225	0
 bin	0.023	0
-bin	0.0235	0
 bin	0.024	0
-bin	0.0245	0
+bin	0.025	0
+bin	0.026	0
+bin	0.027	0
+bin	0.028	0
+bin	0.029	0
+bin	0.03	0
+bin	0.031	0
+bin	0.032	0
+bin	0.033	0
+bin	0.034	0
+bin	0.035	0
+bin	0.036	0
+bin	0.037	0
+bin	0.038	0
+bin	0.039	0
+bin	0.04	0
+bin	0.041	0
+bin	0.042	0
+bin	0.043	0
+bin	0.044	0
+bin	0.045	0
+bin	0.046	0
+bin	0.047	0
+bin	0.048	0
+bin	0.049	0
+bin	0.05	0
+bin	0.051	0
+bin	0.052	0
+bin	0.053	0
+bin	0.054	0
+bin	0.055	0
+bin	0.056	0
+bin	0.057	0
+bin	0.058	0
+bin	0.059	0
+bin	0.06	0
+bin	0.061	0
+bin	0.062	0
+bin	0.063	0
+bin	0.064	0
+bin	0.065	0
+bin	0.066	0
+bin	0.067	0
+bin	0.068	0
+bin	0.069	0
+bin	0.07	1
+bin	0.071	0
+bin	0.072	0
+bin	0.073	0
+bin	0.074	0
+bin	0.075	0
+bin	0.076	0
+bin	0.077	0
+bin	0.078	0
+bin	0.079	0
+bin	0.08	0
+bin	0.081	0
+bin	0.082	0
+bin	0.083	0
+bin	0.084	0
+bin	0.085	0
+bin	0.086	0
+bin	0.087	0
+bin	0.088	0
+bin	0.089	0
 scalar Wireless_12_1m.hostF.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -3454,8 +3529,8 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostG.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostG.wlan[0].mac numRetry 0
-scalar Wireless_12_1m.hostG.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_12_1m.hostG.wlan[0].mac numRetry 1
+scalar Wireless_12_1m.hostG.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostG.wlan[0].mac numGivenUp 0
 scalar Wireless_12_1m.hostG.wlan[0].mac numCollision 1
 scalar Wireless_12_1m.hostG.wlan[0].mac numSent 1
@@ -3470,11 +3545,11 @@ scalar Wireless_12_1m.hostG.wlan[0].mac packetDropIncorrectlyReceived:sum(packet
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostG.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostG.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostG.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostG.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -3498,30 +3573,30 @@ scalar Wireless_12_1m.hostG.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostG.wlan[0].radio radioMode:count 5
+scalar Wireless_12_1m.hostG.wlan[0].radio radioMode:count 7
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostG.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostG.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostG.wlan[0].radio transmissionState:count 4
+scalar Wireless_12_1m.hostG.wlan[0].radio transmissionState:count 8
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostG.wlan[0].radio minSnir:histogram
-field count 25
-field mean 188711.01812817
-field stddev 143298.29761548
-field min 1.3666048888009
+field count 26
+field mean 181453.16647573
+field stddev 145198.528543
+field min 2.1382686909347
 field max 743425.18517283
-field sum 4717775.4532042
-field sqrsum 1383121859462.1
+field sum 4717782.328369
+field sqrsum 1383121859502.1
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	1
+bin	0	2
 bin	20000	0
 bin	40000	4
 bin	60000	2
@@ -3570,226 +3645,205 @@ bin	900000	0
 bin	920000	0
 bin	940000	0
 statistic Wireless_12_1m.hostG.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039783837086627
-field stddev 0.19891918543313
+field count 26
+field mean 0.023221920756641
+field stddev 0.11836656555804
 field min 0
-field max 0.99459592716567
-field sum 0.99459592716567
-field sqrsum 0.98922105833453
+field max 0.60356172044721
+field sum 0.60376993967267
+field sqrsum 0.36428679374445
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
+bin	0.01	0
 bin	0.02	0
+bin	0.03	0
 bin	0.04	0
+bin	0.05	0
 bin	0.06	0
+bin	0.07	0
 bin	0.08	0
+bin	0.09	0
 bin	0.1	0
+bin	0.11	0
 bin	0.12	0
+bin	0.13	0
 bin	0.14	0
+bin	0.15	0
 bin	0.16	0
+bin	0.17	0
 bin	0.18	0
+bin	0.19	0
 bin	0.2	0
+bin	0.21	0
 bin	0.22	0
+bin	0.23	0
 bin	0.24	0
+bin	0.25	0
 bin	0.26	0
+bin	0.27	0
 bin	0.28	0
+bin	0.29	0
 bin	0.3	0
+bin	0.31	0
 bin	0.32	0
+bin	0.33	0
 bin	0.34	0
+bin	0.35	0
 bin	0.36	0
+bin	0.37	0
 bin	0.38	0
+bin	0.39	0
 bin	0.4	0
+bin	0.41	0
 bin	0.42	0
+bin	0.43	0
 bin	0.44	0
+bin	0.45	0
 bin	0.46	0
+bin	0.47	0
 bin	0.48	0
+bin	0.49	0
 bin	0.5	0
+bin	0.51	0
 bin	0.52	0
+bin	0.53	0
 bin	0.54	0
+bin	0.55	0
 bin	0.56	0
+bin	0.57	0
 bin	0.58	0
-bin	0.6	0
+bin	0.59	0
+bin	0.6	1
+bin	0.61	0
 bin	0.62	0
+bin	0.63	0
 bin	0.64	0
+bin	0.65	0
 bin	0.66	0
+bin	0.67	0
 bin	0.68	0
+bin	0.69	0
 bin	0.7	0
+bin	0.71	0
 bin	0.72	0
+bin	0.73	0
 bin	0.74	0
+bin	0.75	0
 bin	0.76	0
-bin	0.78	0
-bin	0.8	0
-bin	0.82	0
-bin	0.84	0
-bin	0.86	0
-bin	0.88	0
-bin	0.9	0
-bin	0.92	0
-bin	0.94	0
-bin	0.96	0
-bin	0.98	1
-bin	1	0
-bin	1.02	0
-bin	1.04	0
-bin	1.06	0
-bin	1.08	0
-bin	1.1	0
-bin	1.12	0
-bin	1.14	0
-bin	1.16	0
-bin	1.18	0
-bin	1.2	0
-bin	1.22	0
-bin	1.24	0
-bin	1.26	0
 statistic Wireless_12_1m.hostG.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00038770601293077
-field stddev 0.0019385300646538
+field count 26
+field mean 6.6349386498996e-05
+field stddev 0.0003382375844266
 field min 0
-field max 0.0096926503232692
-field sum 0.0096926503232692
-field sqrsum 9.394747028917e-05
+field max 0.0017246955398962
+field sum 0.0017250840489739
+field sqrsum 2.9745748562771e-06
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
+bin	5e-05	0
+bin	0.0001	0
+bin	0.00015	0
 bin	0.0002	0
+bin	0.00025	0
+bin	0.0003	0
+bin	0.00035	0
 bin	0.0004	0
+bin	0.00045	0
+bin	0.0005	0
+bin	0.00055	0
 bin	0.0006	0
+bin	0.00065	0
+bin	0.0007	0
+bin	0.00075	0
 bin	0.0008	0
+bin	0.00085	0
+bin	0.0009	0
+bin	0.00095	0
 bin	0.001	0
+bin	0.00105	0
+bin	0.0011	0
+bin	0.00115	0
 bin	0.0012	0
+bin	0.00125	0
+bin	0.0013	0
+bin	0.00135	0
 bin	0.0014	0
+bin	0.00145	0
+bin	0.0015	0
+bin	0.00155	0
 bin	0.0016	0
+bin	0.00165	0
+bin	0.0017	1
+bin	0.00175	0
 bin	0.0018	0
+bin	0.00185	0
+bin	0.0019	0
+bin	0.00195	0
 bin	0.002	0
+bin	0.00205	0
+bin	0.0021	0
+bin	0.00215	0
 bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
-bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
-bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	1
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
 statistic Wireless_12_1m.hostG.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00038770601293077
-field stddev 0.0019385300646538
+field count 26
+field mean 6.6349386498996e-05
+field stddev 0.0003382375844266
 field min 0
-field max 0.0096926503232692
-field sum 0.0096926503232692
-field sqrsum 9.394747028917e-05
+field max 0.0017246955398962
+field sum 0.0017250840489739
+field sqrsum 2.9745748562771e-06
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
+bin	5e-05	0
+bin	0.0001	0
+bin	0.00015	0
 bin	0.0002	0
+bin	0.00025	0
+bin	0.0003	0
+bin	0.00035	0
 bin	0.0004	0
+bin	0.00045	0
+bin	0.0005	0
+bin	0.00055	0
 bin	0.0006	0
+bin	0.00065	0
+bin	0.0007	0
+bin	0.00075	0
 bin	0.0008	0
+bin	0.00085	0
+bin	0.0009	0
+bin	0.00095	0
 bin	0.001	0
+bin	0.00105	0
+bin	0.0011	0
+bin	0.00115	0
 bin	0.0012	0
+bin	0.00125	0
+bin	0.0013	0
+bin	0.00135	0
 bin	0.0014	0
+bin	0.00145	0
+bin	0.0015	0
+bin	0.00155	0
 bin	0.0016	0
+bin	0.00165	0
+bin	0.0017	1
+bin	0.00175	0
 bin	0.0018	0
+bin	0.00185	0
+bin	0.0019	0
+bin	0.00195	0
 bin	0.002	0
+bin	0.00205	0
+bin	0.0021	0
+bin	0.00215	0
 bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
-bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
-bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	1
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
 scalar Wireless_12_1m.hostG.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -3980,27 +4034,27 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostH.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostH.wlan[0].mac numRetry 1
-scalar Wireless_12_1m.hostH.wlan[0].mac numSentWithoutRetry 0
+scalar Wireless_12_1m.hostH.wlan[0].mac numRetry 0
+scalar Wireless_12_1m.hostH.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostH.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostH.wlan[0].mac numCollision 0
+scalar Wireless_12_1m.hostH.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostH.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostH.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostH.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostH.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostH.wlan[0].mac packetDropIncorrectlyReceived:count 0
+scalar Wireless_12_1m.hostH.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostH.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+scalar Wireless_12_1m.hostH.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostH.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostH.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostH.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostH.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -4024,30 +4078,30 @@ scalar Wireless_12_1m.hostH.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostH.wlan[0].radio radioMode:count 7
+scalar Wireless_12_1m.hostH.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostH.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostH.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostH.wlan[0].radio transmissionState:count 8
+scalar Wireless_12_1m.hostH.wlan[0].radio transmissionState:count 4
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostH.wlan[0].radio minSnir:histogram
-field count 24
-field mean 389187.03508977
-field stddev 983371.52496758
-field min 49832.85200654
+field count 27
+field mean 345944.19957824
+field stddev 933260.5671367
+field min 0.42268783138414
 field max 4929696.1888752
-field sum 9340488.8421544
-field sqrsum 25876646949460
+field sum 9340493.3886126
+field sqrsum 25876646949470
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	6
+bin	0	9
 bin	100000	16
 bin	200000	0
 bin	300000	0
@@ -4111,41 +4165,16 @@ bin	6000000	0
 bin	6100000	0
 bin	6200000	0
 statistic Wireless_12_1m.hostH.wlan[0].radio packetErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.079770661899328
+field stddev 0.26682483272057
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 1
+field sum 2.1538078712819
+field sqrsum 2.0228934547615
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
 bin	0	24
 bin	0.02	0
 bin	0.04	0
@@ -4153,7 +4182,7 @@ bin	0.06	0
 bin	0.08	0
 bin	0.1	0
 bin	0.12	0
-bin	0.14	0
+bin	0.14	1
 bin	0.16	0
 bin	0.18	0
 bin	0.2	0
@@ -4172,130 +4201,190 @@ bin	0.44	0
 bin	0.46	0
 bin	0.48	0
 bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	1
+bin	1	1
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
 statistic Wireless_12_1m.hostH.wlan[0].radio bitErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.0041234296672222
+field stddev 0.01871382089793
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 0.09675097877209
+field sum 0.111332601015
+field sqrsum 0.0095644565575495
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
-bin	0	24
+bin	0	25
+bin	0.002	0
+bin	0.004	0
+bin	0.006	0
+bin	0.008	0
+bin	0.01	0
+bin	0.012	0
+bin	0.014	1
+bin	0.016	0
+bin	0.018	0
 bin	0.02	0
+bin	0.022	0
+bin	0.024	0
+bin	0.026	0
+bin	0.028	0
+bin	0.03	0
+bin	0.032	0
+bin	0.034	0
+bin	0.036	0
+bin	0.038	0
 bin	0.04	0
+bin	0.042	0
+bin	0.044	0
+bin	0.046	0
+bin	0.048	0
+bin	0.05	0
+bin	0.052	0
+bin	0.054	0
+bin	0.056	0
+bin	0.058	0
 bin	0.06	0
+bin	0.062	0
+bin	0.064	0
+bin	0.066	0
+bin	0.068	0
+bin	0.07	0
+bin	0.072	0
+bin	0.074	0
+bin	0.076	0
+bin	0.078	0
 bin	0.08	0
+bin	0.082	0
+bin	0.084	0
+bin	0.086	0
+bin	0.088	0
+bin	0.09	0
+bin	0.092	0
+bin	0.094	0
+bin	0.096	1
+bin	0.098	0
 bin	0.1	0
+bin	0.102	0
+bin	0.104	0
+bin	0.106	0
+bin	0.108	0
+bin	0.11	0
+bin	0.112	0
+bin	0.114	0
+bin	0.116	0
+bin	0.118	0
 bin	0.12	0
-bin	0.14	0
-bin	0.16	0
-bin	0.18	0
-bin	0.2	0
-bin	0.22	0
-bin	0.24	0
-bin	0.26	0
-bin	0.28	0
-bin	0.3	0
-bin	0.32	0
-bin	0.34	0
-bin	0.36	0
-bin	0.38	0
-bin	0.4	0
-bin	0.42	0
-bin	0.44	0
-bin	0.46	0
-bin	0.48	0
-bin	0.5	0
+bin	0.122	0
 statistic Wireless_12_1m.hostH.wlan[0].radio symbolErrorRate:histogram
-field count 24
-field mean 0
-field stddev 0
+field count 27
+field mean 0.0041234296672222
+field stddev 0.01871382089793
 field min 0
-field max 0
-field sum 0
-field sqrsum 0
+field max 0.09675097877209
+field sum 0.111332601015
+field sqrsum 0.0095644565575495
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	-0.5	0
-bin	-0.48	0
-bin	-0.46	0
-bin	-0.44	0
-bin	-0.42	0
-bin	-0.4	0
-bin	-0.38	0
-bin	-0.36	0
-bin	-0.34	0
-bin	-0.32	0
-bin	-0.3	0
-bin	-0.28	0
-bin	-0.26	0
-bin	-0.24	0
-bin	-0.22	0
-bin	-0.2	0
-bin	-0.18	0
-bin	-0.16	0
-bin	-0.14	0
-bin	-0.12	0
-bin	-0.1	0
-bin	-0.08	0
-bin	-0.06	0
-bin	-0.04	0
-bin	-0.02	0
-bin	0	24
+bin	0	25
+bin	0.002	0
+bin	0.004	0
+bin	0.006	0
+bin	0.008	0
+bin	0.01	0
+bin	0.012	0
+bin	0.014	1
+bin	0.016	0
+bin	0.018	0
 bin	0.02	0
+bin	0.022	0
+bin	0.024	0
+bin	0.026	0
+bin	0.028	0
+bin	0.03	0
+bin	0.032	0
+bin	0.034	0
+bin	0.036	0
+bin	0.038	0
 bin	0.04	0
+bin	0.042	0
+bin	0.044	0
+bin	0.046	0
+bin	0.048	0
+bin	0.05	0
+bin	0.052	0
+bin	0.054	0
+bin	0.056	0
+bin	0.058	0
 bin	0.06	0
+bin	0.062	0
+bin	0.064	0
+bin	0.066	0
+bin	0.068	0
+bin	0.07	0
+bin	0.072	0
+bin	0.074	0
+bin	0.076	0
+bin	0.078	0
 bin	0.08	0
+bin	0.082	0
+bin	0.084	0
+bin	0.086	0
+bin	0.088	0
+bin	0.09	0
+bin	0.092	0
+bin	0.094	0
+bin	0.096	1
+bin	0.098	0
 bin	0.1	0
+bin	0.102	0
+bin	0.104	0
+bin	0.106	0
+bin	0.108	0
+bin	0.11	0
+bin	0.112	0
+bin	0.114	0
+bin	0.116	0
+bin	0.118	0
 bin	0.12	0
-bin	0.14	0
-bin	0.16	0
-bin	0.18	0
-bin	0.2	0
-bin	0.22	0
-bin	0.24	0
-bin	0.26	0
-bin	0.28	0
-bin	0.3	0
-bin	0.32	0
-bin	0.34	0
-bin	0.36	0
-bin	0.38	0
-bin	0.4	0
-bin	0.42	0
-bin	0.44	0
-bin	0.46	0
-bin	0.48	0
-bin	0.5	0
+bin	0.122	0
 scalar Wireless_12_1m.hostH.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -4486,19 +4575,19 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostI.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostI.wlan[0].mac numRetry 0
-scalar Wireless_12_1m.hostI.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_12_1m.hostI.wlan[0].mac numRetry 1
+scalar Wireless_12_1m.hostI.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostI.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostI.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostI.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostI.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostI.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostI.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostI.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostI.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostI.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostI.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostI.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
@@ -4530,30 +4619,30 @@ scalar Wireless_12_1m.hostI.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostI.wlan[0].radio radioMode:count 5
+scalar Wireless_12_1m.hostI.wlan[0].radio radioMode:count 7
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostI.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostI.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostI.wlan[0].radio transmissionState:count 4
+scalar Wireless_12_1m.hostI.wlan[0].radio transmissionState:count 8
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostI.wlan[0].radio minSnir:histogram
-field count 25
-field mean 373619.60631027
-field stddev 965808.31202796
-field min 1.3156022484611
+field count 26
+field mean 359249.65642661
+field stddev 949127.57293745
+field min 1.0095198166765
 field max 4929696.1888752
-field sum 9340490.1577567
-field sqrsum 25876646949461
+field sum 9340491.0670918
+field sqrsum 25876646949462
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	7
+bin	0	8
 bin	100000	16
 bin	200000	0
 bin	300000	0
@@ -4617,13 +4706,13 @@ bin	6000000	0
 bin	6100000	0
 bin	6200000	0
 statistic Wireless_12_1m.hostI.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039887309722695
-field stddev 0.19943654861348
+field count 26
+field mean 0.076899582383174
+field stddev 0.27166350214977
 field min 0
-field max 0.99718274306738
-field sum 0.99718274306738
-field sqrsum 0.99437342307139
+field max 0.99999419278206
+field sum 1.9993891419625
+field sqrsum 1.9987786500453
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
@@ -4676,7 +4765,7 @@ bin	0.9	0
 bin	0.92	0
 bin	0.94	0
 bin	0.96	0
-bin	0.98	1
+bin	0.98	2
 bin	1	0
 bin	1.02	0
 bin	1.04	0
@@ -4692,167 +4781,141 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostI.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.0004358167370372
-field stddev 0.002179083685186
+field count 26
+field mean 0.0013835416225575
+field stddev 0.0050337121843883
 field min 0
-field max 0.01089541842593
-field sum 0.01089541842593
-field sqrsum 0.00011871014267609
+field max 0.02224221210841
+field sum 0.035972082186494
+field sqrsum 0.00068322533183656
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
 bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	0
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
+bin	0.0065	0
 bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	1
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	1
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	1
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
 statistic Wireless_12_1m.hostI.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.0004358167370372
-field stddev 0.002179083685186
+field count 26
+field mean 0.0013835416225575
+field stddev 0.0050337121843883
 field min 0
-field max 0.01089541842593
-field sum 0.01089541842593
-field sqrsum 0.00011871014267609
+field max 0.02224221210841
+field sum 0.035972082186494
+field sqrsum 0.00068322533183656
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
 bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	0
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
+bin	0.0065	0
 bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	1
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	1
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	1
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
 scalar Wireless_12_1m.hostI.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -5043,19 +5106,19 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostJ.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostJ.wlan[0].mac numRetry 0
-scalar Wireless_12_1m.hostJ.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_12_1m.hostJ.wlan[0].mac numRetry 1
+scalar Wireless_12_1m.hostJ.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostJ.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostJ.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostJ.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostJ.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostJ.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostJ.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostJ.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostJ.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostJ.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostJ.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostJ.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
@@ -5087,30 +5150,30 @@ scalar Wireless_12_1m.hostJ.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostJ.wlan[0].radio radioMode:count 5
+scalar Wireless_12_1m.hostJ.wlan[0].radio radioMode:count 7
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostJ.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostJ.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostJ.wlan[0].radio transmissionState:count 4
+scalar Wireless_12_1m.hostJ.wlan[0].radio transmissionState:count 8
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostJ.wlan[0].radio minSnir:histogram
-field count 25
-field mean 275215.63419407
-field stddev 601089.47379879
-field min 1.0154438810441
+field count 26
+field mean 264630.54160909
+field stddev 591413.02158646
+field min 1.4538237479958
 field max 3136599.3679114
-field sum 6880390.8548516
-field sqrsum 10564996464902
+field sum 6880394.0818364
+field sqrsum 10564996464911
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	2
+bin	0	3
 bin	50000	6
 bin	100000	1
 bin	150000	14
@@ -5191,13 +5254,13 @@ bin	3850000	0
 bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostJ.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039999724685842
-field stddev 0.19999862342921
+field count 26
+field mean 0.045667019613103
+field stddev 0.19582099532773
 field min 0
-field max 0.99999311714606
-field sum 0.99999311714606
-field sqrsum 0.99998623433949
+field max 0.98608546916972
+field sum 1.1873425099407
+field sqrsum 1.0128689489675
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
@@ -5211,7 +5274,7 @@ bin	0.12	0
 bin	0.14	0
 bin	0.16	0
 bin	0.18	0
-bin	0.2	0
+bin	0.2	1
 bin	0.22	0
 bin	0.24	0
 bin	0.26	0
@@ -5264,141 +5327,130 @@ bin	1.18	0
 bin	1.2	0
 bin	1.22	0
 bin	1.24	0
-bin	1.26	0
 statistic Wireless_12_1m.hostJ.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.00087728710756832
-field stddev 0.0043864355378416
+field count 26
+field mean 0.0003216481833787
+field stddev 0.0015567668437332
 field min 0
-field max 0.021932177689208
-field sum 0.021932177689208
-field sqrsum 0.000481020418191
+field max 0.0079436942063926
+field sum 0.0083628527678461
+field sqrsum 6.3277971544316e-05
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
 bin	0	24
-bin	0.0005	0
+bin	0.0002	0
+bin	0.0004	1
+bin	0.0006	0
+bin	0.0008	0
 bin	0.001	0
-bin	0.0015	0
+bin	0.0012	0
+bin	0.0014	0
+bin	0.0016	0
+bin	0.0018	0
 bin	0.002	0
-bin	0.0025	0
+bin	0.0022	0
+bin	0.0024	0
+bin	0.0026	0
+bin	0.0028	0
 bin	0.003	0
-bin	0.0035	0
+bin	0.0032	0
+bin	0.0034	0
+bin	0.0036	0
+bin	0.0038	0
 bin	0.004	0
-bin	0.0045	0
+bin	0.0042	0
+bin	0.0044	0
+bin	0.0046	0
+bin	0.0048	0
 bin	0.005	0
-bin	0.0055	0
+bin	0.0052	0
+bin	0.0054	0
+bin	0.0056	0
+bin	0.0058	0
 bin	0.006	0
-bin	0.0065	0
+bin	0.0062	0
+bin	0.0064	0
+bin	0.0066	0
+bin	0.0068	0
 bin	0.007	0
-bin	0.0075	0
+bin	0.0072	0
+bin	0.0074	0
+bin	0.0076	0
+bin	0.0078	1
 bin	0.008	0
-bin	0.0085	0
+bin	0.0082	0
+bin	0.0084	0
+bin	0.0086	0
+bin	0.0088	0
 bin	0.009	0
-bin	0.0095	0
+bin	0.0092	0
+bin	0.0094	0
+bin	0.0096	0
+bin	0.0098	0
 bin	0.01	0
-bin	0.0105	0
-bin	0.011	0
-bin	0.0115	0
-bin	0.012	0
-bin	0.0125	0
-bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
-bin	0.015	0
-bin	0.0155	0
-bin	0.016	0
-bin	0.0165	0
-bin	0.017	0
-bin	0.0175	0
-bin	0.018	0
-bin	0.0185	0
-bin	0.019	0
-bin	0.0195	0
-bin	0.02	0
-bin	0.0205	0
-bin	0.021	0
-bin	0.0215	1
-bin	0.022	0
-bin	0.0225	0
-bin	0.023	0
-bin	0.0235	0
-bin	0.024	0
-bin	0.0245	0
-bin	0.025	0
-bin	0.0255	0
-bin	0.026	0
-bin	0.0265	0
-bin	0.027	0
-bin	0.0275	0
 statistic Wireless_12_1m.hostJ.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.00087728710756832
-field stddev 0.0043864355378416
+field count 26
+field mean 0.0003216481833787
+field stddev 0.0015567668437332
 field min 0
-field max 0.021932177689208
-field sum 0.021932177689208
-field sqrsum 0.000481020418191
+field max 0.0079436942063926
+field sum 0.0083628527678461
+field sqrsum 6.3277971544316e-05
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
 bin	0	24
-bin	0.0005	0
+bin	0.0002	0
+bin	0.0004	1
+bin	0.0006	0
+bin	0.0008	0
 bin	0.001	0
-bin	0.0015	0
+bin	0.0012	0
+bin	0.0014	0
+bin	0.0016	0
+bin	0.0018	0
 bin	0.002	0
-bin	0.0025	0
+bin	0.0022	0
+bin	0.0024	0
+bin	0.0026	0
+bin	0.0028	0
 bin	0.003	0
-bin	0.0035	0
+bin	0.0032	0
+bin	0.0034	0
+bin	0.0036	0
+bin	0.0038	0
 bin	0.004	0
-bin	0.0045	0
+bin	0.0042	0
+bin	0.0044	0
+bin	0.0046	0
+bin	0.0048	0
 bin	0.005	0
-bin	0.0055	0
+bin	0.0052	0
+bin	0.0054	0
+bin	0.0056	0
+bin	0.0058	0
 bin	0.006	0
-bin	0.0065	0
+bin	0.0062	0
+bin	0.0064	0
+bin	0.0066	0
+bin	0.0068	0
 bin	0.007	0
-bin	0.0075	0
+bin	0.0072	0
+bin	0.0074	0
+bin	0.0076	0
+bin	0.0078	1
 bin	0.008	0
-bin	0.0085	0
+bin	0.0082	0
+bin	0.0084	0
+bin	0.0086	0
+bin	0.0088	0
 bin	0.009	0
-bin	0.0095	0
+bin	0.0092	0
+bin	0.0094	0
+bin	0.0096	0
+bin	0.0098	0
 bin	0.01	0
-bin	0.0105	0
-bin	0.011	0
-bin	0.0115	0
-bin	0.012	0
-bin	0.0125	0
-bin	0.013	0
-bin	0.0135	0
-bin	0.014	0
-bin	0.0145	0
-bin	0.015	0
-bin	0.0155	0
-bin	0.016	0
-bin	0.0165	0
-bin	0.017	0
-bin	0.0175	0
-bin	0.018	0
-bin	0.0185	0
-bin	0.019	0
-bin	0.0195	0
-bin	0.02	0
-bin	0.0205	0
-bin	0.021	0
-bin	0.0215	1
-bin	0.022	0
-bin	0.0225	0
-bin	0.023	0
-bin	0.0235	0
-bin	0.024	0
-bin	0.0245	0
-bin	0.025	0
-bin	0.0255	0
-bin	0.026	0
-bin	0.0265	0
-bin	0.027	0
-bin	0.0275	0
 scalar Wireless_12_1m.hostJ.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -5589,8 +5641,8 @@ attr title "packets removed, count"
 scalar Wireless_12_1m.hostK.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
 attr interpolationmode none
 attr title "packets removed, sum(packetBytes)"
-scalar Wireless_12_1m.hostK.wlan[0].mac numRetry 0
-scalar Wireless_12_1m.hostK.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_12_1m.hostK.wlan[0].mac numRetry 2
+scalar Wireless_12_1m.hostK.wlan[0].mac numSentWithoutRetry 0
 scalar Wireless_12_1m.hostK.wlan[0].mac numGivenUp 0
 scalar Wireless_12_1m.hostK.wlan[0].mac numCollision 1
 scalar Wireless_12_1m.hostK.wlan[0].mac numSent 1
@@ -5633,26 +5685,26 @@ scalar Wireless_12_1m.hostK.wlan[0].mac linkBroken:count 0
 attr interpolationmode none
 attr source linkBroken
 attr title "link break, count"
-scalar Wireless_12_1m.hostK.wlan[0].radio radioMode:count 5
+scalar Wireless_12_1m.hostK.wlan[0].radio radioMode:count 9
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostK.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostK.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
-scalar Wireless_12_1m.hostK.wlan[0].radio transmissionState:count 4
+scalar Wireless_12_1m.hostK.wlan[0].radio transmissionState:count 12
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostK.wlan[0].radio minSnir:histogram
 field count 25
-field mean 275215.63961079
-field stddev 601089.47121536
-field min 1.1508618905202
+field mean 275215.66560707
+field stddev 601089.45881679
+field min 1.8007689849065
 field max 3136599.3679114
-field sum 6880390.9902696
-field sqrsum 10564996464902
+field sum 6880391.6401767
+field sqrsum 10564996464904
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
@@ -5738,12 +5790,12 @@ bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostK.wlan[0].radio packetErrorRate:histogram
 field count 25
-field mean 0.039992783169936
-field stddev 0.19996391584968
+field mean 0.03433191137531
+field stddev 0.17165955687655
 field min 0
-field max 0.9998195792484
-field sum 0.9998195792484
-field sqrsum 0.99963919104844
+field max 0.85829778438274
+field sum 0.85829778438274
+field sqrsum 0.73667508667632
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
@@ -5789,252 +5841,135 @@ bin	0.76	0
 bin	0.78	0
 bin	0.8	0
 bin	0.82	0
-bin	0.84	0
+bin	0.84	1
 bin	0.86	0
 bin	0.88	0
 bin	0.9	0
 bin	0.92	0
 bin	0.94	0
 bin	0.96	0
-bin	0.98	1
+bin	0.98	0
 bin	1	0
 bin	1.02	0
 bin	1.04	0
 bin	1.06	0
 bin	1.08	0
-bin	1.1	0
-bin	1.12	0
-bin	1.14	0
-bin	1.16	0
-bin	1.18	0
-bin	1.2	0
-bin	1.22	0
-bin	1.24	0
-bin	1.26	0
 statistic Wireless_12_1m.hostK.wlan[0].radio bitErrorRate:histogram
 field count 25
-field mean 0.00063815460510581
-field stddev 0.0031907730255291
+field mean 0.00014555746605369
+field stddev 0.00072778733026845
 field min 0
-field max 0.015953865127645
-field sum 0.015953865127645
-field sqrsum 0.0002545258125111
+field max 0.0036389366513423
+field sum 0.0036389366513423
+field sqrsum 1.3241859952482e-05
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
 bin	0	24
+bin	0.0001	0
 bin	0.0002	0
+bin	0.0003	0
 bin	0.0004	0
+bin	0.0005	0
 bin	0.0006	0
+bin	0.0007	0
 bin	0.0008	0
+bin	0.0009	0
 bin	0.001	0
+bin	0.0011	0
 bin	0.0012	0
+bin	0.0013	0
 bin	0.0014	0
+bin	0.0015	0
 bin	0.0016	0
+bin	0.0017	0
 bin	0.0018	0
+bin	0.0019	0
 bin	0.002	0
+bin	0.0021	0
 bin	0.0022	0
+bin	0.0023	0
 bin	0.0024	0
+bin	0.0025	0
 bin	0.0026	0
+bin	0.0027	0
 bin	0.0028	0
+bin	0.0029	0
 bin	0.003	0
+bin	0.0031	0
 bin	0.0032	0
+bin	0.0033	0
 bin	0.0034	0
-bin	0.0036	0
+bin	0.0035	0
+bin	0.0036	1
+bin	0.0037	0
 bin	0.0038	0
+bin	0.0039	0
 bin	0.004	0
+bin	0.0041	0
 bin	0.0042	0
+bin	0.0043	0
 bin	0.0044	0
+bin	0.0045	0
 bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
-bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
-bin	0.014	0
-bin	0.0142	0
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
-bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	1
-bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
-bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
-bin	0.018	0
-bin	0.0182	0
-bin	0.0184	0
-bin	0.0186	0
-bin	0.0188	0
-bin	0.019	0
-bin	0.0192	0
-bin	0.0194	0
-bin	0.0196	0
-bin	0.0198	0
-bin	0.02	0
 statistic Wireless_12_1m.hostK.wlan[0].radio symbolErrorRate:histogram
 field count 25
-field mean 0.00063815460510581
-field stddev 0.0031907730255291
+field mean 0.00014555746605369
+field stddev 0.00072778733026845
 field min 0
-field max 0.015953865127645
-field sum 0.015953865127645
-field sqrsum 0.0002545258125111
+field max 0.0036389366513423
+field sum 0.0036389366513423
+field sqrsum 1.3241859952482e-05
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
 bin	0	24
+bin	0.0001	0
 bin	0.0002	0
+bin	0.0003	0
 bin	0.0004	0
+bin	0.0005	0
 bin	0.0006	0
+bin	0.0007	0
 bin	0.0008	0
+bin	0.0009	0
 bin	0.001	0
+bin	0.0011	0
 bin	0.0012	0
+bin	0.0013	0
 bin	0.0014	0
+bin	0.0015	0
 bin	0.0016	0
+bin	0.0017	0
 bin	0.0018	0
+bin	0.0019	0
 bin	0.002	0
+bin	0.0021	0
 bin	0.0022	0
+bin	0.0023	0
 bin	0.0024	0
+bin	0.0025	0
 bin	0.0026	0
+bin	0.0027	0
 bin	0.0028	0
+bin	0.0029	0
 bin	0.003	0
+bin	0.0031	0
 bin	0.0032	0
+bin	0.0033	0
 bin	0.0034	0
-bin	0.0036	0
+bin	0.0035	0
+bin	0.0036	1
+bin	0.0037	0
 bin	0.0038	0
+bin	0.0039	0
 bin	0.004	0
+bin	0.0041	0
 bin	0.0042	0
+bin	0.0043	0
 bin	0.0044	0
+bin	0.0045	0
 bin	0.0046	0
-bin	0.0048	0
-bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
-bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
-bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
-bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
-bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
-bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
-bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
-bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
-bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
-bin	0.014	0
-bin	0.0142	0
-bin	0.0144	0
-bin	0.0146	0
-bin	0.0148	0
-bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	1
-bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
-bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
-bin	0.018	0
-bin	0.0182	0
-bin	0.0184	0
-bin	0.0186	0
-bin	0.0188	0
-bin	0.019	0
-bin	0.0192	0
-bin	0.0194	0
-bin	0.0196	0
-bin	0.0198	0
-bin	0.02	0
 scalar Wireless_12_1m.hostK.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -6228,16 +6163,16 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostL.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostL.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostL.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostL.wlan[0].mac numCollision 0
+scalar Wireless_12_1m.hostL.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostL.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostL.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostL.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostL.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostL.wlan[0].mac packetDropIncorrectlyReceived:count 0
+scalar Wireless_12_1m.hostL.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostL.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+scalar Wireless_12_1m.hostL.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
@@ -6273,7 +6208,7 @@ scalar Wireless_12_1m.hostL.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostL.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostL.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -6282,17 +6217,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostL.wlan[0].radio minSnir:histogram
-field count 25
-field mean 306813.57100078
-field stddev 616886.32183209
-field min 3.1906555829181
+field count 27
+field mean 284086.84192563
+field stddev 598314.61333934
+field min 1.0512887103994
 field max 3136599.3679114
-field sum 7670339.2750194
-field sqrsum 11486533801281
+field sum 7670344.7319919
+field sqrsum 11486533801313
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	1
+bin	0	3
 bin	50000	7
 bin	100000	1
 bin	150000	13
@@ -6373,188 +6308,206 @@ bin	3850000	0
 bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostL.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.0036169753888919
-field stddev 0.018084876944459
+field count 27
+field mean 0.073946903768139
+field stddev 0.26640098112892
 field min 0
-field max 0.090424384722297
-field sum 0.090424384722297
-field sqrsum 0.008176569352406
+field max 0.99998174465009
+field sum 1.9965664017398
+field sqrsum 1.9928464549839
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.002	0
-bin	0.004	0
-bin	0.006	0
-bin	0.008	0
-bin	0.01	0
-bin	0.012	0
-bin	0.014	0
-bin	0.016	0
-bin	0.018	0
+bin	0	25
 bin	0.02	0
-bin	0.022	0
-bin	0.024	0
-bin	0.026	0
-bin	0.028	0
-bin	0.03	0
-bin	0.032	0
-bin	0.034	0
-bin	0.036	0
-bin	0.038	0
 bin	0.04	0
-bin	0.042	0
-bin	0.044	0
-bin	0.046	0
-bin	0.048	0
-bin	0.05	0
-bin	0.052	0
-bin	0.054	0
-bin	0.056	0
-bin	0.058	0
 bin	0.06	0
-bin	0.062	0
-bin	0.064	0
-bin	0.066	0
-bin	0.068	0
-bin	0.07	0
-bin	0.072	0
-bin	0.074	0
-bin	0.076	0
-bin	0.078	0
 bin	0.08	0
-bin	0.082	0
-bin	0.084	0
-bin	0.086	0
-bin	0.088	0
-bin	0.09	1
-bin	0.092	0
-bin	0.094	0
-bin	0.096	0
-bin	0.098	0
 bin	0.1	0
-bin	0.102	0
-bin	0.104	0
-bin	0.106	0
-bin	0.108	0
-bin	0.11	0
-bin	0.112	0
-bin	0.114	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	2
+bin	1	0
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
 statistic Wireless_12_1m.hostL.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 7.0722959843207e-06
-field stddev 3.5361479921603e-05
+field count 27
+field mean 0.0011337746473288
+field stddev 0.0043001514722273
 field min 0
-field max 0.00017680739960802
-field sum 0.00017680739960802
-field sqrsum 3.1260856556149e-08
+field max 0.020150647427268
+field sum 0.030611915477877
+field sqrsum 0.00051548088346154
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	5e-06	0
-bin	1e-05	0
-bin	1.5e-05	0
-bin	2e-05	0
-bin	2.5e-05	0
-bin	3e-05	0
-bin	3.5e-05	0
-bin	4e-05	0
-bin	4.5e-05	0
-bin	5e-05	0
-bin	5.5e-05	0
-bin	6e-05	0
-bin	6.5e-05	0
-bin	7e-05	0
-bin	7.5e-05	0
-bin	8e-05	0
-bin	8.5e-05	0
-bin	9e-05	0
-bin	9.5e-05	0
-bin	0.0001	0
-bin	0.000105	0
-bin	0.00011	0
-bin	0.000115	0
-bin	0.00012	0
-bin	0.000125	0
-bin	0.00013	0
-bin	0.000135	0
-bin	0.00014	0
-bin	0.000145	0
-bin	0.00015	0
-bin	0.000155	0
-bin	0.00016	0
-bin	0.000165	0
-bin	0.00017	0
-bin	0.000175	1
-bin	0.00018	0
-bin	0.000185	0
-bin	0.00019	0
-bin	0.000195	0
-bin	0.0002	0
-bin	0.000205	0
-bin	0.00021	0
-bin	0.000215	0
-bin	0.00022	0
-bin	0.000225	0
+bin	0	25
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	1
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	1
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
 statistic Wireless_12_1m.hostL.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 7.0722959843207e-06
-field stddev 3.5361479921603e-05
+field count 27
+field mean 0.0011337746473288
+field stddev 0.0043001514722273
 field min 0
-field max 0.00017680739960802
-field sum 0.00017680739960802
-field sqrsum 3.1260856556149e-08
+field max 0.020150647427268
+field sum 0.030611915477877
+field sqrsum 0.00051548088346154
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	5e-06	0
-bin	1e-05	0
-bin	1.5e-05	0
-bin	2e-05	0
-bin	2.5e-05	0
-bin	3e-05	0
-bin	3.5e-05	0
-bin	4e-05	0
-bin	4.5e-05	0
-bin	5e-05	0
-bin	5.5e-05	0
-bin	6e-05	0
-bin	6.5e-05	0
-bin	7e-05	0
-bin	7.5e-05	0
-bin	8e-05	0
-bin	8.5e-05	0
-bin	9e-05	0
-bin	9.5e-05	0
-bin	0.0001	0
-bin	0.000105	0
-bin	0.00011	0
-bin	0.000115	0
-bin	0.00012	0
-bin	0.000125	0
-bin	0.00013	0
-bin	0.000135	0
-bin	0.00014	0
-bin	0.000145	0
-bin	0.00015	0
-bin	0.000155	0
-bin	0.00016	0
-bin	0.000165	0
-bin	0.00017	0
-bin	0.000175	1
-bin	0.00018	0
-bin	0.000185	0
-bin	0.00019	0
-bin	0.000195	0
-bin	0.0002	0
-bin	0.000205	0
-bin	0.00021	0
-bin	0.000215	0
-bin	0.00022	0
-bin	0.000225	0
+bin	0	25
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	1
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	1
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
 scalar Wireless_12_1m.hostL.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
@@ -6748,24 +6701,24 @@ attr title "packets removed, sum(packetBytes)"
 scalar Wireless_12_1m.hostM.wlan[0].mac numRetry 0
 scalar Wireless_12_1m.hostM.wlan[0].mac numSentWithoutRetry 1
 scalar Wireless_12_1m.hostM.wlan[0].mac numGivenUp 0
-scalar Wireless_12_1m.hostM.wlan[0].mac numCollision 1
+scalar Wireless_12_1m.hostM.wlan[0].mac numCollision 2
 scalar Wireless_12_1m.hostM.wlan[0].mac numSent 1
 scalar Wireless_12_1m.hostM.wlan[0].mac numReceived 0
 scalar Wireless_12_1m.hostM.wlan[0].mac numSentBroadcast 0
 scalar Wireless_12_1m.hostM.wlan[0].mac numReceivedBroadcast 1
-scalar Wireless_12_1m.hostM.wlan[0].mac packetDropIncorrectlyReceived:count 1
+scalar Wireless_12_1m.hostM.wlan[0].mac packetDropIncorrectlyReceived:count 2
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, count"
-scalar Wireless_12_1m.hostM.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+scalar Wireless_12_1m.hostM.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 118
 attr interpolationmode none
 attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
 attr title "packet drop: incorrectly received, sum(packetBytes)"
-scalar Wireless_12_1m.hostM.wlan[0].mac packetDropNotAddressedToUs:count 11
+scalar Wireless_12_1m.hostM.wlan[0].mac packetDropNotAddressedToUs:count 12
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, count"
-scalar Wireless_12_1m.hostM.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 649
+scalar Wireless_12_1m.hostM.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 708
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drop: not addressed to us, sum(packetBytes)"
@@ -6793,7 +6746,7 @@ scalar Wireless_12_1m.hostM.wlan[0].radio radioMode:count 5
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, count"
-scalar Wireless_12_1m.hostM.wlan[0].radio receptionState:count 54
+scalar Wireless_12_1m.hostM.wlan[0].radio receptionState:count 60
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, count"
@@ -6802,17 +6755,17 @@ attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, count"
 statistic Wireless_12_1m.hostM.wlan[0].radio minSnir:histogram
-field count 25
-field mean 306813.49093413
-field stddev 616886.36331285
-field min 1.1889893864436
+field count 27
+field mean 284087.31864961
+field stddev 598314.3782888
+field min 1.0497103689902
 field max 3136599.3679114
-field sum 7670337.2733532
-field sqrsum 11486533801272
+field sum 7670357.6035395
+field sqrsum 11486533801618
 attr source minimumSnir(packetSentToUpper)
 attr title "Min SNIR, histogram"
 bin	-inf	0
-bin	0	1
+bin	0	3
 bin	50000	7
 bin	100000	1
 bin	150000	13
@@ -6893,17 +6846,17 @@ bin	3850000	0
 bin	3900000	0
 bin	3950000	0
 statistic Wireless_12_1m.hostM.wlan[0].radio packetErrorRate:histogram
-field count 25
-field mean 0.039984908227694
-field stddev 0.19992454113847
+field count 27
+field mean 0.064574601587643
+field stddev 0.23535715127695
 field min 0
-field max 0.99962270569236
-field sum 0.99962270569236
-field sqrsum 0.99924555373571
+field max 0.99998247996996
+field sum 1.7435142428664
+field sqrsum 1.5528044426827
 attr source packetErrorRate(packetSentToUpper)
 attr title "Packet error rate, histogram"
 bin	-inf	0
-bin	0	24
+bin	0	25
 bin	0.02	0
 bin	0.04	0
 bin	0.06	0
@@ -6940,7 +6893,7 @@ bin	0.66	0
 bin	0.68	0
 bin	0.7	0
 bin	0.72	0
-bin	0.74	0
+bin	0.74	1
 bin	0.76	0
 bin	0.78	0
 bin	0.8	0
@@ -6968,213 +6921,131 @@ bin	1.22	0
 bin	1.24	0
 bin	1.26	0
 statistic Wireless_12_1m.hostM.wlan[0].radio bitErrorRate:histogram
-field count 25
-field mean 0.0005839408717383
-field stddev 0.0029197043586915
+field count 27
+field mean 0.00084301098910095
+field stddev 0.0039042571014605
 field min 0
-field max 0.014598521793458
-field sum 0.014598521793458
-field sqrsum 0.00021311683855406
+field max 0.020225802980058
+field sum 0.022761296705726
+field sqrsum 0.00041551183462103
 attr source bitErrorRate(packetSentToUpper)
 attr title "Bit error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0	25
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	1
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
+bin	0.0065	0
 bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	0
 bin	0.014	0
-bin	0.0142	0
-bin	0.0144	1
-bin	0.0146	0
-bin	0.0148	0
+bin	0.0145	0
 bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
+bin	0.0155	0
 bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
+bin	0.0165	0
 bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
+bin	0.0175	0
 bin	0.018	0
-bin	0.0182	0
-bin	0.0184	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	1
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
 statistic Wireless_12_1m.hostM.wlan[0].radio symbolErrorRate:histogram
-field count 25
-field mean 0.0005839408717383
-field stddev 0.0029197043586915
+field count 27
+field mean 0.00084301098910095
+field stddev 0.0039042571014605
 field min 0
-field max 0.014598521793458
-field sum 0.014598521793458
-field sqrsum 0.00021311683855406
+field max 0.020225802980058
+field sum 0.022761296705726
+field sqrsum 0.00041551183462103
 attr source symbolErrorRate(packetSentToUpper)
 attr title "Symbol error rate, histogram"
 bin	-inf	0
-bin	0	24
-bin	0.0002	0
-bin	0.0004	0
-bin	0.0006	0
-bin	0.0008	0
+bin	0	25
+bin	0.0005	0
 bin	0.001	0
-bin	0.0012	0
-bin	0.0014	0
-bin	0.0016	0
-bin	0.0018	0
+bin	0.0015	0
 bin	0.002	0
-bin	0.0022	0
-bin	0.0024	0
-bin	0.0026	0
-bin	0.0028	0
+bin	0.0025	1
 bin	0.003	0
-bin	0.0032	0
-bin	0.0034	0
-bin	0.0036	0
-bin	0.0038	0
+bin	0.0035	0
 bin	0.004	0
-bin	0.0042	0
-bin	0.0044	0
-bin	0.0046	0
-bin	0.0048	0
+bin	0.0045	0
 bin	0.005	0
-bin	0.0052	0
-bin	0.0054	0
-bin	0.0056	0
-bin	0.0058	0
+bin	0.0055	0
 bin	0.006	0
-bin	0.0062	0
-bin	0.0064	0
-bin	0.0066	0
-bin	0.0068	0
+bin	0.0065	0
 bin	0.007	0
-bin	0.0072	0
-bin	0.0074	0
-bin	0.0076	0
-bin	0.0078	0
+bin	0.0075	0
 bin	0.008	0
-bin	0.0082	0
-bin	0.0084	0
-bin	0.0086	0
-bin	0.0088	0
+bin	0.0085	0
 bin	0.009	0
-bin	0.0092	0
-bin	0.0094	0
-bin	0.0096	0
-bin	0.0098	0
+bin	0.0095	0
 bin	0.01	0
-bin	0.0102	0
-bin	0.0104	0
-bin	0.0106	0
-bin	0.0108	0
+bin	0.0105	0
 bin	0.011	0
-bin	0.0112	0
-bin	0.0114	0
-bin	0.0116	0
-bin	0.0118	0
+bin	0.0115	0
 bin	0.012	0
-bin	0.0122	0
-bin	0.0124	0
-bin	0.0126	0
-bin	0.0128	0
+bin	0.0125	0
 bin	0.013	0
-bin	0.0132	0
-bin	0.0134	0
-bin	0.0136	0
-bin	0.0138	0
+bin	0.0135	0
 bin	0.014	0
-bin	0.0142	0
-bin	0.0144	1
-bin	0.0146	0
-bin	0.0148	0
+bin	0.0145	0
 bin	0.015	0
-bin	0.0152	0
-bin	0.0154	0
-bin	0.0156	0
-bin	0.0158	0
+bin	0.0155	0
 bin	0.016	0
-bin	0.0162	0
-bin	0.0164	0
-bin	0.0166	0
-bin	0.0168	0
+bin	0.0165	0
 bin	0.017	0
-bin	0.0172	0
-bin	0.0174	0
-bin	0.0176	0
-bin	0.0178	0
+bin	0.0175	0
 bin	0.018	0
-bin	0.0182	0
-bin	0.0184	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	1
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	0
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
 scalar Wireless_12_1m.hostM.ipv4.ip packetDropAddressResolutionFailed:count 0
 attr interpolationmode none
 attr source packetDropReasonIsAddressResolutionFailed(packetDropped)

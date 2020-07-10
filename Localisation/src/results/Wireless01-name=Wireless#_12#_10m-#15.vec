@@ -1,0 +1,1826 @@
+version 2
+run Wireless01-255-20200710-12:28:57-3905
+attr configname Wireless01
+attr datetime 20200710-12:28:57
+attr experiment Wireless01
+attr inifile omnetpp.ini
+attr iterationvars $name=Wireless_12_10m
+attr iterationvarsf name=Wireless#_12#_10m-
+attr measurement $name=Wireless_12_10m
+attr network "${name=Wireless_3_1m,Wireless_3_5m, Wireless_3_10m, Wireless_6_1m, Wireless_6_5m, Wireless_6_10m, Wireless_12_1m, Wireless_12_5m, Wireless_12_10m }"
+attr processid 3905
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 255
+attr seedset 255
+itervar name Wireless_12_10m
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"TDOAApp\""
+param *.hostA.app[0].destAddresses "\"Broadcast\""
+param *.hostA.app[0].destPort 5000
+param *.hostA.app[0].localPort 6000
+param *.hostA.app[0].isReceiver false
+param *.hostA.app[0].Nome_arquivo "\"Wireless_12_10m.csv\""
+param *.host*.numApps 1
+param *.host*.app[0].typename "\"TDOAApp\""
+param *.host*.app[0].localPort 5000
+param *.host*.app[0].destPort 6000
+param *.host*.app[0].destAddresses "\"hostA\""
+param *.host*.app[0].isReceiver true
+param *.host*.wlan[0].typename "\"WirelessInterface\""
+param *.radioMedium.typename "\"ApskScalarRadioMedium\""
+param *.radioMedium.backgroundNoise.power -90dBm
+param *.radioMedium.mediumLimitCache.centerFrequency 2GHz
+param *.host*.wlan[0].radio.typename "\"ApskScalarRadio\""
+param *.host*.wlan[0].radio.centerFrequency 2GHz
+param *.host*.wlan[0].radio.bandwidth 2MHz
+param *.host*.wlan[0].radio.transmitter.power 1.4mW
+param *.host*.wlan[0].radio.transmitter.preambleDuration 10us
+param *.host*.wlan[0].radio.transmitter.headerLength 8B
+param *.host*.wlan[0].radio.receiver.sensitivity -85dBm
+param *.host*.wlan[0].radio.receiver.energyDetection -85dBm
+param *.host*.wlan[0].radio.receiver.snirThreshold 4dB
+param *.host*.wlan[0].mac.typename "\"CsmaCaMac\""
+param *.host*.wlan[0].mac.ackTimeout 300us
+param *.host*.wlan[0].mac.useAck true
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.wlan[0].mac.headerLength 23B
+param *.host*.**.bitrate 1Mbps
+param *.host*.ipv4.arp.typename "\"GlobalArp\""
+param **.ip.limitedBroadcast true
+
+vector 0 Wireless_12_10m.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Wireless_12_10m.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 Wireless_12_10m.hostC.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 Wireless_12_10m.hostD.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 Wireless_12_10m.hostE.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 Wireless_12_10m.hostF.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 6 Wireless_12_10m.hostG.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 Wireless_12_10m.hostH.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 8 Wireless_12_10m.hostI.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 Wireless_12_10m.hostJ.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 10 Wireless_12_10m.hostK.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 11 Wireless_12_10m.hostL.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 12 Wireless_12_10m.hostM.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 13 Wireless_12_10m.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 14 Wireless_12_10m.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 15 Wireless_12_10m.hostC.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 16 Wireless_12_10m.hostD.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 17 Wireless_12_10m.hostE.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 18 Wireless_12_10m.hostF.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 19 Wireless_12_10m.hostG.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 20 Wireless_12_10m.hostH.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 21 Wireless_12_10m.hostI.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 22 Wireless_12_10m.hostJ.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 23 Wireless_12_10m.hostK.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 24 Wireless_12_10m.hostL.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 25 Wireless_12_10m.hostM.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 26 Wireless_12_10m.hostA.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 27 Wireless_12_10m.hostA.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 28 Wireless_12_10m.hostA.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 29 Wireless_12_10m.hostA.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 30 Wireless_12_10m.hostA.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 31 Wireless_12_10m.hostA.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 32 Wireless_12_10m.hostA.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 33 Wireless_12_10m.hostA.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 34 Wireless_12_10m.hostA.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), vector(count)"
+vector 35 Wireless_12_10m.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 36 Wireless_12_10m.hostB.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 37 Wireless_12_10m.hostB.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 38 Wireless_12_10m.hostC.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 39 Wireless_12_10m.hostC.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 40 Wireless_12_10m.hostD.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 41 Wireless_12_10m.hostD.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 42 Wireless_12_10m.hostE.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 43 Wireless_12_10m.hostE.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 44 Wireless_12_10m.hostF.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 45 Wireless_12_10m.hostF.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 46 Wireless_12_10m.hostG.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 47 Wireless_12_10m.hostG.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 48 Wireless_12_10m.hostH.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 49 Wireless_12_10m.hostH.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 50 Wireless_12_10m.hostI.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 51 Wireless_12_10m.hostI.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 52 Wireless_12_10m.hostJ.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 53 Wireless_12_10m.hostJ.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 54 Wireless_12_10m.hostK.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 55 Wireless_12_10m.hostK.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 56 Wireless_12_10m.hostL.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 57 Wireless_12_10m.hostL.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 58 Wireless_12_10m.hostM.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 59 Wireless_12_10m.hostM.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 60 Wireless_12_10m.hostB.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 61 Wireless_12_10m.hostC.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 62 Wireless_12_10m.hostD.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 63 Wireless_12_10m.hostE.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 64 Wireless_12_10m.hostF.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 65 Wireless_12_10m.hostG.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 66 Wireless_12_10m.hostH.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 67 Wireless_12_10m.hostI.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 68 Wireless_12_10m.hostJ.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 69 Wireless_12_10m.hostK.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 70 Wireless_12_10m.hostL.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 71 Wireless_12_10m.hostM.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 72 Wireless_12_10m.hostB.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 73 Wireless_12_10m.hostB.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 74 Wireless_12_10m.hostB.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 75 Wireless_12_10m.hostB.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 76 Wireless_12_10m.hostC.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 77 Wireless_12_10m.hostC.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 78 Wireless_12_10m.hostC.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 79 Wireless_12_10m.hostC.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 80 Wireless_12_10m.hostD.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 81 Wireless_12_10m.hostD.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 82 Wireless_12_10m.hostD.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 83 Wireless_12_10m.hostD.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 84 Wireless_12_10m.hostE.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 85 Wireless_12_10m.hostE.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 86 Wireless_12_10m.hostE.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 87 Wireless_12_10m.hostE.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 88 Wireless_12_10m.hostF.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 89 Wireless_12_10m.hostF.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 90 Wireless_12_10m.hostF.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 91 Wireless_12_10m.hostF.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 92 Wireless_12_10m.hostG.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 93 Wireless_12_10m.hostG.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 94 Wireless_12_10m.hostG.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 95 Wireless_12_10m.hostG.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 96 Wireless_12_10m.hostH.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 97 Wireless_12_10m.hostH.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 98 Wireless_12_10m.hostH.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 99 Wireless_12_10m.hostH.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 100 Wireless_12_10m.hostI.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 101 Wireless_12_10m.hostI.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 102 Wireless_12_10m.hostI.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 103 Wireless_12_10m.hostI.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 104 Wireless_12_10m.hostJ.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 105 Wireless_12_10m.hostJ.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 106 Wireless_12_10m.hostJ.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 107 Wireless_12_10m.hostJ.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 108 Wireless_12_10m.hostK.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 109 Wireless_12_10m.hostK.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 110 Wireless_12_10m.hostK.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 111 Wireless_12_10m.hostK.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 112 Wireless_12_10m.hostL.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 113 Wireless_12_10m.hostL.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 114 Wireless_12_10m.hostL.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 115 Wireless_12_10m.hostL.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 116 Wireless_12_10m.hostM.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 117 Wireless_12_10m.hostM.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 118 Wireless_12_10m.hostM.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 119 Wireless_12_10m.hostM.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 120 Wireless_12_10m.hostG.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 121 Wireless_12_10m.hostF.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 122 Wireless_12_10m.hostE.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 123 Wireless_12_10m.hostC.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 124 Wireless_12_10m.hostA.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 125 Wireless_12_10m.hostM.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 126 Wireless_12_10m.hostI.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 127 Wireless_12_10m.hostL.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 128 Wireless_12_10m.hostH.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 129 Wireless_12_10m.hostD.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 130 Wireless_12_10m.hostB.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 131 Wireless_12_10m.hostK.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 132 Wireless_12_10m.hostJ.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 133 Wireless_12_10m.hostH.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 134 Wireless_12_10m.hostG.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 135 Wireless_12_10m.hostI.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 136 Wireless_12_10m.hostE.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 137 Wireless_12_10m.hostK.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 138 Wireless_12_10m.hostJ.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 139 Wireless_12_10m.hostC.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 140 Wireless_12_10m.hostD.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 141 Wireless_12_10m.hostF.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 142 Wireless_12_10m.hostL.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 143 Wireless_12_10m.hostM.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 144 Wireless_12_10m.hostC.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, vector(packetBytes)"
+vector 145 Wireless_12_10m.hostE.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, vector(packetBytes)"
+vector 146 Wireless_12_10m.hostA.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, vector(packetBytes)"
+vector 147 Wireless_12_10m.hostJ.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, vector(packetBytes)"
+vector 148 Wireless_12_10m.hostB.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, vector(packetBytes)"
+vector 149 Wireless_12_10m.hostB.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+0	0	0	0
+0	0	0	0
+0	0	0	2
+0	34	0.00007	3
+0	48	0.000616	2
+0	199	0.001302066712	3
+0	213	0.001520066712	2
+0	291	0.002186133424	3
+0	305	0.002404133424	2
+0	382	0.003070200136	3
+0	396	0.003288200136	2
+0	472	0.003914266848	3
+0	486	0.004132266848	2
+0	561	0.00479833356	3
+0	575	0.00501633356	2
+0	649	0.005642400272	3
+0	663	0.005860400272	2
+0	736	0.006626466984	3
+0	750	0.006844466984	2
+0	944	0.008186598136	3
+0	958	0.008404598136	2
+0	1029	0.009170664848	3
+0	1043	0.009388664848	2
+0	1113	0.01037473156	3
+0	1127	0.01059273156	2
+0	1199	0.011718798272	3
+0	1213	0.011936798272	2
+0	1283	0.012742864984	3
+0	1297	0.012960864984	2
+1	0	0	0
+1	0	0	0
+1	0	0	2
+1	898	0.00763056478	3
+1	916	0.00817656478	2
+2	0	0	0
+2	0	0	0
+2	0	0	2
+2	694	0.006070433628	3
+2	708	0.006616433628	2
+3	0	0	0
+3	0	0	0
+3	0	0	2
+3	780	0.00693450034	3
+3	836	0.00748050034	2
+3	1071	0.009818698204	3
+3	1085	0.010364698204	2
+4	0	0	0
+4	0	0	0
+4	0	0	2
+4	430	0.003358233492	3
+4	444	0.003904233492	2
+5	0	0	0
+5	0	0	0
+5	0	0	2
+5	781	0.00693450034	3
+5	837	0.00748050034	2
+5	1155	0.011162764916	3
+5	1171	0.011708764916	2
+6	0	0	0
+6	0	0	0
+6	0	0	2
+6	157	0.000746033356	3
+6	171	0.001292033356	2
+7	0	0	0
+7	0	0	0
+7	0	0	2
+7	249	0.001630100068	3
+7	263	0.002176100068	2
+8	0	0	0
+8	0	0	0
+8	0	0	2
+8	340	0.00251416678	3
+8	354	0.00306016678	2
+9	0	0	0
+9	0	0	0
+9	0	0	2
+9	607	0.005086366916	3
+9	621	0.005632366916	2
+10	0	0	0
+10	0	0	0
+10	0	0	2
+10	519	0.004242300204	3
+10	533	0.004788300204	2
+11	0	0	0
+11	0	0	0
+11	0	0	2
+11	782	0.00693450034	3
+11	838	0.00748050034	2
+11	1240	0.012186831628	3
+11	1255	0.012732831628	2
+12	0	0	0
+12	0	0	0
+12	0	0	2
+12	783	0.00693450034	3
+12	839	0.00748050034	2
+12	987	0.008614631492	3
+12	1001	0.009160631492	2
+13	0	0	1
+13	34	0.00007	0
+13	48	0.000616	1
+13	162	0.000746066712	3
+13	178	0.001292066712	1
+13	199	0.001302066712	0
+13	213	0.001520066712	1
+13	254	0.001630133424	3
+13	270	0.002176133424	1
+13	291	0.002186133424	0
+13	305	0.002404133424	1
+13	345	0.002514200136	3
+13	361	0.003060200136	1
+13	382	0.003070200136	0
+13	396	0.003288200136	1
+13	436	0.003358266848	3
+13	453	0.003904266848	1
+13	472	0.003914266848	0
+13	486	0.004132266848	1
+13	523	0.00424233356	3
+13	538	0.00478833356	1
+13	561	0.00479833356	0
+13	575	0.00501633356	1
+13	611	0.005086400272	3
+13	626	0.005632400272	1
+13	649	0.005642400272	0
+13	663	0.005860400272	1
+13	700	0.006070466984	3
+13	717	0.006616466984	1
+13	736	0.006626466984	0
+13	750	0.006844466984	1
+13	797	0.006934533696	3
+13	855	0.007480533696	1
+13	902	0.007630598136	3
+13	921	0.008176598136	1
+13	944	0.008186598136	0
+13	958	0.008404598136	1
+13	991	0.008614664848	3
+13	1006	0.009160664848	1
+13	1029	0.009170664848	0
+13	1043	0.009388664848	1
+13	1075	0.00981873156	3
+13	1090	0.01036473156	1
+13	1113	0.01037473156	0
+13	1127	0.01059273156	1
+13	1160	0.011162798272	3
+13	1178	0.011708798272	1
+13	1199	0.011718798272	0
+13	1213	0.011936798272	1
+13	1244	0.012186864984	3
+13	1260	0.012732864984	1
+13	1283	0.012742864984	0
+13	1297	0.012960864984	1
+14	0	0	1
+14	36	0.000070033356	3
+14	49	0.000616033356	1
+14	168	0.000746096645	3
+14	193	0.001292096645	1
+14	201	0.001302100068	3
+14	214	0.001520100068	1
+14	253	0.001630129903	3
+14	268	0.002176129903	1
+14	293	0.00218616678	3
+14	306	0.00240416678	1
+14	351	0.002514230069	3
+14	376	0.003060230069	1
+14	384	0.003070233492	3
+14	397	0.003288233492	1
+14	443	0.003358300205	3
+14	470	0.003904300205	1
+14	474	0.003914300204	3
+14	487	0.004132300204	1
+14	524	0.00424233356	3
+14	539	0.00478833356	1
+14	563	0.004798366916	3
+14	576	0.005016366916	1
+14	609	0.005086384183	3
+14	622	0.005632384183	1
+14	651	0.005642433628	3
+14	664	0.005860433628	1
+14	701	0.006070480801	3
+14	722	0.006616480801	1
+14	738	0.00662650034	3
+14	751	0.00684450034	1
+14	802	0.006934533696	3
+14	860	0.007480533696	2
+14	890	0.00748056478	1
+14	898	0.00763056478	0
+14	916	0.00817656478	1
+14	946	0.008186631492	3
+14	959	0.008404631492	1
+14	998	0.008614695932	3
+14	1023	0.009160695932	1
+14	1031	0.009170698204	3
+14	1044	0.009388698204	1
+14	1078	0.009818745377	3
+14	1099	0.010364745377	1
+14	1115	0.010374764916	3
+14	1128	0.010592764916	1
+14	1165	0.011162824586	3
+14	1191	0.011708824586	1
+14	1201	0.011718831628	3
+14	1214	0.011936831628	1
+14	1245	0.012186864984	3
+14	1261	0.012732864984	1
+14	1285	0.01274289834	3
+14	1298	0.01296089834	1
+15	0	0	1
+15	37	0.000070033356	3
+15	50	0.000616033356	1
+15	161	0.000746063191	3
+15	176	0.001292063191	1
+15	202	0.001302100068	3
+15	215	0.001520100068	1
+15	252	0.001630121164	3
+15	266	0.002176121164	1
+15	294	0.00218616678	3
+15	307	0.00240416678	1
+15	350	0.00251422645	3
+15	374	0.00306022645	1
+15	385	0.003070233492	3
+15	398	0.003288233492	1
+15	437	0.003358280665	3
+15	458	0.003904280665	1
+15	475	0.003914300204	3
+15	488	0.004132300204	1
+15	530	0.004242364644	3
+15	555	0.004788364644	1
+15	564	0.004798366916	3
+15	577	0.005016366916	1
+15	616	0.005086424691	3
+15	639	0.005632424691	1
+15	652	0.005642433628	3
+15	665	0.005860433628	1
+15	694	0.006070433628	0
+15	708	0.006616433628	1
+15	739	0.00662650034	3
+15	752	0.00684450034	1
+15	792	0.006934517607	3
+15	847	0.007480517607	2
+15	896	0.007480567053	1
+15	905	0.007630611953	3
+15	930	0.008176611953	1
+15	947	0.008186631492	3
+15	960	0.008404631492	1
+15	996	0.008614689267	3
+15	1019	0.009160689267	1
+15	1032	0.009170698204	3
+15	1045	0.009388698204	1
+15	1084	0.009818764917	3
+15	1111	0.010364764917	1
+15	1116	0.010374764916	3
+15	1129	0.010592764916	1
+15	1158	0.011162786012	3
+15	1174	0.011708786012	1
+15	1202	0.011718831628	3
+15	1215	0.011936831628	1
+15	1243	0.012186848895	3
+15	1258	0.012732848895	1
+15	1286	0.01274289834	3
+15	1299	0.01296089834	1
+16	0	0	1
+16	38	0.000070033356	3
+16	51	0.000616033356	1
+16	167	0.000746093026	3
+16	191	0.001292093026	1
+16	203	0.001302100068	3
+16	216	0.001520100068	1
+16	260	0.001630163357	3
+16	285	0.002176163357	1
+16	295	0.00218616678	3
+16	308	0.00240416678	1
+16	344	0.002514196615	3
+16	359	0.003060196615	1
+16	386	0.003070233492	3
+16	399	0.003288233492	1
+16	438	0.003358280665	3
+16	459	0.003904280665	1
+16	476	0.003914300204	3
+16	489	0.004132300204	1
+16	521	0.004242317471	3
+16	534	0.004788317471	1
+16	565	0.004798366916	3
+16	578	0.005016366916	1
+16	612	0.005086400272	3
+16	627	0.005632400272	1
+16	653	0.005642433628	3
+16	666	0.005860433628	1
+16	707	0.006070500341	3
+16	734	0.006616500341	1
+16	740	0.00662650034	3
+16	753	0.00684450034	1
+16	780	0.00693450034	0
+16	836	0.00748050034	2
+16	888	0.00748056478	1
+16	906	0.007630611953	3
+16	931	0.008176611953	1
+16	948	0.008186631492	3
+16	961	0.008404631492	1
+16	992	0.008614664848	3
+16	1007	0.009160664848	1
+16	1033	0.009170698204	3
+16	1046	0.009388698204	1
+16	1071	0.009818698204	0
+16	1085	0.010364698204	1
+16	1117	0.010374764916	3
+16	1130	0.010592764916	1
+16	1166	0.011162828205	3
+16	1193	0.011708828205	1
+16	1203	0.011718831628	3
+16	1216	0.011936831628	1
+16	1251	0.012186896068	3
+16	1277	0.012732896068	1
+16	1287	0.01274289834	3
+16	1300	0.01296089834	1
+17	0	0	1
+17	39	0.000070033356	3
+17	52	0.000616033356	1
+17	160	0.000746054452	3
+17	174	0.001292054452	1
+17	204	0.001302100068	3
+17	217	0.001520100068	1
+17	259	0.001630159738	3
+17	283	0.002176159738	1
+17	296	0.00218616678	3
+17	309	0.00240416678	1
+17	343	0.002514187876	3
+17	357	0.003060187876	1
+17	387	0.003070233492	3
+17	400	0.003288233492	1
+17	430	0.003358233492	0
+17	444	0.003904233492	1
+17	477	0.003914300204	3
+17	490	0.004132300204	1
+17	528	0.004242357979	3
+17	551	0.004788357979	1
+17	566	0.004798366916	3
+17	579	0.005016366916	1
+17	618	0.005086431356	3
+17	643	0.005632431356	1
+17	654	0.005642433628	3
+17	667	0.005860433628	1
+17	702	0.006070480801	3
+17	723	0.006616480801	1
+17	741	0.00662650034	3
+17	754	0.00684450034	1
+17	793	0.006934517607	3
+17	848	0.007480517607	2
+17	878	0.007480558115	1
+17	911	0.007630631493	3
+17	942	0.008176631493	1
+17	949	0.008186631492	3
+17	962	0.008404631492	1
+17	990	0.008614648759	3
+17	1004	0.009160648759	1
+17	1034	0.009170698204	3
+17	1047	0.009388698204	1
+17	1079	0.009818745377	3
+17	1100	0.010364745377	1
+17	1118	0.010374764916	3
+17	1131	0.010592764916	1
+17	1159	0.011162794751	3
+17	1176	0.011708794751	1
+17	1204	0.011718831628	3
+17	1217	0.011936831628	1
+17	1249	0.012186889403	3
+17	1273	0.012732889403	1
+17	1288	0.01274289834	3
+17	1301	0.01296089834	1
+18	0	0	1
+18	40	0.000070033356	3
+18	53	0.000616033356	1
+18	159	0.000746042791	3
+18	172	0.001292042791	1
+18	205	0.001302100068	3
+18	218	0.001520100068	1
+18	255	0.001630140096	3
+18	275	0.002176140096	1
+18	297	0.00218616678	3
+18	310	0.00240416678	1
+18	348	0.002514213953	3
+18	370	0.003060213953	1
+18	388	0.003070233492	3
+18	401	0.003288233492	1
+18	435	0.003358263327	3
+18	451	0.003904263327	1
+18	478	0.003914300204	3
+18	491	0.004132300204	1
+18	532	0.004242366797	3
+18	559	0.004788366797	1
+18	567	0.004798366916	3
+18	580	0.005016366916	1
+18	619	0.005086432274	3
+18	645	0.005632432274	1
+18	655	0.005642433628	3
+18	668	0.005860433628	1
+18	697	0.006070454724	3
+18	711	0.006616454724	1
+18	742	0.00662650034	3
+18	755	0.00684450034	1
+18	781	0.00693450034	0
+18	837	0.00748050034	2
+18	884	0.007480563629	1
+18	907	0.00763062445	3
+18	934	0.00817662445	1
+18	950	0.008186631492	3
+18	963	0.008404631492	1
+18	994	0.008614675754	3
+18	1015	0.009160675754	1
+18	1035	0.009170698204	3
+18	1048	0.009388698204	1
+18	1081	0.009818761493	3
+18	1105	0.010364761493	1
+18	1119	0.010374764916	3
+18	1132	0.010592764916	1
+18	1155	0.011162764916	0
+18	1171	0.011708764916	1
+18	1205	0.011718831628	3
+18	1218	0.011936831628	1
+18	1246	0.012186868386	3
+18	1267	0.012732868386	1
+18	1289	0.01274289834	3
+18	1302	0.01296089834	1
+19	0	0	1
+19	41	0.000070033356	3
+19	54	0.000616033356	1
+19	157	0.000746033356	0
+19	171	0.001292033356	1
+19	206	0.001302100068	3
+19	219	0.001520100068	1
+19	257	0.001630147241	3
+19	279	0.002176147241	1
+19	298	0.00218616678	3
+19	311	0.00240416678	1
+19	346	0.002514206808	3
+19	366	0.003060206808	1
+19	389	0.003070233492	3
+19	402	0.003288233492	1
+19	433	0.003358254588	3
+19	447	0.003904254588	1
+19	479	0.003914300204	3
+19	492	0.004132300204	1
+19	531	0.004242365562	3
+19	557	0.004788365562	1
+19	568	0.004798366916	3
+19	581	0.005016366916	1
+19	620	0.005086433509	3
+19	647	0.005632433509	1
+19	656	0.005642433628	3
+19	669	0.005860433628	1
+19	699	0.006070463463	3
+19	715	0.006616463463	1
+19	743	0.00662650034	3
+19	756	0.00684450034	1
+19	790	0.006934509775	3
+19	844	0.007480509775	2
+19	882	0.00748056001	1
+19	908	0.007630628069	3
+19	936	0.008176628069	1
+19	951	0.008186631492	3
+19	964	0.008404631492	1
+19	993	0.00861466825	3
+19	1013	0.00916066825	1
+19	1036	0.009170698204	3
+19	1049	0.009388698204	1
+19	1080	0.009818757874	3
+19	1103	0.010364757874	1
+19	1120	0.010374764916	3
+19	1133	0.010592764916	1
+19	1157	0.011162774351	3
+19	1172	0.011708774351	1
+19	1206	0.011718831628	3
+19	1219	0.011936831628	1
+19	1247	0.01218687589	3
+19	1269	0.01273287589	1
+19	1290	0.01274289834	3
+19	1303	0.01296089834	1
+20	0	0	1
+20	42	0.000070033356	3
+20	55	0.000616033356	1
+20	166	0.000746080529	3
+20	189	0.001292080529	1
+20	207	0.001302100068	3
+20	220	0.001520100068	1
+20	249	0.001630100068	0
+20	263	0.002176100068	1
+20	299	0.00218616678	3
+20	312	0.00240416678	1
+20	353	0.002514232822	3
+20	380	0.003060232822	1
+20	390	0.003070233492	3
+20	403	0.003288233492	1
+20	441	0.003358293162	3
+20	466	0.003904293162	1
+20	480	0.003914300204	3
+20	493	0.004132300204	1
+20	527	0.004242355877	3
+20	549	0.004788355877	1
+20	569	0.004798366916	3
+20	582	0.005016366916	1
+20	613	0.005086411178	3
+20	633	0.005632411178	1
+20	657	0.005642433628	3
+20	670	0.005860433628	1
+20	698	0.006070454724	3
+20	712	0.006616454724	1
+20	744	0.00662650034	3
+20	757	0.00684450034	1
+20	788	0.006934504337	3
+20	840	0.007480504337	2
+20	894	0.007480565698	1
+20	901	0.007630594615	3
+20	919	0.008176594615	1
+20	952	0.008186631492	3
+20	965	0.008404631492	1
+20	1000	0.00861469685	3
+20	1027	0.00916069685	1
+20	1037	0.009170698204	3
+20	1050	0.009388698204	1
+20	1082	0.009818761493	3
+20	1106	0.010364761493	1
+20	1121	0.010374764916	3
+20	1134	0.010592764916	1
+20	1162	0.011162804944	3
+20	1185	0.011708804944	1
+20	1207	0.011718831628	3
+20	1220	0.011936831628	1
+20	1242	0.012186835625	3
+20	1256	0.012732835625	1
+20	1291	0.01274289834	3
+20	1304	0.01296089834	1
+21	0	0	1
+21	43	0.000070033356	3
+21	56	0.000616033356	1
+21	164	0.000746073384	3
+21	185	0.001292073384	1
+21	208	0.001302100068	3
+21	221	0.001520100068	1
+21	262	0.00163016611	3
+21	289	0.00217616611	1
+21	300	0.00218616678	3
+21	313	0.00240416678	1
+21	340	0.00251416678	0
+21	354	0.00306016678	1
+21	391	0.003070233492	3
+21	404	0.003288233492	1
+21	434	0.003358254588	3
+21	448	0.003904254588	1
+21	481	0.003914300204	3
+21	494	0.004132300204	1
+21	525	0.004242344466	3
+21	545	0.004788344466	1
+21	570	0.004798366916	3
+21	583	0.005016366916	1
+21	615	0.005086422589	3
+21	637	0.005632422589	1
+21	658	0.005642433628	3
+21	671	0.005860433628	1
+21	705	0.006070493298	3
+21	730	0.006616493298	1
+21	745	0.00662650034	3
+21	758	0.00684450034	1
+21	789	0.006934504337	3
+21	841	0.007480504337	2
+21	893	0.007480565698	1
+21	909	0.007630628069	3
+21	937	0.008176628069	1
+21	953	0.008186631492	3
+21	966	0.008404631492	1
+21	989	0.008614635489	3
+21	1002	0.009160635489	1
+21	1038	0.009170698204	3
+21	1051	0.009388698204	1
+21	1074	0.009818728039	3
+21	1088	0.010364728039	1
+21	1122	0.010374764916	3
+21	1135	0.010592764916	1
+21	1164	0.011162812089	3
+21	1189	0.011708812089	1
+21	1208	0.011718831628	3
+21	1221	0.011936831628	1
+21	1253	0.012186896986	3
+21	1281	0.012732896986	1
+21	1292	0.01274289834	3
+21	1305	0.01296089834	1
+22	0	0	1
+22	44	0.000070033356	3
+22	57	0.000616033356	1
+22	170	0.000746099949	3
+22	197	0.001292099949	1
+22	209	0.001302100068	3
+22	222	0.001520100068	1
+22	256	0.00163014433	3
+22	277	0.00217614433	1
+22	301	0.00218616678	3
+22	314	0.00240416678	1
+22	349	0.002514222453	3
+22	372	0.003060222453	1
+22	392	0.003070233492	3
+22	405	0.003288233492	1
+22	442	0.003358297932	3
+22	468	0.003904297932	1
+22	482	0.003914300204	3
+22	495	0.004132300204	1
+22	522	0.004242317471	3
+22	535	0.004788317471	1
+22	571	0.004798366916	3
+22	584	0.005016366916	1
+22	607	0.005086366916	0
+22	621	0.005632366916	1
+22	659	0.005642433628	3
+22	672	0.005860433628	1
+22	703	0.006070491403	3
+22	726	0.006616491403	1
+22	746	0.00662650034	3
+22	759	0.00684450034	1
+22	798	0.006934533696	3
+22	856	0.007480533696	2
+22	892	0.007480565698	1
+22	900	0.007630582047	3
+22	917	0.008176582047	1
+22	954	0.008186631492	3
+22	967	0.008404631492	1
+22	997	0.008614689267	3
+22	1020	0.009160689267	1
+22	1039	0.009170698204	3
+22	1052	0.009388698204	1
+22	1076	0.00981873156	3
+22	1091	0.01036473156	1
+22	1123	0.010374764916	3
+22	1136	0.010592764916	1
+22	1167	0.011162830274	3
+22	1195	0.011708830274	1
+22	1209	0.011718831628	3
+22	1222	0.011936831628	1
+22	1248	0.012186878801	3
+22	1271	0.012732878801	1
+22	1293	0.01274289834	3
+22	1306	0.01296089834	1
+23	0	0	1
+23	45	0.000070033356	3
+23	58	0.000616033356	1
+23	169	0.000746098714	3
+23	195	0.001292098714	1
+23	210	0.001302100068	3
+23	223	0.001520100068	1
+23	258	0.001630155741	3
+23	281	0.002176155741	1
+23	302	0.00218616678	3
+23	315	0.00240416678	1
+23	347	0.002514211042	3
+23	368	0.003060211042	1
+23	393	0.003070233492	3
+23	406	0.003288233492	1
+23	439	0.003358291267	3
+23	462	0.003904291267	1
+23	483	0.003914300204	3
+23	496	0.004132300204	1
+23	519	0.004242300204	0
+23	533	0.004788300204	1
+23	572	0.004798366916	3
+23	585	0.005016366916	1
+23	610	0.005086384183	3
+23	623	0.005632384183	1
+23	660	0.005642433628	3
+23	673	0.005860433628	1
+23	706	0.006070498068	3
+23	732	0.006616498068	1
+23	747	0.00662650034	3
+23	760	0.00684450034	1
+23	791	0.006934517607	3
+23	846	0.007480517607	2
+23	895	0.007480566933	1
+23	903	0.007630598136	3
+23	922	0.008176598136	1
+23	955	0.008186631492	3
+23	968	0.008404631492	1
+23	995	0.008614678665	3
+23	1017	0.009160678665	1
+23	1040	0.009170698204	3
+23	1053	0.009388698204	1
+23	1073	0.009818715471	3
+23	1086	0.010364715471	1
+23	1124	0.010374764916	3
+23	1137	0.010592764916	1
+23	1168	0.011162831509	3
+23	1197	0.011708831509	1
+23	1210	0.011718831628	3
+23	1223	0.011936831628	1
+23	1250	0.012186889403	3
+23	1274	0.012732889403	1
+23	1294	0.01274289834	3
+23	1307	0.01296089834	1
+24	0	0	1
+24	46	0.000070033356	3
+24	59	0.000616033356	1
+24	165	0.000746077618	3
+24	187	0.001292077618	1
+24	211	0.001302100068	3
+24	224	0.001520100068	1
+24	251	0.001630104065	3
+24	264	0.002176104065	1
+24	303	0.00218616678	3
+24	316	0.00240416678	1
+24	352	0.002514232138	3
+24	378	0.003060232138	1
+24	394	0.003070233492	3
+24	407	0.003288233492	1
+24	440	0.003358291267	3
+24	463	0.003904291267	1
+24	484	0.003914300204	3
+24	497	0.004132300204	1
+24	529	0.004242357979	3
+24	552	0.004788357979	1
+24	573	0.004798366916	3
+24	586	0.005016366916	1
+24	614	0.005086414089	3
+24	635	0.005632414089	1
+24	661	0.005642433628	3
+24	674	0.005860433628	1
+24	696	0.006070450895	3
+24	709	0.006616450895	1
+24	748	0.00662650034	3
+24	761	0.00684450034	1
+24	782	0.00693450034	0
+24	838	0.00748050034	2
+24	887	0.00748056478	1
+24	904	0.007630598136	3
+24	923	0.008176598136	1
+24	956	0.008186631492	3
+24	969	0.008404631492	1
+24	999	0.008614695932	3
+24	1024	0.009160695932	1
+24	1041	0.009170698204	3
+24	1054	0.009388698204	1
+24	1083	0.009818762644	3
+24	1109	0.010364762644	1
+24	1125	0.010374764916	3
+24	1138	0.010592764916	1
+24	1161	0.011162801674	3
+24	1183	0.011708801674	1
+24	1211	0.011718831628	3
+24	1224	0.011936831628	1
+24	1240	0.012186831628	0
+24	1255	0.012732831628	1
+24	1295	0.01274289834	3
+24	1308	0.01296089834	1
+25	0	0	1
+25	47	0.000070033356	3
+25	60	0.000616033356	1
+25	163	0.000746070114	3
+25	183	0.001292070114	1
+25	212	0.001302100068	3
+25	225	0.001520100068	1
+25	261	0.001630165426	3
+25	287	0.002176165426	1
+25	304	0.00218616678	3
+25	317	0.00240416678	1
+25	342	0.002514170777	3
+25	355	0.003060170777	1
+25	395	0.003070233492	3
+25	408	0.003288233492	1
+25	432	0.003358250759	3
+25	445	0.003904250759	1
+25	485	0.003914300204	3
+25	498	0.004132300204	1
+25	526	0.004242347377	3
+25	547	0.004788347377	1
+25	574	0.004798366916	3
+25	587	0.005016366916	1
+25	617	0.005086424691	3
+25	640	0.005632424691	1
+25	662	0.005642433628	3
+25	675	0.005860433628	1
+25	704	0.006070491403	3
+25	727	0.006616491403	1
+25	749	0.00662650034	3
+25	762	0.00684450034	1
+25	783	0.00693450034	0
+25	839	0.00748050034	2
+25	889	0.00748056478	1
+25	910	0.00763062922	3
+25	940	0.00817662922	1
+25	957	0.008186631492	3
+25	970	0.008404631492	1
+25	987	0.008614631492	0
+25	1001	0.009160631492	1
+25	1042	0.009170698204	3
+25	1055	0.009388698204	1
+25	1077	0.00981873156	3
+25	1092	0.01036473156	1
+25	1126	0.010374764916	3
+25	1139	0.010592764916	1
+25	1163	0.011162809178	3
+25	1187	0.011708809178	1
+25	1212	0.011718831628	3
+25	1225	0.011936831628	1
+25	1252	0.012186896068	3
+25	1278	0.012732896068	1
+25	1296	0.01274289834	3
+25	1309	0.01296089834	1
+26	3	0	12
+27	29	0	32
+28	29	0	32
+29	30	0	59
+30	30	0	1
+30	30	0	0
+31	30	0	59
+32	30	0	0
+33	32	0	12
+33	181	0.001292066712	12
+33	273	0.002176133424	12
+33	364	0.003060200136	12
+33	456	0.003904266848	12
+33	543	0.00478833356	12
+33	631	0.005632400272	12
+33	720	0.006616466984	12
+33	928	0.008176598136	12
+33	1011	0.009160664848	12
+33	1097	0.01036473156	12
+33	1181	0.011708798272	12
+33	1265	0.012732864984	12
+34	32	0	1
+35	34	0.00007	1
+35	35	0.00007	2
+35	48	0.000616	1
+35	48	0.000616	0
+35	199	0.001302066712	1
+35	200	0.001302066712	2
+35	213	0.001520066712	1
+35	213	0.001520066712	0
+35	291	0.002186133424	1
+35	292	0.002186133424	2
+35	305	0.002404133424	1
+35	305	0.002404133424	0
+35	382	0.003070200136	1
+35	383	0.003070200136	2
+35	396	0.003288200136	1
+35	396	0.003288200136	0
+35	472	0.003914266848	1
+35	473	0.003914266848	2
+35	486	0.004132266848	1
+35	486	0.004132266848	0
+35	561	0.00479833356	1
+35	562	0.00479833356	2
+35	575	0.00501633356	1
+35	575	0.00501633356	0
+35	649	0.005642400272	1
+35	650	0.005642400272	2
+35	663	0.005860400272	1
+35	663	0.005860400272	0
+35	736	0.006626466984	1
+35	737	0.006626466984	2
+35	750	0.006844466984	1
+35	750	0.006844466984	0
+35	944	0.008186598136	1
+35	945	0.008186598136	2
+35	958	0.008404598136	1
+35	958	0.008404598136	0
+35	1029	0.009170664848	1
+35	1030	0.009170664848	2
+35	1043	0.009388664848	1
+35	1043	0.009388664848	0
+35	1113	0.01037473156	1
+35	1114	0.01037473156	2
+35	1127	0.01059273156	1
+35	1127	0.01059273156	0
+35	1199	0.011718798272	1
+35	1200	0.011718798272	2
+35	1213	0.011936798272	1
+35	1213	0.011936798272	0
+35	1283	0.012742864984	1
+35	1284	0.012742864984	2
+35	1297	0.012960864984	1
+35	1297	0.012960864984	0
+36	85	0.000616033356	12
+37	85	0.000616033356	1
+38	86	0.000616033356	12
+39	86	0.000616033356	1
+40	87	0.000616033356	12
+41	87	0.000616033356	1
+42	88	0.000616033356	12
+43	88	0.000616033356	1
+44	89	0.000616033356	12
+45	89	0.000616033356	1
+46	90	0.000616033356	12
+47	90	0.000616033356	1
+48	91	0.000616033356	12
+49	91	0.000616033356	1
+50	92	0.000616033356	12
+51	92	0.000616033356	1
+52	93	0.000616033356	12
+53	93	0.000616033356	1
+54	94	0.000616033356	12
+55	94	0.000616033356	1
+56	95	0.000616033356	12
+57	95	0.000616033356	1
+58	96	0.000616033356	12
+59	96	0.000616033356	1
+60	109	0.000616033356	12
+61	110	0.000616033356	12
+62	111	0.000616033356	12
+63	112	0.000616033356	12
+64	113	0.000616033356	12
+65	114	0.000616033356	12
+66	115	0.000616033356	12
+67	116	0.000616033356	12
+68	117	0.000616033356	12
+69	118	0.000616033356	12
+70	119	0.000616033356	12
+71	120	0.000616033356	12
+72	133	0.000616033356	59
+73	133	0.000616033356	1
+73	133	0.000616033356	0
+74	133	0.000616033356	59
+75	133	0.000616033356	0
+76	134	0.000616033356	59
+77	134	0.000616033356	1
+77	134	0.000616033356	0
+78	134	0.000616033356	59
+79	134	0.000616033356	0
+80	135	0.000616033356	59
+81	135	0.000616033356	1
+81	135	0.000616033356	0
+82	135	0.000616033356	59
+83	135	0.000616033356	0
+84	136	0.000616033356	59
+85	136	0.000616033356	1
+85	136	0.000616033356	0
+86	136	0.000616033356	59
+87	136	0.000616033356	0
+88	137	0.000616033356	59
+89	137	0.000616033356	1
+89	137	0.000616033356	0
+90	137	0.000616033356	59
+91	137	0.000616033356	0
+92	138	0.000616033356	59
+93	138	0.000616033356	1
+93	138	0.000616033356	0
+94	138	0.000616033356	59
+95	138	0.000616033356	0
+96	139	0.000616033356	59
+97	139	0.000616033356	1
+97	139	0.000616033356	0
+98	139	0.000616033356	59
+99	139	0.000616033356	0
+100	140	0.000616033356	59
+101	140	0.000616033356	1
+101	140	0.000616033356	0
+102	140	0.000616033356	59
+103	140	0.000616033356	0
+104	141	0.000616033356	59
+105	141	0.000616033356	1
+105	141	0.000616033356	0
+106	141	0.000616033356	59
+107	141	0.000616033356	0
+108	142	0.000616033356	59
+109	142	0.000616033356	1
+109	142	0.000616033356	0
+110	142	0.000616033356	59
+111	142	0.000616033356	0
+112	143	0.000616033356	59
+113	143	0.000616033356	1
+113	143	0.000616033356	0
+114	143	0.000616033356	59
+115	143	0.000616033356	0
+116	144	0.000616033356	59
+117	144	0.000616033356	1
+117	144	0.000616033356	0
+118	144	0.000616033356	59
+119	144	0.000616033356	0
+120	157	0.000746033356	1
+120	158	0.000746033356	2
+120	171	0.001292033356	1
+120	171	0.001292033356	0
+121	173	0.001292042791	59
+121	276	0.002176140096	59
+121	371	0.003060213953	59
+121	452	0.003904263327	59
+121	560	0.004788366797	59
+121	646	0.005632432274	59
+121	713	0.006616454724	59
+121	935	0.00817662445	59
+121	1016	0.009160675754	59
+121	1107	0.010364761493	59
+121	1268	0.012732868386	59
+122	175	0.001292054452	59
+122	284	0.002176159738	59
+122	358	0.003060187876	59
+122	553	0.004788357979	59
+122	644	0.005632431356	59
+122	725	0.006616480801	59
+122	943	0.008176631493	59
+122	1005	0.009160648759	59
+122	1102	0.010364745377	59
+122	1177	0.011708794751	59
+122	1275	0.012732889403	59
+123	177	0.001292063191	59
+123	267	0.002176121164	59
+123	375	0.00306022645	59
+123	460	0.003904280665	59
+123	556	0.004788364644	59
+123	641	0.005632424691	59
+123	932	0.008176611953	59
+123	1021	0.009160689267	59
+123	1112	0.010364764917	59
+123	1175	0.011708786012	59
+123	1259	0.012732848895	59
+124	181	0.001292066712	1
+124	273	0.002176133424	2
+124	364	0.003060200136	3
+124	456	0.003904266848	4
+124	543	0.00478833356	5
+124	631	0.005632400272	6
+124	720	0.006616466984	7
+124	928	0.008176598136	8
+124	1011	0.009160664848	9
+124	1097	0.01036473156	10
+124	1181	0.011708798272	11
+124	1265	0.012732864984	12
+125	184	0.001292070114	59
+125	288	0.002176165426	59
+125	356	0.003060170777	59
+125	446	0.003904250759	59
+125	548	0.004788347377	59
+125	642	0.005632424691	59
+125	729	0.006616491403	59
+125	941	0.00817662922	59
+125	1095	0.01036473156	59
+125	1188	0.011708809178	59
+125	1280	0.012732896068	59
+126	186	0.001292073384	59
+126	290	0.00217616611	59
+126	450	0.003904254588	59
+126	546	0.004788344466	59
+126	638	0.005632422589	59
+126	731	0.006616493298	59
+126	843	0.007480504337	59
+126	939	0.008176628069	59
+126	1003	0.009160635489	59
+126	1089	0.010364728039	59
+126	1190	0.011708812089	59
+126	1282	0.012732896986	59
+127	188	0.001292077618	59
+127	265	0.002176104065	59
+127	379	0.003060232138	59
+127	465	0.003904291267	59
+127	554	0.004788357979	59
+127	636	0.005632414089	59
+127	710	0.006616450895	59
+127	926	0.008176598136	59
+127	1026	0.009160695932	59
+127	1110	0.010364762644	59
+127	1184	0.011708801674	59
+128	190	0.001292080529	59
+128	381	0.003060232822	59
+128	467	0.003904293162	59
+128	550	0.004788355877	59
+128	634	0.005632411178	59
+128	714	0.006616454724	59
+128	842	0.007480504337	59
+128	920	0.008176594615	59
+128	1028	0.00916069685	59
+128	1108	0.010364761493	59
+128	1186	0.011708804944	59
+128	1257	0.012732835625	59
+129	192	0.001292093026	59
+129	286	0.002176163357	59
+129	360	0.003060196615	59
+129	461	0.003904280665	59
+129	536	0.004788317471	59
+129	629	0.005632400272	59
+129	735	0.006616500341	59
+129	933	0.008176611953	59
+129	1009	0.009160664848	59
+129	1194	0.011708828205	59
+129	1279	0.012732896068	59
+130	194	0.001292096645	59
+130	269	0.002176129903	59
+130	377	0.003060230069	59
+130	471	0.003904300205	59
+130	541	0.00478833356	59
+130	624	0.005632384183	59
+130	724	0.006616480801	59
+130	1025	0.009160695932	59
+130	1101	0.010364745377	59
+130	1192	0.011708824586	59
+130	1263	0.012732864984	59
+131	196	0.001292098714	59
+131	282	0.002176155741	59
+131	369	0.003060211042	59
+131	464	0.003904291267	59
+131	625	0.005632384183	59
+131	733	0.006616498068	59
+131	849	0.007480517607	59
+131	925	0.008176598136	59
+131	1018	0.009160678665	59
+131	1087	0.010364715471	59
+131	1198	0.011708831509	59
+131	1276	0.012732889403	59
+132	198	0.001292099949	59
+132	278	0.00217614433	59
+132	373	0.003060222453	59
+132	469	0.003904297932	59
+132	537	0.004788317471	59
+132	728	0.006616491403	59
+132	918	0.008176582047	59
+132	1022	0.009160689267	59
+132	1094	0.01036473156	59
+132	1196	0.011708830274	59
+132	1272	0.012732878801	59
+133	249	0.001630100068	1
+133	250	0.001630100068	2
+133	263	0.002176100068	1
+133	263	0.002176100068	0
+134	280	0.002176147241	59
+134	367	0.003060206808	59
+134	449	0.003904254588	59
+134	558	0.004788365562	59
+134	648	0.005632433509	59
+134	716	0.006616463463	59
+134	845	0.007480509775	59
+134	938	0.008176628069	59
+134	1014	0.00916066825	59
+134	1104	0.010364757874	59
+134	1173	0.011708774351	59
+134	1270	0.01273287589	59
+135	340	0.00251416678	1
+135	341	0.00251416678	2
+135	354	0.00306016678	1
+135	354	0.00306016678	0
+136	430	0.003358233492	1
+136	431	0.003358233492	2
+136	444	0.003904233492	1
+136	444	0.003904233492	0
+137	519	0.004242300204	1
+137	520	0.004242300204	2
+137	533	0.004788300204	1
+137	533	0.004788300204	0
+138	607	0.005086366916	1
+138	608	0.005086366916	2
+138	621	0.005632366916	1
+138	621	0.005632366916	0
+139	694	0.006070433628	1
+139	695	0.006070433628	2
+139	708	0.006616433628	1
+139	708	0.006616433628	0
+140	780	0.00693450034	1
+140	784	0.00693450034	2
+140	836	0.00748050034	1
+140	836	0.00748050034	0
+140	1071	0.009818698204	1
+140	1072	0.009818698204	2
+140	1085	0.010364698204	1
+140	1085	0.010364698204	0
+141	781	0.00693450034	1
+141	785	0.00693450034	2
+141	837	0.00748050034	1
+141	837	0.00748050034	0
+141	1155	0.011162764916	1
+141	1156	0.011162764916	2
+141	1171	0.011708764916	1
+141	1171	0.011708764916	0
+142	782	0.00693450034	1
+142	786	0.00693450034	2
+142	838	0.00748050034	1
+142	838	0.00748050034	0
+142	1240	0.012186831628	1
+142	1241	0.012186831628	2
+142	1255	0.012732831628	1
+142	1255	0.012732831628	0
+143	783	0.00693450034	1
+143	787	0.00693450034	2
+143	839	0.00748050034	1
+143	839	0.00748050034	0
+143	987	0.008614631492	1
+143	988	0.008614631492	2
+143	1001	0.009160631492	1
+143	1001	0.009160631492	0
+144	850	0.007480517607	59
+145	851	0.007480517607	59
+146	863	0.007480533696	59
+147	864	0.007480533696	59
+148	865	0.007480533696	59
+149	898	0.00763056478	1
+149	899	0.00763056478	2
+149	916	0.00817656478	1
+149	916	0.00817656478	0
+
