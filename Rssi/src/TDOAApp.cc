@@ -254,9 +254,9 @@ void TDOAApp::finish()
         trilateracao();
         end_trilateracao = std::chrono::system_clock::now();
 
-        std::chrono::duration<double> elapsed_seconds = end_distancia - start_distancia;
+        std::chrono::duration<double> elapsed_seconds = end_trilateracao - start_trilateracao;
 
-        EV<< "Duracao da trilateração:"<< elapsed_seconds.count();
+        EV<<"Tempo trilateracao "<<elapsed_seconds.count()<<endl;
 
         std::ifstream verifica_arquivo;
         std::ofstream arquivo;
@@ -283,7 +283,7 @@ void TDOAApp::finish()
 
                 else{
                     arquivo.open (nome_arquivo);
-                    arquivo << "Tempo Trilateração (s);";
+                    arquivo << "Tempo Trilateração (s),";
 
                     int Quant_nos=valores.size();
 
