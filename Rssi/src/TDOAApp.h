@@ -74,7 +74,7 @@ class INET_API TDOAApp : public ApplicationBase, public UdpSocket::ICallback
     virtual void sendPacket(W signalPower);
     virtual void processStart();
     virtual void setSocketOptions();
-    virtual double calculo(double x, double y, double z,W potencia);
+    virtual double calculo(double x, double y, double z,double potencia);
     virtual void trilateracao();
 
     virtual void handleStartOperation(LifecycleOperation *operation) override;

@@ -18,7 +18,7 @@ using namespace inet;
 class Valores
 {
     public:
-    W potencia;
+    double potencia;
     Coord position;
     L3Address ip;
     double distancia;

@@ -265,17 +265,17 @@ void TDOAApp::finish()
 
                 if(verifica_arquivo.is_open()){
                     arquivo.open (nome_arquivo,std::ios::app);
-                    arquivo<<elapsed_seconds.count()<<";";
+                    arquivo<<elapsed_seconds.count()<<",";
                     int Quant_nos=valores.size();
                     for(int cont=0; cont<Quant_nos;cont++){
-                        arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                        arquivo<<valores.at(cont).time_real_distancia.count()<<",";
                     }
 
                     for(int cont=0; cont<Quant_nos;cont++){
-                          arquivo<<valores.at(cont).distancia<<";";
+                          arquivo<<valores.at(cont).distancia<<",";
                      }
-                    arquivo<<x_emissor<<";"<<y_emissor<<";";
-                    arquivo<<position_emissor.x<<";"<<position_emissor.y;
+                    arquivo<<x_emissor<<","<<y_emissor<<",";
+                    arquivo<<position_emissor.x<<","<<position_emissor.y;
 
                     arquivo<<"\n";
                 }
@@ -291,29 +291,29 @@ void TDOAApp::finish()
 
                         EV<<"Tempo distancia :"<<valores.at(cont).time_real_distancia.count()<<endl;
 
-                        arquivo<<"Tempo distancia "<< cont<<"(s);";
+                        arquivo<<"Tempo distancia "<< cont<<"(s),";
                     }
                     for(int cont=0; cont<Quant_nos;cont++){
-                        arquivo<<"Distancia nó "<<cont<<"(m);";
+                        arquivo<<"Distancia nó "<<cont<<"(m),";
                     }
-                    arquivo<<"Posição x estimada (m);";
-                    arquivo<<"Posição y estimada (m);";
-                    arquivo<<"Posição x real (m);";
+                    arquivo<<"Posição x estimada (m),";
+                    arquivo<<"Posição y estimada (m),";
+                    arquivo<<"Posição x real (m),";
                     arquivo<<"Posição y real (m)";
 
 
                     arquivo<<"\n";
-                    arquivo<<elapsed_seconds.count()<<";";
+                    arquivo<<elapsed_seconds.count()<<",";
 
                     for(int cont=0; cont<Quant_nos;cont++){
-                        arquivo<<valores.at(cont).time_real_distancia.count()<<";";
+                        arquivo<<valores.at(cont).time_real_distancia.count()<<",";
                     }
 
                     for(int cont=0; cont<Quant_nos;cont++){
-                          arquivo<<valores.at(cont).distancia<<";";
+                          arquivo<<valores.at(cont).distancia<<",";
                      }
-                    arquivo<<x_emissor<<";"<<y_emissor<<";";
-                    arquivo<<position_emissor.x<<";"<<position_emissor.y;
+                    arquivo<<x_emissor<<","<<y_emissor<<",";
+                    arquivo<<position_emissor.x<<","<<position_emissor.y;
                     arquivo<<"\n";
                 }
                 arquivo.close();
@@ -376,13 +376,17 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
 
         for (auto& region : regions) { // for each region do
 
-            auto measurePower = region.getTag()->getSignalPower(); // original signal power
+            auto measurePower_watts = region.getTag()->getSignalPower(); // original signal power
             auto positions=region.getTag()->getLocation();
-            EV << "PowerReceived = " << measurePower << "Position :"<<positions<< endl;
+            auto valor_aleatorio=uniform(0, 0.0000000083);
+            auto measurePower_decimal = measurePower_watts.get()+valor_aleatorio;
+            EV<<"Valor aleatorio: "<< valor_aleatorio;
+
+            EV << "PowerReceived = " << measurePower_decimal << "Position :"<<positions<< endl;
 
             start_distancia = std::chrono::system_clock::now(); //Calculo em relação a função calcula posição
 
-            auto distancia = calculo(positions.x,positions.y,positions.z,measurePower);
+            auto distancia = calculo(positions.x,positions.y,positions.z,measurePower_decimal);
 
             end_distancia = std::chrono::system_clock::now();
 
@@ -392,7 +396,7 @@ void TDOAApp::socketDataArrived(UdpSocket *socket, Packet *packet)
                         valores_temp.time_real_distancia=elapsed_seconds;
                         valores_temp.distancia=distancia;
                         valores_temp.position=positions;
-                        valores_temp.potencia=measurePower;
+                        valores_temp.potencia=measurePower_decimal;
                         valores_temp.ip=srcAddr;
                         valores.push_back(valores_temp);
 
@@ -441,8 +445,8 @@ void TDOAApp::refreshDisplay() const
 //    getDisplayString().setTagArg("t", 0, buf);
 }
 
-double TDOAApp::calculo(double x, double y, double z,W potencia){
-    double distancia = pow(10.0,(-37.007106659-10*log10(1000*potencia.get()))/20);
+double TDOAApp::calculo(double x, double y, double z,double potencia){
+    double distancia = pow(10.0,(-37.007106659-10*log10(1000*potencia))/20);
     EV << "Distancia= " << distancia;
     return distancia;
 }

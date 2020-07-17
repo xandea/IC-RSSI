@@ -1,0 +1,3716 @@
+version 2
+run Wireless01-189-20200717-17:33:21-12057
+attr configname Wireless01
+attr datetime 20200717-17:33:21
+attr experiment Wireless01
+attr inifile omnetpp.ini
+attr iterationvars $name=Wireless_6_10
+attr iterationvarsf name=Wireless#_6#_10-
+attr measurement $name=Wireless_6_10
+attr network "${name=WirelessA, Wireless_3_1, Wireless_3_5, Wireless_3_10, Wireless_6_1,Wireless_6_5,Wireless_6_10,Wireless_12_1,Wireless_12_5,Wireless_12_10}"
+attr processid 12057
+attr repetition 9
+attr replication #9
+attr resultdir results
+attr runnumber 189
+attr seedset 189
+itervar name Wireless_6_10
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"TDOAApp\""
+param *.hostA.app[0].destAddresses "\"Broadcast\""
+param *.hostA.app[0].destPort 5000
+param *.hostA.app[0].localPort 6000
+param *.hostA.app[0].isReceiver false
+param *.hostA.app[0].Nome_arquivo "\"Wireless_6_10.csv\""
+param *.host*.numApps 1
+param *.host*.app[0].typename "\"TDOAApp\""
+param *.host*.app[0].localPort 5000
+param *.host*.app[0].destPort 6000
+param *.host*.app[0].destAddresses "\"hostA\""
+param *.host*.app[0].isReceiver true
+param *.host*.wlan[0].typename "\"WirelessInterface\""
+param *.radioMedium.typename "\"ApskScalarRadioMedium\""
+param *.radioMedium.backgroundNoise.power -90dBm
+param *.radioMedium.mediumLimitCache.centerFrequency 2GHz
+param *.host*.wlan[0].radio.typename "\"ApskScalarRadio\""
+param *.host*.wlan[0].radio.centerFrequency 2GHz
+param *.host*.wlan[0].radio.bandwidth 2MHz
+param *.host*.wlan[0].radio.transmitter.power 1.4mW
+param *.host*.wlan[0].radio.transmitter.preambleDuration 10us
+param *.host*.wlan[0].radio.transmitter.headerLength 8B
+param *.host*.wlan[0].radio.receiver.sensitivity -85dBm
+param *.host*.wlan[0].radio.receiver.energyDetection -85dBm
+param *.host*.wlan[0].radio.receiver.snirThreshold 4dB
+param *.host*.wlan[0].mac.typename "\"CsmaCaMac\""
+param *.host*.wlan[0].mac.ackTimeout 300us
+param *.host*.wlan[0].mac.useAck true
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.wlan[0].mac.headerLength 23B
+param *.host*.**.bitrate 1Mbps
+param *.host*.ipv4.arp.typename "\"GlobalArp\""
+param **.ip.limitedBroadcast true
+
+scalar Wireless_6_10.radioMedium.propagation "Arrival computation count" 90
+scalar Wireless_6_10.radioMedium "transmission count" 15
+scalar Wireless_6_10.radioMedium "signal send count" 90
+scalar Wireless_6_10.radioMedium "reception computation count" 90
+scalar Wireless_6_10.radioMedium "interference computation count" 283
+scalar Wireless_6_10.radioMedium "reception decision computation count" 83
+scalar Wireless_6_10.radioMedium "listening decision computation count" 112
+scalar Wireless_6_10.radioMedium "reception cache hit" 85.413290113452
+attr unit %
+scalar Wireless_6_10.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar Wireless_6_10.radioMedium "noise cache hit" 0
+attr unit %
+scalar Wireless_6_10.radioMedium "snir cache hit" 50
+attr unit %
+scalar Wireless_6_10.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar Wireless_6_10.radioMedium "reception result cache hit" 0
+attr unit %
+scalar Wireless_6_10.hostA.lo[0].lo rcvdPkFromHl:count 1
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostA.lo[0].lo rcvdPkFromHl:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostA.lo[0].lo passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostA.lo[0].lo passedUpPk:sum(packetBytes) 32
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostA.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostA.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostA.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac numRetry 0
+scalar Wireless_6_10.hostA.wlan[0].mac numSentWithoutRetry 0
+scalar Wireless_6_10.hostA.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostA.wlan[0].mac numCollision 1
+scalar Wireless_6_10.hostA.wlan[0].mac numSent 0
+scalar Wireless_6_10.hostA.wlan[0].mac numReceived 6
+scalar Wireless_6_10.hostA.wlan[0].mac numSentBroadcast 1
+scalar Wireless_6_10.hostA.wlan[0].mac numReceivedBroadcast 0
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropIncorrectlyReceived:count 1
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostA.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostA.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostA.wlan[0].radio radioMode:count 17
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostA.wlan[0].radio receptionState:count 29
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostA.wlan[0].radio transmissionState:count 28
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostA.wlan[0].radio minSnir:histogram
+field count 7
+field mean 1707.5728825758
+field stddev 752.5281281705
+field min 0.99949824432855
+field max 1992.0017800002
+field sum 11953.010178031
+field sqrsum 23808427.547285
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	1
+bin	50	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	0
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	0
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	6
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+bin	2450	0
+bin	2500	0
+statistic Wireless_6_10.hostA.wlan[0].radio packetErrorRate:histogram
+field count 7
+field mean 0.14285652418941
+field stddev 0.37796283616827
+field min 0
+field max 0.9999956693259
+field sum 0.9999956693259
+field sqrsum 0.99999133867056
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	6
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	1
+bin	1	0
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
+statistic Wireless_6_10.hostA.wlan[0].radio bitErrorRate:histogram
+field count 7
+field mean 0.0032538913171976
+field stddev 0.0086089872185373
+field min 0
+field max 0.022777239220383
+field sum 0.022777239220383
+field sqrsum 0.00051880262650256
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	6
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+statistic Wireless_6_10.hostA.wlan[0].radio symbolErrorRate:histogram
+field count 7
+field mean 0.0032538913171976
+field stddev 0.0086089872185373
+field min 0
+field max 0.022777239220383
+field sum 0.022777239220383
+field sqrsum 0.00051880262650256
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	6
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+scalar Wireless_6_10.hostA.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostA.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostA.udp packetReceived:count 7
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostA.udp packetReceived:sum(packetBytes) 84
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostA.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostA.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostA.udp passedUpPk:count 6
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostA.udp droppedPkWrongPort:count 1
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostA.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostB.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostB.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostB.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostB.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostB.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostB.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostB.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac numRetry 1
+scalar Wireless_6_10.hostB.wlan[0].mac numSentWithoutRetry 0
+scalar Wireless_6_10.hostB.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostB.wlan[0].mac numCollision 0
+scalar Wireless_6_10.hostB.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostB.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostB.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostB.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropNotAddressedToUs:count 5
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 295
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostB.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostB.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostB.wlan[0].radio radioMode:count 7
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostB.wlan[0].radio receptionState:count 30
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostB.wlan[0].radio transmissionState:count 8
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostB.wlan[0].radio minSnir:histogram
+field count 12
+field mean 1646.1681376291
+field stddev 626.96986981708
+field min 498.00044500005
+field max 1992.0017800002
+field sum 19754.017651549
+field sqrsum 36842437.842387
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+statistic Wireless_6_10.hostB.wlan[0].radio packetErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic Wireless_6_10.hostB.wlan[0].radio bitErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic Wireless_6_10.hostB.wlan[0].radio symbolErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostB.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostB.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostB.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostB.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostB.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostB.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostB.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostB.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostB.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostC.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostC.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostC.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostC.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostC.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostC.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostC.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac numRetry 0
+scalar Wireless_6_10.hostC.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_6_10.hostC.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostC.wlan[0].mac numCollision 0
+scalar Wireless_6_10.hostC.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostC.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostC.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostC.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropNotAddressedToUs:count 6
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 354
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostC.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostC.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostC.wlan[0].radio radioMode:count 5
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostC.wlan[0].radio receptionState:count 30
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostC.wlan[0].radio transmissionState:count 4
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostC.wlan[0].radio minSnir:histogram
+field count 13
+field mean 1519.8468950403
+field stddev 753.50869169915
+field min 3.9919839749768
+field max 1992.0017800002
+field sum 19758.009635524
+field sqrsum 36842453.778323
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	1
+bin	50	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+bin	2450	0
+bin	2500	0
+statistic Wireless_6_10.hostC.wlan[0].radio packetErrorRate:histogram
+field count 13
+field mean 0.0013167561138015
+field stddev 0.004747631685592
+field min 0
+field max 0.017117829479419
+field sum 0.017117829479419
+field sqrsum 0.00029302008608648
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	1
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+statistic Wireless_6_10.hostC.wlan[0].radio bitErrorRate:histogram
+field count 13
+field mean 2.4778638277274e-06
+field stddev 8.9340650844887e-06
+field min 0
+field max 3.2212229760457e-05
+field sum 3.2212229760457e-05
+field sqrsum 1.0376277461404e-09
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	5e-07	0
+bin	1e-06	0
+bin	1.5e-06	0
+bin	2e-06	0
+bin	2.5e-06	0
+bin	3e-06	0
+bin	3.5e-06	0
+bin	4e-06	0
+bin	4.5e-06	0
+bin	5e-06	0
+bin	5.5e-06	0
+bin	6e-06	0
+bin	6.5e-06	0
+bin	7e-06	0
+bin	7.5e-06	0
+bin	8e-06	0
+bin	8.5e-06	0
+bin	9e-06	0
+bin	9.5e-06	0
+bin	1e-05	0
+bin	1.05e-05	0
+bin	1.1e-05	0
+bin	1.15e-05	0
+bin	1.2e-05	0
+bin	1.25e-05	0
+bin	1.3e-05	0
+bin	1.35e-05	0
+bin	1.4e-05	0
+bin	1.45e-05	0
+bin	1.5e-05	0
+bin	1.55e-05	0
+bin	1.6e-05	0
+bin	1.65e-05	0
+bin	1.7e-05	0
+bin	1.75e-05	0
+bin	1.8e-05	0
+bin	1.85e-05	0
+bin	1.9e-05	0
+bin	1.95e-05	0
+bin	2e-05	0
+bin	2.05e-05	0
+bin	2.1e-05	0
+bin	2.15e-05	0
+bin	2.2e-05	0
+bin	2.25e-05	0
+bin	2.3e-05	0
+bin	2.35e-05	0
+bin	2.4e-05	0
+bin	2.45e-05	0
+bin	2.5e-05	0
+bin	2.55e-05	0
+bin	2.6e-05	0
+bin	2.65e-05	0
+bin	2.7e-05	0
+bin	2.75e-05	0
+bin	2.8e-05	0
+bin	2.85e-05	0
+bin	2.9e-05	0
+bin	2.95e-05	0
+bin	3e-05	0
+bin	3.05e-05	0
+bin	3.1e-05	0
+bin	3.15e-05	0
+bin	3.2e-05	1
+bin	3.25e-05	0
+bin	3.3e-05	0
+bin	3.35e-05	0
+bin	3.4e-05	0
+bin	3.45e-05	0
+bin	3.5e-05	0
+bin	3.55e-05	0
+bin	3.6e-05	0
+bin	3.65e-05	0
+bin	3.7e-05	0
+bin	3.75e-05	0
+bin	3.8e-05	0
+bin	3.85e-05	0
+bin	3.9e-05	0
+bin	3.95e-05	0
+bin	4e-05	0
+bin	4.05e-05	0
+statistic Wireless_6_10.hostC.wlan[0].radio symbolErrorRate:histogram
+field count 13
+field mean 2.4778638277274e-06
+field stddev 8.9340650844887e-06
+field min 0
+field max 3.2212229760457e-05
+field sum 3.2212229760457e-05
+field sqrsum 1.0376277461404e-09
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	5e-07	0
+bin	1e-06	0
+bin	1.5e-06	0
+bin	2e-06	0
+bin	2.5e-06	0
+bin	3e-06	0
+bin	3.5e-06	0
+bin	4e-06	0
+bin	4.5e-06	0
+bin	5e-06	0
+bin	5.5e-06	0
+bin	6e-06	0
+bin	6.5e-06	0
+bin	7e-06	0
+bin	7.5e-06	0
+bin	8e-06	0
+bin	8.5e-06	0
+bin	9e-06	0
+bin	9.5e-06	0
+bin	1e-05	0
+bin	1.05e-05	0
+bin	1.1e-05	0
+bin	1.15e-05	0
+bin	1.2e-05	0
+bin	1.25e-05	0
+bin	1.3e-05	0
+bin	1.35e-05	0
+bin	1.4e-05	0
+bin	1.45e-05	0
+bin	1.5e-05	0
+bin	1.55e-05	0
+bin	1.6e-05	0
+bin	1.65e-05	0
+bin	1.7e-05	0
+bin	1.75e-05	0
+bin	1.8e-05	0
+bin	1.85e-05	0
+bin	1.9e-05	0
+bin	1.95e-05	0
+bin	2e-05	0
+bin	2.05e-05	0
+bin	2.1e-05	0
+bin	2.15e-05	0
+bin	2.2e-05	0
+bin	2.25e-05	0
+bin	2.3e-05	0
+bin	2.35e-05	0
+bin	2.4e-05	0
+bin	2.45e-05	0
+bin	2.5e-05	0
+bin	2.55e-05	0
+bin	2.6e-05	0
+bin	2.65e-05	0
+bin	2.7e-05	0
+bin	2.75e-05	0
+bin	2.8e-05	0
+bin	2.85e-05	0
+bin	2.9e-05	0
+bin	2.95e-05	0
+bin	3e-05	0
+bin	3.05e-05	0
+bin	3.1e-05	0
+bin	3.15e-05	0
+bin	3.2e-05	1
+bin	3.25e-05	0
+bin	3.3e-05	0
+bin	3.35e-05	0
+bin	3.4e-05	0
+bin	3.45e-05	0
+bin	3.5e-05	0
+bin	3.55e-05	0
+bin	3.6e-05	0
+bin	3.65e-05	0
+bin	3.7e-05	0
+bin	3.75e-05	0
+bin	3.8e-05	0
+bin	3.85e-05	0
+bin	3.9e-05	0
+bin	3.95e-05	0
+bin	4e-05	0
+bin	4.05e-05	0
+scalar Wireless_6_10.hostC.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostC.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostC.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostC.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostC.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostC.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostC.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostC.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostC.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostD.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostD.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostD.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostD.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostD.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostD.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostD.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac numRetry 0
+scalar Wireless_6_10.hostD.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_6_10.hostD.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostD.wlan[0].mac numCollision 1
+scalar Wireless_6_10.hostD.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostD.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostD.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostD.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropIncorrectlyReceived:count 1
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropNotAddressedToUs:count 5
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 295
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostD.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostD.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostD.wlan[0].radio radioMode:count 5
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostD.wlan[0].radio receptionState:count 29
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostD.wlan[0].radio transmissionState:count 4
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostD.wlan[0].radio minSnir:histogram
+field count 13
+field mean 1519.616626726
+field stddev 754.01082215785
+field min 0.99849624197006
+field max 1992.0017800002
+field sum 19755.016147438
+field sqrsum 36842438.838061
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	1
+bin	50	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+bin	2450	0
+bin	2500	0
+statistic Wireless_6_10.hostD.wlan[0].radio packetErrorRate:histogram
+field count 13
+field mean 0.076922753558361
+field stddev 0.27734893220455
+field min 0
+field max 0.99999579625869
+field sum 0.99999579625869
+field sqrsum 0.99999159253506
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	1
+bin	1	0
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
+statistic Wireless_6_10.hostD.wlan[0].radio bitErrorRate:histogram
+field count 13
+field mean 0.001756267239678
+field stddev 0.0063323115860766
+field min 0
+field max 0.022831474115814
+field sum 0.022831474115814
+field sqrsum 0.00052127621030108
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+bin	0.029	0
+statistic Wireless_6_10.hostD.wlan[0].radio symbolErrorRate:histogram
+field count 13
+field mean 0.001756267239678
+field stddev 0.0063323115860766
+field min 0
+field max 0.022831474115814
+field sum 0.022831474115814
+field sqrsum 0.00052127621030108
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+bin	0.029	0
+scalar Wireless_6_10.hostD.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostD.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostD.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostD.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostD.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostD.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostD.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostD.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostD.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostE.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostE.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostE.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostE.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostE.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostE.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostE.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac numRetry 0
+scalar Wireless_6_10.hostE.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_6_10.hostE.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostE.wlan[0].mac numCollision 0
+scalar Wireless_6_10.hostE.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostE.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostE.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostE.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropNotAddressedToUs:count 6
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 354
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostE.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostE.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostE.wlan[0].radio radioMode:count 5
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostE.wlan[0].radio receptionState:count 30
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostE.wlan[0].radio transmissionState:count 4
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostE.wlan[0].radio minSnir:histogram
+field count 13
+field mean 1519.8468950132
+field stddev 753.50869168552
+field min 3.9919839750842
+field max 1992.0017800002
+field sum 19758.009635171
+field sqrsum 36842453.777002
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	1
+bin	50	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+bin	2450	0
+bin	2500	0
+statistic Wireless_6_10.hostE.wlan[0].radio packetErrorRate:histogram
+field count 13
+field mean 0.0013167561135045
+field stddev 0.0047476316845213
+field min 0
+field max 0.017117829475559
+field sum 0.017117829475559
+field sqrsum 0.00029302008595431
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	1
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+statistic Wireless_6_10.hostE.wlan[0].radio bitErrorRate:histogram
+field count 13
+field mean 2.4778638271652e-06
+field stddev 8.9340650824615e-06
+field min 0
+field max 3.2212229753148e-05
+field sum 3.2212229753148e-05
+field sqrsum 1.0376277456696e-09
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	5e-07	0
+bin	1e-06	0
+bin	1.5e-06	0
+bin	2e-06	0
+bin	2.5e-06	0
+bin	3e-06	0
+bin	3.5e-06	0
+bin	4e-06	0
+bin	4.5e-06	0
+bin	5e-06	0
+bin	5.5e-06	0
+bin	6e-06	0
+bin	6.5e-06	0
+bin	7e-06	0
+bin	7.5e-06	0
+bin	8e-06	0
+bin	8.5e-06	0
+bin	9e-06	0
+bin	9.5e-06	0
+bin	1e-05	0
+bin	1.05e-05	0
+bin	1.1e-05	0
+bin	1.15e-05	0
+bin	1.2e-05	0
+bin	1.25e-05	0
+bin	1.3e-05	0
+bin	1.35e-05	0
+bin	1.4e-05	0
+bin	1.45e-05	0
+bin	1.5e-05	0
+bin	1.55e-05	0
+bin	1.6e-05	0
+bin	1.65e-05	0
+bin	1.7e-05	0
+bin	1.75e-05	0
+bin	1.8e-05	0
+bin	1.85e-05	0
+bin	1.9e-05	0
+bin	1.95e-05	0
+bin	2e-05	0
+bin	2.05e-05	0
+bin	2.1e-05	0
+bin	2.15e-05	0
+bin	2.2e-05	0
+bin	2.25e-05	0
+bin	2.3e-05	0
+bin	2.35e-05	0
+bin	2.4e-05	0
+bin	2.45e-05	0
+bin	2.5e-05	0
+bin	2.55e-05	0
+bin	2.6e-05	0
+bin	2.65e-05	0
+bin	2.7e-05	0
+bin	2.75e-05	0
+bin	2.8e-05	0
+bin	2.85e-05	0
+bin	2.9e-05	0
+bin	2.95e-05	0
+bin	3e-05	0
+bin	3.05e-05	0
+bin	3.1e-05	0
+bin	3.15e-05	0
+bin	3.2e-05	1
+bin	3.25e-05	0
+bin	3.3e-05	0
+bin	3.35e-05	0
+bin	3.4e-05	0
+bin	3.45e-05	0
+bin	3.5e-05	0
+bin	3.55e-05	0
+bin	3.6e-05	0
+bin	3.65e-05	0
+bin	3.7e-05	0
+bin	3.75e-05	0
+bin	3.8e-05	0
+bin	3.85e-05	0
+bin	3.9e-05	0
+bin	3.95e-05	0
+bin	4e-05	0
+bin	4.05e-05	0
+statistic Wireless_6_10.hostE.wlan[0].radio symbolErrorRate:histogram
+field count 13
+field mean 2.4778638271652e-06
+field stddev 8.9340650824615e-06
+field min 0
+field max 3.2212229753148e-05
+field sum 3.2212229753148e-05
+field sqrsum 1.0376277456696e-09
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	5e-07	0
+bin	1e-06	0
+bin	1.5e-06	0
+bin	2e-06	0
+bin	2.5e-06	0
+bin	3e-06	0
+bin	3.5e-06	0
+bin	4e-06	0
+bin	4.5e-06	0
+bin	5e-06	0
+bin	5.5e-06	0
+bin	6e-06	0
+bin	6.5e-06	0
+bin	7e-06	0
+bin	7.5e-06	0
+bin	8e-06	0
+bin	8.5e-06	0
+bin	9e-06	0
+bin	9.5e-06	0
+bin	1e-05	0
+bin	1.05e-05	0
+bin	1.1e-05	0
+bin	1.15e-05	0
+bin	1.2e-05	0
+bin	1.25e-05	0
+bin	1.3e-05	0
+bin	1.35e-05	0
+bin	1.4e-05	0
+bin	1.45e-05	0
+bin	1.5e-05	0
+bin	1.55e-05	0
+bin	1.6e-05	0
+bin	1.65e-05	0
+bin	1.7e-05	0
+bin	1.75e-05	0
+bin	1.8e-05	0
+bin	1.85e-05	0
+bin	1.9e-05	0
+bin	1.95e-05	0
+bin	2e-05	0
+bin	2.05e-05	0
+bin	2.1e-05	0
+bin	2.15e-05	0
+bin	2.2e-05	0
+bin	2.25e-05	0
+bin	2.3e-05	0
+bin	2.35e-05	0
+bin	2.4e-05	0
+bin	2.45e-05	0
+bin	2.5e-05	0
+bin	2.55e-05	0
+bin	2.6e-05	0
+bin	2.65e-05	0
+bin	2.7e-05	0
+bin	2.75e-05	0
+bin	2.8e-05	0
+bin	2.85e-05	0
+bin	2.9e-05	0
+bin	2.95e-05	0
+bin	3e-05	0
+bin	3.05e-05	0
+bin	3.1e-05	0
+bin	3.15e-05	0
+bin	3.2e-05	1
+bin	3.25e-05	0
+bin	3.3e-05	0
+bin	3.35e-05	0
+bin	3.4e-05	0
+bin	3.45e-05	0
+bin	3.5e-05	0
+bin	3.55e-05	0
+bin	3.6e-05	0
+bin	3.65e-05	0
+bin	3.7e-05	0
+bin	3.75e-05	0
+bin	3.8e-05	0
+bin	3.85e-05	0
+bin	3.9e-05	0
+bin	3.95e-05	0
+bin	4e-05	0
+bin	4.05e-05	0
+scalar Wireless_6_10.hostE.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostE.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostE.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostE.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostE.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostE.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostE.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostE.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostE.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostF.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostF.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostF.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostF.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostF.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostF.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostF.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac numRetry 1
+scalar Wireless_6_10.hostF.wlan[0].mac numSentWithoutRetry 0
+scalar Wireless_6_10.hostF.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostF.wlan[0].mac numCollision 0
+scalar Wireless_6_10.hostF.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostF.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostF.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostF.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropNotAddressedToUs:count 5
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 295
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostF.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostF.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostF.wlan[0].radio radioMode:count 7
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostF.wlan[0].radio receptionState:count 30
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostF.wlan[0].radio transmissionState:count 8
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostF.wlan[0].radio minSnir:histogram
+field count 12
+field mean 1646.1681375997
+field stddev 626.96986980571
+field min 498.00044498663
+field max 1992.0017800002
+field sum 19754.017651196
+field sqrsum 36842437.841066
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+statistic Wireless_6_10.hostF.wlan[0].radio packetErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic Wireless_6_10.hostF.wlan[0].radio bitErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic Wireless_6_10.hostF.wlan[0].radio symbolErrorRate:histogram
+field count 12
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostF.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostF.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostF.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostF.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostF.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostF.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostF.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostF.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostF.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar Wireless_6_10.hostG.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar Wireless_6_10.hostG.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostG.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar Wireless_6_10.hostG.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetPopped:count 1
+attr interpolationmode none
+attr title "packet popped, count"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetPopped:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic Wireless_6_10.hostG.wlan[0].mac.queue queueingTime:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar Wireless_6_10.hostG.wlan[0].mac.queue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetPushed:count 1
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetPushed:sum(packetBytes) 59
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar Wireless_6_10.hostG.wlan[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac numRetry 0
+scalar Wireless_6_10.hostG.wlan[0].mac numSentWithoutRetry 1
+scalar Wireless_6_10.hostG.wlan[0].mac numGivenUp 0
+scalar Wireless_6_10.hostG.wlan[0].mac numCollision 1
+scalar Wireless_6_10.hostG.wlan[0].mac numSent 1
+scalar Wireless_6_10.hostG.wlan[0].mac numReceived 0
+scalar Wireless_6_10.hostG.wlan[0].mac numSentBroadcast 0
+scalar Wireless_6_10.hostG.wlan[0].mac numReceivedBroadcast 1
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropIncorrectlyReceived:count 1
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 59
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropNotAddressedToUs:count 5
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 295
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar Wireless_6_10.hostG.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostG.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+scalar Wireless_6_10.hostG.wlan[0].radio radioMode:count 5
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar Wireless_6_10.hostG.wlan[0].radio receptionState:count 29
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar Wireless_6_10.hostG.wlan[0].radio transmissionState:count 4
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic Wireless_6_10.hostG.wlan[0].radio minSnir:histogram
+field count 13
+field mean 1519.6167038031
+field stddev 754.01065398403
+field min 0.99949824427468
+field max 1992.0017800002
+field sum 19755.01714944
+field sqrsum 36842438.840063
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	1
+bin	50	0
+bin	100	0
+bin	150	0
+bin	200	0
+bin	250	0
+bin	300	0
+bin	350	0
+bin	400	0
+bin	450	1
+bin	500	0
+bin	550	0
+bin	600	0
+bin	650	2
+bin	700	0
+bin	750	0
+bin	800	0
+bin	850	0
+bin	900	0
+bin	950	0
+bin	1000	0
+bin	1050	0
+bin	1100	0
+bin	1150	0
+bin	1200	0
+bin	1250	0
+bin	1300	0
+bin	1350	0
+bin	1400	0
+bin	1450	0
+bin	1500	0
+bin	1550	0
+bin	1600	0
+bin	1650	0
+bin	1700	0
+bin	1750	0
+bin	1800	0
+bin	1850	0
+bin	1900	0
+bin	1950	9
+bin	2000	0
+bin	2050	0
+bin	2100	0
+bin	2150	0
+bin	2200	0
+bin	2250	0
+bin	2300	0
+bin	2350	0
+bin	2400	0
+bin	2450	0
+bin	2500	0
+statistic Wireless_6_10.hostG.wlan[0].radio packetErrorRate:histogram
+field count 13
+field mean 0.076922743794301
+field stddev 0.27734889699973
+field min 0
+field max 0.99999566932591
+field sum 0.99999566932591
+field sqrsum 0.99999133867057
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+bin	0.52	0
+bin	0.54	0
+bin	0.56	0
+bin	0.58	0
+bin	0.6	0
+bin	0.62	0
+bin	0.64	0
+bin	0.66	0
+bin	0.68	0
+bin	0.7	0
+bin	0.72	0
+bin	0.74	0
+bin	0.76	0
+bin	0.78	0
+bin	0.8	0
+bin	0.82	0
+bin	0.84	0
+bin	0.86	0
+bin	0.88	0
+bin	0.9	0
+bin	0.92	0
+bin	0.94	0
+bin	0.96	0
+bin	0.98	1
+bin	1	0
+bin	1.02	0
+bin	1.04	0
+bin	1.06	0
+bin	1.08	0
+bin	1.1	0
+bin	1.12	0
+bin	1.14	0
+bin	1.16	0
+bin	1.18	0
+bin	1.2	0
+bin	1.22	0
+bin	1.24	0
+bin	1.26	0
+statistic Wireless_6_10.hostG.wlan[0].radio bitErrorRate:histogram
+field count 13
+field mean 0.0017520953248689
+field stddev 0.0063172695333154
+field min 0
+field max 0.022777239223295
+field sum 0.022777239223295
+field sqrsum 0.00051880262663522
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+statistic Wireless_6_10.hostG.wlan[0].radio symbolErrorRate:histogram
+field count 13
+field mean 0.0017520953248689
+field stddev 0.0063172695333154
+field min 0
+field max 0.022777239223295
+field sum 0.022777239223295
+field sqrsum 0.00051880262663522
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	12
+bin	0.0005	0
+bin	0.001	0
+bin	0.0015	0
+bin	0.002	0
+bin	0.0025	0
+bin	0.003	0
+bin	0.0035	0
+bin	0.004	0
+bin	0.0045	0
+bin	0.005	0
+bin	0.0055	0
+bin	0.006	0
+bin	0.0065	0
+bin	0.007	0
+bin	0.0075	0
+bin	0.008	0
+bin	0.0085	0
+bin	0.009	0
+bin	0.0095	0
+bin	0.01	0
+bin	0.0105	0
+bin	0.011	0
+bin	0.0115	0
+bin	0.012	0
+bin	0.0125	0
+bin	0.013	0
+bin	0.0135	0
+bin	0.014	0
+bin	0.0145	0
+bin	0.015	0
+bin	0.0155	0
+bin	0.016	0
+bin	0.0165	0
+bin	0.017	0
+bin	0.0175	0
+bin	0.018	0
+bin	0.0185	0
+bin	0.019	0
+bin	0.0195	0
+bin	0.02	0
+bin	0.0205	0
+bin	0.021	0
+bin	0.0215	0
+bin	0.022	0
+bin	0.0225	1
+bin	0.023	0
+bin	0.0235	0
+bin	0.024	0
+bin	0.0245	0
+bin	0.025	0
+bin	0.0255	0
+bin	0.026	0
+bin	0.0265	0
+bin	0.027	0
+bin	0.0275	0
+bin	0.028	0
+bin	0.0285	0
+scalar Wireless_6_10.hostG.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar Wireless_6_10.hostG.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar Wireless_6_10.hostG.udp packetReceived:count 1
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar Wireless_6_10.hostG.udp packetReceived:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar Wireless_6_10.hostG.udp packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar Wireless_6_10.hostG.udp packetSent:sum(packetBytes) 12
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar Wireless_6_10.hostG.udp passedUpPk:count 1
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar Wireless_6_10.hostG.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar Wireless_6_10.hostG.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+
